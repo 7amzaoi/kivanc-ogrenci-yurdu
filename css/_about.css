@@ -1,0 +1,118 @@
+/* ==========================================================================
+   ABOUT / WHY US — image + value props
+   ========================================================================== */
+
+.about__grid {
+  display: grid;
+  gap: var(--s-9);
+  align-items: start;
+}
+
+/* --------------------------------------------------------------------------
+   MEDIA COLUMN
+   -------------------------------------------------------------------------- */
+.about__media {
+  position: relative;
+  max-width: 520px;
+}
+.about__media .media { border-radius: var(--r-lg); }
+
+/* Floating stat card overlapping the photo's bottom corner.
+   position + z-index are load-bearing, not decoration: .media is
+   position:relative, and positioned elements paint above static ones no matter
+   what the DOM order is. Without these the photo covers the card. */
+.about__stat {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+  inline-size: max-content;
+  max-inline-size: 78%;
+  margin-block-start: calc(var(--s-7) * -1);
+  margin-inline-start: var(--s-5);
+  padding: var(--s-5) var(--s-6);
+  background-color: var(--c-accent);
+  color: var(--c-cream);
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-lg);
+}
+.about__stat-value {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-display);
+  font-size: var(--t-xl);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.about__stat-label {
+  font-size: var(--t-xs);
+  line-height: 1.4;
+  color: rgba(251, 248, 243, 0.82);
+}
+
+/* --------------------------------------------------------------------------
+   CONTENT COLUMN
+   -------------------------------------------------------------------------- */
+.about__content > h2 { margin-block-end: var(--s-5); }
+
+.about__lede {
+  font-size: var(--t-md);
+  color: var(--c-ink-soft);
+  margin-block-end: var(--s-4);
+}
+.about__content > p:not(.eyebrow) { color: var(--c-ink-mute); }
+
+/* --------------------------------------------------------------------------
+   VALUE LIST
+   -------------------------------------------------------------------------- */
+.value-list {
+  display: grid;
+  gap: var(--s-5);
+  margin-block-start: var(--s-8);
+  padding-block-start: var(--s-7);
+  border-block-start: 1px solid var(--c-line-soft);
+}
+
+.value-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--s-4);
+  align-items: start;
+}
+
+.value-item__icon {
+  color: var(--c-accent);
+  margin-block-start: 2px;
+}
+
+.value-item__title {
+  font-family: var(--font-body);
+  font-size: var(--t-base);
+  font-weight: 600;
+  letter-spacing: var(--ls-normal);
+  color: var(--c-ink);
+  line-height: 1.35;
+  margin-block-end: var(--s-1);
+}
+
+.value-item__desc {
+  font-size: var(--t-sm);
+  line-height: 1.6;
+  color: var(--c-ink-mute);
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (min-width: 700px) {
+  .value-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-6) var(--s-7); }
+}
+
+@media (min-width: 1000px) {
+  .about__grid {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: var(--s-10);
+    align-items: center;
+  }
+  .about__media { max-width: none; }
+}

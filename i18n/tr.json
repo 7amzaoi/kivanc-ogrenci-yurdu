@@ -1,0 +1,356 @@
+{
+  "meta": {
+    "title": "Kıvanç Öğrenci Yurdu — Avcılar, İstanbul'da Kız Öğrenci Yurdu",
+    "description": "Avcılar, İstanbul'da özel kız öğrenci yurdu. Güvenli ve profesyonel yönetilen odalar; İstanbul'un vakıf üniversitelerine dakikalar mesafede."
+  },
+  "brand": {
+    "suffix": "Öğrenci Yurdu",
+    "name": "Kıvanç Öğrenci Yurdu"
+  },
+  "a11y": {
+    "skipToContent": "İçeriğe geç",
+    "languageSwitcher": "Dil değiştir",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "mobileNav": "Mobil menü",
+    "lightbox": "Fotoğraf görüntüleyici",
+    "close": "Kapat",
+    "prev": "Önceki fotoğraf",
+    "next": "Sonraki fotoğraf",
+    "whatsappFab": "WhatsApp'tan yazın"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "rooms": "Odalar",
+    "universities": "Üniversiteler",
+    "amenities": "İmkânlar",
+    "about": "Hakkımızda",
+    "gallery": "Galeri",
+    "faq": "S.S.S.",
+    "contact": "İletişim",
+    "cta": "Yer Ayırt"
+  },
+  "hero": {
+    "eyebrow": "Avcılar · İstanbul",
+    "title": "Kendini <em>evinde hissedeceğin</em> bir yurt",
+    "lede": "Avcılar'ın merkezinde kız öğrenciler için özel bir yurt — profesyonel yönetim, 7/24 güvenlik ve yarım saatin altında beş üniversite kampüsüne ulaşan Metrobüs'e kısa bir yürüyüş.",
+    "ctaPrimary": "Odaları İncele",
+    "ctaSecondary": "Randevu Al",
+    "imageAlt": "Aydınlık ve modern bir yurt ortak alanında dinlenen öğrenciler",
+    "trust": {
+      "1": {
+        "value": "500+",
+        "label": "2013'ten bu yana ağırladığımız öğrenci"
+      },
+      "2": {
+        "value": "5 dk",
+        "label": "En yakın kampüse"
+      },
+      "3": {
+        "value": "7/24",
+        "label": "Güvenlik ve bina içi personel"
+      },
+      "4": {
+        "value": "3",
+        "label": "Oda tipi, tek standart"
+      }
+    }
+  },
+  "rooms": {
+    "eyebrow": "Odalar ve Fiyatlar",
+    "title": "Ders çalışmak ve dinlenmek için tasarlanmış odalar",
+    "lede": "Kız öğrenciler için tek bir binada üç oda tipi — hangisini seçerseniz seçin aynı imkânlar, aynı hizmet. Faturalar, temizlik, çamaşırhane ve yemek hepsine dahildir.",
+    "headCta": "Boş yer durumunu sorun",
+    "priceFrom": "Başlangıç",
+    "priceUnit": "/ ay",
+    "apply": "Başvur",
+    "disclaimer": "Gösterilen fiyatlar örnek amaçlıdır. Kesin ücretler oda tipine, sözleşme süresine ve seçtiğiniz yemek planına göre değişir — güncel fiyat listesi için bize ulaşın.",
+    "amen": {
+      "wifi": "Wi-Fi",
+      "desk": "Çalışma masası",
+      "wardrobe": "Gardırop",
+      "ensuite": "Oda içi banyo",
+      "sharedBath": "Ortak banyo"
+    },
+    "f1": {
+      "name": "Tek Kişilik Oda",
+      "capacity": "1 öğrenci",
+      "desc": "Kendine ait banyosu, geniş bir çalışma masası ve bol dolap alanı olan özel bir oda — sessizlik ve odaklanma isteyen öğrenciler için.",
+      "price": "₺X.XXX",
+      "alt": "Yatak, çalışma masası ve geniş pencereli tek kişilik oda"
+    },
+    "f2": {
+      "name": "İki Kişilik Oda",
+      "capacity": "2 öğrenci",
+      "desc": "İki tek kişilik yatak, iki masa ve iki gardıroba sahip ferah bir oda; banyo kat içinde ortak kullanımda. En çok tercih edilen seçeneğimiz.",
+      "price": "₺X.XXX",
+      "alt": "İki yataklı ve iki çalışma masalı paylaşımlı oda"
+    },
+    "f3": {
+      "name": "Üç Kişilik Oda",
+      "capacity": "3 öğrenci",
+      "desc": "En ekonomik seçenek, hiçbir şeyden ödün vermeden: üç ayrı yatak, üç masa, üç gardırop ve diğer tüm odalarla aynı imkânlar.",
+      "price": "₺X.XXX",
+      "alt": "Ranzalı ve kişisel dolapları olan paylaşımlı oda"
+    },
+    "residenceNote": "Kartlı geçiş sistemi, binada ikamet eden bir yurt müdürü ve 24 saat kamera takibi bulunan müstakil bir bina."
+  },
+  "uni": {
+    "eyebrow": "Kampüse ulaşım",
+    "title": "Okuduğunuz yere yakın",
+    "lede": "Avcılar doğrudan Metrobüs güzergâhının üzerinde; İstanbul Gelişim ilçenin kendi sınırları içinde, dört kampüs daha aynı hat üzerinde yarım saat mesafede. Aşağıdaki süreler toplu taşımayla kapıdan kapıya hesaplanmıştır.",
+    "transitTitle": "Kapınızın önünde",
+    "note": "Süreler toplu taşımayla, yoğun saat dışı ortalama değerlerdir; trafiğe ve saate göre değişebilir.",
+    "transit": {
+      "1": "Metrobüs'e 5 dakika yürüme",
+      "2": "25 dakikada beş kampüs",
+      "3": "Halkalı Marmaray'a 15 dakika"
+    },
+    "1": {
+      "name": "İstanbul Gelişim Üniversitesi",
+      "short": "Avcılar Yerleşkesi",
+      "time": "Metrobüs ile 5 dk"
+    },
+    "2": {
+      "name": "Beykent Üniversitesi",
+      "short": "Beylikdüzü Yerleşkesi",
+      "time": "Metrobüs ile 10 dk"
+    },
+    "3": {
+      "name": "İstanbul Aydın Üniversitesi",
+      "short": "Florya Yerleşkesi",
+      "time": "Metrobüs ile 15 dk"
+    },
+    "4": {
+      "name": "İstanbul Arel Üniversitesi",
+      "short": "Tepekent Yerleşkesi",
+      "time": "Metrobüs ile 20 dk"
+    },
+    "5": {
+      "name": "İstanbul Sabahattin Zaim Üniversitesi",
+      "short": "Halkalı Yerleşkesi",
+      "time": "Metrobüs + otobüs ile 25 dk"
+    },
+    "6": {
+      "name": "Bahçeşehir Üniversitesi",
+      "short": "Beşiktaş Yerleşkesi",
+      "time": "Metrobüs + metro ile 55 dk"
+    }
+  },
+  "amen": {
+    "eyebrow": "İmkânlar",
+    "title": "Her şey dahil, düşünecek bir şey yok",
+    "lede": "Tek bir aylık ödeme; odayı, faturaları ve çevresindeki tüm hizmetleri kapsıyor. Böylece öğrenciler dikkatlerini asıl olması gereken yere verebiliyor.",
+    "1": {
+      "title": "7/24 güvenlik",
+      "desc": "Gece gündüz personelli resepsiyon ve tüm girişlerde kartlı geçiş sistemi."
+    },
+    "2": {
+      "title": "Kamera takibi",
+      "desc": "Tüm ortak alanlarda ve girişlerde kayıt altına alınan, düzenli izlenen kameralar."
+    },
+    "3": {
+      "title": "Fiber Wi-Fi",
+      "desc": "Her odada ve salonda yüksek hızlı fiber internet; sınav dönemine dayanacak altyapı."
+    },
+    "4": {
+      "title": "Çalışma salonları",
+      "desc": "Masanız yetmediğinde sessiz odalar ve grup çalışma masaları."
+    },
+    "5": {
+      "title": "Yemekhane ve mutfak",
+      "desc": "Her gün kahvaltı ve akşam yemeği, ayrıca her katta ortak mutfak."
+    },
+    "6": {
+      "title": "Çamaşırhane",
+      "desc": "Kiraya dahil çamaşır ve kurutma makineleri — jeton yok, sıra yok."
+    },
+    "7": {
+      "title": "Spor salonu",
+      "desc": "Her iki binada da tam donanımlı, sabahtan geç saatlere kadar açık spor salonu."
+    },
+    "8": {
+      "title": "Temizlik hizmeti",
+      "desc": "Haftalık oda temizliği ve tüm ortak alanların günlük bakımı."
+    },
+    "9": {
+      "title": "Bina içi yönetim",
+      "desc": "Binada yaşayan bir yurt müdürü — başka şehirdeki bir telefon numarası değil."
+    },
+    "10": {
+      "title": "Kapıda toplu taşıma",
+      "desc": "Metrobüs, otobüs ve minibüs hatları; her iki binaya da kısa bir yürüyüş mesafesinde."
+    }
+  },
+  "about": {
+    "eyebrow": "Kıvanç Hakkında",
+    "title": "Öğrenci için kurulduk. Aileye hesap veriyoruz.",
+    "p1": "Öğrencilerimizin çoğu İstanbul'a başka bir şehirden geliyor ve aileleri için o ilk yıl büyük bir güven meselesi. Kıvanç'ı tam da bu gerçeğin üzerine kurduk: gerçekten personelli tek bir bina, net kurallar, şeffaf fiyatlandırma ve bir veli soru sorduğunda her zaman ulaşılabilen bir muhatap.",
+    "p2": "Büyük bir zincir değiliz. Yurdu, 2013'ten bu yana sahibi olan aile günlük olarak kendisi yönetiyor; standartların korunmasının sebebi de bu.",
+    "statValue": "2013'ten beri",
+    "statLabel": "Aile işletmesi, profesyonel yönetim",
+    "imageAlt": "Ortak bir masanın etrafında birlikte ders çalışan öğrenciler",
+    "v1": {
+      "title": "Önce güvenlik",
+      "desc": "Kontrollü giriş, kamera kapsaması ve günün her saatinde binada personel."
+    },
+    "v2": {
+      "title": "Sizin dilinizden konuşuyoruz",
+      "desc": "Bugün Türkçe ve İngilizce destek; uluslararası öğrenciler için Arapça bilen personel."
+    },
+    "v3": {
+      "title": "Şeffaf fiyatlandırma",
+      "desc": "Faturaları, temizliği, çamaşırhaneyi ve yemeği kapsayan tek bir aylık rakam. Yıl ortasında sürpriz yok."
+    },
+    "v4": {
+      "title": "Gerçek bir topluluk",
+      "desc": "Yeni bir şehri küçültecek çalışma grupları, ortak sofralar ve etkinlikler."
+    }
+  },
+  "gallery": {
+    "eyebrow": "Galeri",
+    "title": "İçeriden bir bakış",
+    "lede": "Odalar, salonlar, mutfaklar ve aradaki tüm alanlar. Randevu alın, gerisini yerinde gösterelim.",
+    "cta": "Randevu alın",
+    "1": {
+      "alt": "Koltuklar ve lambaderlerle döşenmiş ortak salon"
+    },
+    "2": {
+      "alt": "Ortak salonda sessiz bir oturma köşesi"
+    },
+    "3": {
+      "alt": "Pencere kenarında bitkilerle çevrili çalışma masası"
+    },
+    "4": {
+      "alt": "Ortak mutfakta birlikte yemek yapan öğrenciler"
+    },
+    "5": {
+      "alt": "Kitaplıkları ve koltuklarıyla çalışma salonu"
+    },
+    "6": {
+      "alt": "Serbest ağırlıkların bulunduğu spor salonu"
+    },
+    "7": {
+      "alt": "Akşam saatlerinde yurt binasının dış görünümü"
+    },
+    "8": {
+      "alt": "Duşakabinli modern ortak banyo"
+    }
+  },
+  "test": {
+    "eyebrow": "Onların sözleriyle",
+    "title": "Öğrenciler ve veliler ne diyor",
+    "note": "Buradaki yorumlar yerleşim amaçlı örnek metinlerdir — açılıştan önce gerçek ve isimli yorumlarla değiştirilecektir.",
+    "1": {
+      "quote": "Gaziantep'ten kimseyi tanımadan geldim. Bir hafta içinde hem çalışma grubum hem de akşam yemeğine oturduğum arkadaşlarım oldu. Oda gerçekten ders çalışılacak kadar sessiz.",
+      "name": "Zeynep A.",
+      "meta": "2. sınıf, İstanbul Aydın Üniversitesi"
+    },
+    "2": {
+      "quote": "Kızını İstanbul'a gönderen bir baba olarak benim için önemli olan, aradığımda onu ismiyle tanıyan bir insana ulaşabilmekti. Bu bir kez bile aksamadı.",
+      "name": "Mehmet Y.",
+      "meta": "Veli, Konya"
+    },
+    "3": {
+      "quote": "Kararı ulaşım verdi. Beş dakikada Metrobüs'teyim ve ilk derse acele etmeden yetişiyorum.",
+      "name": "Elif D.",
+      "meta": "3. sınıf, İstanbul Gelişim Üniversitesi"
+    }
+  },
+  "faq": {
+    "eyebrow": "Sorular",
+    "title": "Başvurmadan önce",
+    "lede": "Sorunuzun cevabı burada yoksa bizi arayın veya yazın — haftanın yedi günü Türkçe ve İngilizce yanıt veriyoruz.",
+    "cta": "Doğrudan bize sorun",
+    "1": {
+      "q": "Odaya nasıl başvururum?",
+      "a": "Sayfanın altındaki formu doldurun ya da adınızı, üniversitenizi ve tercih ettiğiniz oda tipini WhatsApp'tan bize yazın. Boş yer durumunu teyit edip sizi yurdu görmeye davet ediyoruz; karar verdiğinizde kaparo ile odanızı ayırıyoruz."
+    },
+    "2": {
+      "q": "Sözleşme süresi ne kadar?",
+      "a": "Standart sözleşme eylül–haziran arası akademik yılı kapsar. Yaz dönemi konaklaması ve daha kısa süreli kalışlar, yer durumuna bağlı olarak talep üzerine mümkündür."
+    },
+    "3": {
+      "q": "Aylık ücrete neler dahil?",
+      "a": "Kira, tüm faturalar, fiber internet, haftalık oda temizliği, çamaşırhane kullanımı, çalışma salonları ve spor salonu ile günlük yemek planı. Ay sonunda ayrıca bir fatura çıkmaz."
+    },
+    "4": {
+      "q": "Veliler ziyaret edebilir mi, güvenlik kuralları nedir?",
+      "a": "Aileleri ziyaret saatleri içinde memnuniyetle ağırlıyor ve giriş katındaki salonda karşılıyoruz. Yatakhane katlarına giriş kartlıdır ve yalnızca öğrenciler ile personel içindir. Tüm girişler kamerayla izlenir, resepsiyon 24 saat personellidir."
+    },
+    "5": {
+      "q": "Ödeme nasıl yapılıyor?",
+      "a": "Aylık banka havalesiyle ya da sözleşme sırasında belirlenen taksitlerle. Her ödeme için makbuz düzenliyoruz; belgesiz nakit talep etmiyoruz."
+    },
+    "6": {
+      "q": "Giriş-çıkış saatleri nasıl?",
+      "a": "Bina hafta içi 23:00'te, hafta sonu 24:00'te kapanır. Daha geç dönmesi ya da dışarıda kalması gereken bir öğrenci, yurt müdürüyle önceden görüşür ve ailesi bilgilendirilir."
+    }
+  },
+  "contact": {
+    "eyebrow": "Ziyaret ve başvuru",
+    "title": "Gelin, kendi gözünüzle görün",
+    "lede": "Hangi oda tipiyle ilgilendiğinizi yazın; boş yer durumu, güncel fiyatlar ve ziyaret saati için aynı gün içinde size dönelim.",
+    "addressLabel": "Adres",
+    "address": "Cihangir Mah., Kirazlı Cad., 34310 Avcılar / İstanbul",
+    "addressHint": "Aşağıdaki haritada işaretli. Kapı numarası için bizi arayın.",
+    "phoneLabel": "Telefon",
+    "phone": "+90 541 590 44 45",
+    "whatsappLabel": "WhatsApp",
+    "whatsapp": "WhatsApp'tan yazın",
+    "emailLabel": "E-posta",
+    "email": "kivancogrenciyurtlari@gmail.com",
+    "hoursLabel": "Ziyaret saatleri",
+    "hours": "Her gün, 09:00 – 20:00",
+    "mapTitle": "Kıvanç Öğrenci Yurdu haritası, Avcılar",
+    "mapNote": "Cihangir Mah., Avcılar — yol tarifi için işarete dokunun.",
+    "_comment": "SINGLE SOURCE OF TRUTH for contact details. js/i18n.js writes phoneRaw / waNumber / emailRaw into the tel:, wa.me and mailto: links, and builds both the Google Maps directions links and the embedded map iframe from mapLat / mapLng. The iframe in index.html also carries the coordinates as a no-JS fallback; tools/verify keeps the two in step.",
+    "phoneRaw": "+905415904445",
+    "waNumber": "905415904445",
+    "emailRaw": "kivancogrenciyurtlari@gmail.com",
+    "directions": "Yol tarifi al",
+    "mapLat": "40.9833101",
+    "mapLng": "28.7098463"
+  },
+  "form": {
+    "name": "Ad Soyad",
+    "namePh": "Adınız",
+    "errName": "Lütfen adınızı yazın.",
+    "phone": "Telefon",
+    "phonePh": "+90 541 590 44 45",
+    "errPhone": "Size ulaşabileceğimiz bir telefon numarası yazın.",
+    "email": "E-posta",
+    "emailPh": "ornek@eposta.com",
+    "errEmail": "Lütfen geçerli bir e-posta adresi yazın.",
+    "interest": "Oda tipi",
+    "message": "Mesajınız",
+    "messagePh": "Hangi üniversitede okuyorsunuz? Ne zaman yerleşmeyi düşünüyorsunuz?",
+    "submit": "Talebi gönder",
+    "note": "Bu formu göndererek talebinizle ilgili sizinle iletişime geçilmesini kabul etmiş olursunuz. Bilgilerinizi hiçbir şekilde üçüncü kişilerle paylaşmıyoruz.",
+    "sending": "E-posta uygulamanız açılıyor…",
+    "success": "Teşekkürler — e-posta uygulamanız talebiniz hazır şekilde açılmış olmalı.",
+    "error": "Bir sorun oluştu. Lütfen bizi arayın ya da WhatsApp'tan yazın.",
+    "mailSubject": "Oda talebi — Kıvanç Öğrenci Yurdu",
+    "roomSingle": "Tek kişilik",
+    "roomTwin": "İki kişilik",
+    "roomTriple": "Üç kişilik",
+    "errRoomType": "Lütfen bir oda tipi seçin."
+  },
+  "footer": {
+    "desc": "Avcılar, İstanbul'da kız öğrenciler için özel yurt — profesyonel yönetim, 7/24 güvenlik ve vakıf üniversitesi kampüslerine dakikalar mesafe.",
+    "exploreTitle": "Keşfet",
+    "residencesTitle": "Odalar",
+    "contactTitle": "İletişim",
+    "bookVisit": "Randevu al",
+    "applyNow": "Hemen başvur",
+    "copyright": "© 2026 Kıvanç Öğrenci Yurdu. Tüm hakları saklıdır.",
+    "privacy": "Gizlilik",
+    "terms": "Kullanım Koşulları",
+    "social": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "youtube": "YouTube",
+      "whatsapp": "WhatsApp"
+    }
+  }
+}

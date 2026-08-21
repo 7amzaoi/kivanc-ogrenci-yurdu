@@ -1,0 +1,176 @@
+/* ==========================================================================
+   GALLERY — mixed-span grid + lightbox
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   GALLERY GRID
+   Spans are set per breakpoint with :nth-child() rather than by classes in the
+   markup, because the pattern that tiles cleanly depends on the column count.
+   Each breakpoint below is chosen so the 8 items fill their rows exactly —
+   no holes. If you add or remove a photo, re-check the arithmetic:
+     2 cols: 8 items, no spans                    = 8 cells  = 4 rows
+     3 cols: item 1 tall (+1)                     = 9 cells  = 3 rows
+     4 cols: items 1 & 6 tall, 3 & 7 wide (+4)    = 12 cells = 3 rows
+   -------------------------------------------------------------------------- */
+.gallery-grid {
+  display: grid;
+  gap: var(--s-3);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 180px;
+  /* Backfills any gap left by a span, so a future edit degrades gracefully
+     instead of punching a hole in the layout. */
+  grid-auto-flow: dense;
+}
+
+.gallery-item { min-width: 0; }
+
+.gallery-item__btn {
+  position: relative;
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  cursor: zoom-in;
+}
+.gallery-item__btn .media {
+  block-size: 100%;
+  border-radius: 0;
+}
+.gallery-item__btn img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+/* Scrim + zoom affordance appear on hover / keyboard focus. */
+.gallery-item__btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(20, 15, 12, 0.28);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+}
+.gallery-item__btn:hover::after,
+.gallery-item__btn:focus-visible::after { opacity: 1; }
+.gallery-item__btn:hover img { transform: scale(1.05); }
+
+.gallery-item__zoom {
+  position: absolute;
+  inset-block-end: var(--s-3);
+  inset-inline-end: var(--s-3);
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  inline-size: 34px;
+  block-size: 34px;
+  background-color: var(--c-cream);
+  color: var(--c-ink);
+  border-radius: var(--r-pill);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.gallery-item__btn:hover .gallery-item__zoom,
+.gallery-item__btn:focus-visible .gallery-item__zoom {
+  opacity: 1;
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   LIGHTBOX
+   -------------------------------------------------------------------------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-5);
+  background-color: rgba(15, 11, 9, 0.94);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+}
+.lightbox.is-open { opacity: 1; }
+.lightbox[hidden] { display: none; }
+
+.lightbox__figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-4);
+  max-block-size: 100%;
+  min-width: 0;
+}
+.lightbox__img {
+  max-inline-size: 100%;
+  max-block-size: 76svh;
+  object-fit: contain;
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-xl);
+}
+.lightbox__caption {
+  font-size: var(--t-sm);
+  color: rgba(251, 248, 243, 0.7);
+  text-align: center;
+  max-width: 56ch;
+}
+
+.lightbox__close,
+.lightbox__nav {
+  display: grid;
+  place-items: center;
+  inline-size: 44px;
+  block-size: 44px;
+  flex: none;
+  color: var(--c-cream);
+  background-color: rgba(251, 248, 243, 0.1);
+  border: 1px solid rgba(251, 248, 243, 0.2);
+  border-radius: var(--r-pill);
+  transition: background-color var(--dur-fast) var(--ease);
+}
+.lightbox__close:hover,
+.lightbox__nav:hover { background-color: rgba(251, 248, 243, 0.22); }
+
+.lightbox__close {
+  position: absolute;
+  inset-block-start: var(--s-5);
+  inset-inline-end: var(--s-5);
+  z-index: 1;
+}
+
+/* Arrows point along the reading direction. */
+.lightbox__nav--prev svg { transform: rotate(180deg); }
+[dir="rtl"] .lightbox__nav--prev svg { transform: none; }
+[dir="rtl"] .lightbox__nav--next svg { transform: rotate(180deg); }
+
+/* --------------------------------------------------------------------------
+   BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (min-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 200px;
+  }
+  .gallery-item:nth-child(1) { grid-row: span 2; }
+}
+
+@media (min-width: 1000px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 230px;
+    gap: var(--s-4);
+  }
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(6) { grid-row: span 2; }
+  .gallery-item:nth-child(3),
+  .gallery-item:nth-child(7) { grid-column: span 2; }
+}
+
+@media (min-width: 700px) {
+  .lightbox { padding: var(--s-8) var(--s-9); gap: var(--s-6); }
+}

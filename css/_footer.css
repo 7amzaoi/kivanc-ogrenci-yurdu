@@ -1,0 +1,171 @@
+/* ==========================================================================
+   FOOTER + FLOATING WHATSAPP BUTTON
+   ========================================================================== */
+
+.footer {
+  background-color: var(--c-ink);
+  color: rgba(251, 248, 243, 0.62);
+  padding-block: var(--s-9) var(--s-6);
+}
+
+.footer__top {
+  display: grid;
+  gap: var(--s-8);
+  padding-block-end: var(--s-8);
+  border-block-end: 1px solid rgba(251, 248, 243, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   BRAND BLOCK
+   -------------------------------------------------------------------------- */
+.brand--footer .brand__badge { inline-size: 56px; block-size: 56px; }
+.brand--footer .brand__name   { color: var(--c-cream); }
+.brand--footer .brand__suffix { color: rgba(251, 248, 243, 0.6); }
+
+.footer__desc {
+  max-width: 42ch;
+  margin-block-start: var(--s-5);
+  font-size: var(--t-sm);
+  line-height: 1.65;
+}
+
+.social {
+  display: flex;
+  gap: var(--s-3);
+  margin-block-start: var(--s-6);
+}
+.social a {
+  display: grid;
+  place-items: center;
+  inline-size: 38px;
+  block-size: 38px;
+  color: rgba(251, 248, 243, 0.7);
+  border: 1px solid rgba(251, 248, 243, 0.18);
+  border-radius: var(--r-pill);
+  transition:
+    color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    background-color var(--dur-fast) var(--ease);
+}
+.social a:hover {
+  color: var(--c-cream);
+  border-color: var(--c-accent);
+  background-color: var(--c-accent);
+}
+
+/* --------------------------------------------------------------------------
+   LINK COLUMNS
+   -------------------------------------------------------------------------- */
+.footer__title {
+  font-family: var(--font-body);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-caps);
+  color: var(--c-cream);
+  margin-block-end: var(--s-5);
+}
+
+.footer__links {
+  display: grid;
+  gap: var(--s-3);
+  font-size: var(--t-sm);
+}
+.footer__links a {
+  color: rgba(251, 248, 243, 0.62);
+  transition: color var(--dur-fast) var(--ease);
+  /* The email is a 30-character unbreakable string and the footer columns get
+     down to ~200px; without this it overflows the page at ~1000px. */
+  overflow-wrap: anywhere;
+}
+.footer__links a:hover { color: var(--c-cream); }
+
+.lang-switch--footer {
+  --ls-border: rgba(251, 248, 243, 0.22);
+  --ls-fg: var(--c-cream);
+  --ls-fg-mute: rgba(251, 248, 243, 0.55);
+  --ls-fg-active: var(--c-gold-light);
+  margin-block-start: var(--s-6);
+}
+
+/* --------------------------------------------------------------------------
+   BOTTOM BAR
+   -------------------------------------------------------------------------- */
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3) var(--s-6);
+  align-items: center;
+  justify-content: space-between;
+  padding-block-start: var(--s-6);
+  font-size: var(--t-xs);
+  color: rgba(251, 248, 243, 0.55); /* AA on --c-ink: 5.84:1 */
+}
+.footer__legal {
+  display: flex;
+  gap: var(--s-3);
+  align-items: center;
+}
+.footer__legal a { transition: color var(--dur-fast) var(--ease); }
+.footer__legal a:hover { color: var(--c-cream); }
+
+/* --------------------------------------------------------------------------
+   FLOATING WHATSAPP CTA
+   -------------------------------------------------------------------------- */
+.wa-fab {
+  position: fixed;
+  inset-block-end: var(--s-5);
+  inset-inline-end: var(--s-5);
+  z-index: var(--z-sticky);
+  display: grid;
+  place-items: center;
+  inline-size: 52px;
+  block-size: 52px;
+  background-color: var(--c-forest);
+  color: var(--c-cream);
+  border-radius: var(--r-pill);
+  box-shadow: var(--sh-lg);
+  transition: transform var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+.wa-fab:hover {
+  transform: translateY(-2px) scale(1.04);
+  background-color: var(--c-forest-deep);
+}
+/* Stays out of the way while a full-screen layer is open. */
+.is-locked .wa-fab { display: none; }
+
+/* ...and while the footer is on screen, where it would otherwise cover the
+   legal links. js/main.js toggles this. */
+.wa-fab.is-tucked {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px) scale(0.9);
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease),
+              visibility 0s linear var(--dur);
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (min-width: 620px) {
+  .footer__top {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--s-8) var(--s-6);
+  }
+  .footer__brand { grid-column: 1 / -1; }
+}
+
+@media (min-width: 1000px) {
+  .footer { padding-block: var(--s-10) var(--s-6); }
+  .footer__top {
+    grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr));
+    gap: var(--s-9);
+  }
+  .footer__brand { grid-column: auto; }
+  .wa-fab {
+    inline-size: 58px;
+    block-size: 58px;
+    inset-block-end: var(--s-6);
+    inset-inline-end: var(--s-6);
+  }
+}

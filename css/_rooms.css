@@ -1,0 +1,191 @@
+/* ==========================================================================
+   ROOMS — room cards
+   One residence (female), so there is no second tone and no tab UI: the
+   accent gold carries every highlight in this section.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   INTRO NOTE
+   -------------------------------------------------------------------------- */
+.rooms__note {
+  max-width: 68ch;
+  padding-inline-start: var(--s-5);
+  border-inline-start: 2px solid var(--c-accent-line);
+  font-size: var(--t-base);
+  color: var(--c-ink-mute);
+  margin-block-end: var(--s-8);
+}
+
+/* --------------------------------------------------------------------------
+   ROOM GRID
+   -------------------------------------------------------------------------- */
+.room-grid {
+  display: grid;
+  gap: var(--s-6);
+  grid-template-columns: 1fr;
+}
+
+.room-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--c-cream);
+  border: 1px solid var(--c-line-soft);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition:
+    border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+.room-card:hover {
+  border-color: var(--c-accent-line);
+  box-shadow: var(--sh-md);
+  transform: translateY(-3px);
+}
+.room-card:hover .media img { transform: scale(1.04); }
+
+.room-card__media {
+  border-radius: 0;
+  position: relative;
+}
+
+.room-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--s-4);
+  padding: var(--s-6);
+}
+
+.room-card__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-4);
+}
+
+.room-card__title {
+  font-size: var(--t-lg);
+  color: var(--c-ink);
+}
+
+.room-card__cap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  flex: none;
+  font-size: var(--t-xs);
+  font-weight: 500;
+  color: var(--c-ink-mute);
+  white-space: nowrap;
+}
+.room-card__cap .icon { color: var(--c-accent); }
+
+.room-card__desc {
+  font-size: var(--t-base);
+  color: var(--c-ink-mute);
+  line-height: 1.6;
+}
+
+/* Amenity chips ---------------------------------------------------------- */
+.amenity-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.amenity-chips li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: 0.35rem var(--s-3);
+  background-color: var(--c-sand);
+  border-radius: var(--r-pill);
+  font-size: var(--t-xs);
+  color: var(--c-ink-soft);
+}
+.amenity-chips .icon { color: var(--c-accent); opacity: 0.9; }
+
+/* Footer: price + CTA ---------------------------------------------------- */
+.room-card__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  margin-block-start: auto;
+  padding-block-start: var(--s-5);
+  border-block-start: 1px solid var(--c-line-soft);
+}
+
+/* "From" sits on its own line as a small label, with the figure beneath it.
+   Inline, the three parts are ~200px wide and push the Apply button onto a
+   second row in a 3-up grid; stacked, the whole footer fits on one line at
+   every card width. It also reads better — the classic listing-price pattern. */
+.price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 var(--s-2);
+  white-space: nowrap;
+}
+.price__from {
+  flex-basis: 100%;
+  font-size: var(--t-xs);
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  color: var(--c-ink-faint);
+}
+.price__value {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-display);
+  font-size: var(--t-lg);
+  color: var(--c-ink);
+  letter-spacing: -0.02em;
+}
+.price__unit {
+  font-size: var(--t-xs);
+  color: var(--c-ink-mute);
+}
+
+.room-card .btn--ghost:hover {
+  --btn-fg: var(--c-accent);
+  --btn-bd: var(--c-accent);
+}
+
+/* --------------------------------------------------------------------------
+   DISCLAIMER
+   -------------------------------------------------------------------------- */
+.rooms__disclaimer {
+  max-width: 68ch;
+  margin-block-start: var(--s-8);
+  padding-block-start: var(--s-5);
+  border-block-start: 1px solid var(--c-line-soft);
+  font-size: var(--t-sm);
+  color: var(--c-ink-faint);
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINTS
+   -------------------------------------------------------------------------- */
+/* Below this the card is too narrow to hold the price and the Apply button
+   side by side, so the button takes the full width instead of half-wrapping. */
+@media (max-width: 479px) {
+  .room-card__foot { align-items: stretch; }
+  .room-card__foot .btn { inline-size: 100%; }
+}
+
+
+/* Column counts are set by the widest thing a card must hold on one line:
+   the price block plus the Apply button, which measures ~284px in Turkish
+   ("BAŞLANGIÇ" is longer than "FROM"). Adding the 2x32px card padding, a card
+   needs ~350px, so 2-up needs ~800px of viewport and 3-up needs ~1240px.
+   Going multi-column any earlier makes the footer wrap. */
+@media (min-width: 800px) {
+  .room-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+
+@media (min-width: 1240px) {
+  .room-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-6); }
+}

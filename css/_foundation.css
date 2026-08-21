@@ -1,0 +1,171 @@
+/* ==========================================================================
+   KIVANÇ ÖĞRENCİ YURDU — DESIGN FOUNDATION
+   Design tokens only. No component styles belong in this file.
+   Palette: warm-neutral base + a single disciplined accent (antique gold,
+   taken from the logo). Dark charcoal is used for the header, testimonials
+   and footer, which is where the gold badge and bright gold can appear.
+   ========================================================================== */
+
+:root {
+  /* ---------------------------------------------------------------------
+     COLOR — Warm neutral scale
+     The whole site sits on this. Never introduce a pure #fff / #000.
+     --------------------------------------------------------------------- */
+  --c-cream:        #FBF8F3;  /* page background                     */
+  --c-sand:         #F4EEE5;  /* alternating section background      */
+  --c-sand-deep:    #EAE1D4;  /* card wells, hairline fills          */
+  --c-line:         #DFD5C6;  /* borders / dividers                  */
+  --c-line-soft:    #EDE5D9;
+
+  --c-ink:          #191411;  /* headings                            */
+  --c-ink-soft:     #3A322C;  /* body copy                           */
+  --c-ink-mute:     #6E635A;  /* captions, meta, labels              */
+  /* The lightest text tone still carries real copy (disclaimers, form notes,
+     card meta), so it is pinned to WCAG AA rather than picked by eye:
+     4.92:1 on --c-cream, 4.52:1 on --c-sand. Don't lighten it. */
+  --c-ink-faint:    #756B61;
+
+  /* ---------------------------------------------------------------------
+     COLOR — Accent (ONE strong accent, used sparingly)
+     Reserved for: primary CTAs, active states, numerals in the stat bar,
+     and small typographic accents.
+     --------------------------------------------------------------------- */
+  /* Antique gold, sampled from the Kıvanç logo (its mid-tone is #9E7330) and
+     then darkened until it passes WCAG AA as body text on BOTH light surfaces:
+     5.00:1 on --c-cream, 4.59:1 on --c-sand. Do not lighten it — gold is an
+     inherently light hue and loses legibility on cream very fast (the literal
+     logo gold manages only 2.28:1 there). */
+  --c-accent:       #8A6524;
+  --c-accent-deep:  #6D521E;  /* hover / pressed — 6.89:1 on cream   */
+  --c-accent-soft:  #F3EAD6;  /* tinted backgrounds                  */
+  --c-accent-line:  #E3D3AE;
+
+  /* The bright, literal logo gold. DARK SURFACES ONLY — 7.43:1 on --c-ink but
+     2.28:1 on cream, so it must never carry text on a light background. */
+  --c-gold:         #C9A227;
+  --c-gold-light:   #E8CE86;  /* 10:1 on --c-ink — emphasis on dark  */
+
+  /* Deep forest. Retained for exactly one thing: the WhatsApp button, where a
+     green reads as the platform. It is no longer a residence tone — the
+     residence is female-only, so there is no second tone to distinguish. */
+  --c-forest:       #35493C;
+  --c-forest-deep:  #2A3A30;
+
+  /* Semantic */
+  --c-success:      #3F6B4A;
+  --c-error:        #B33A28;
+
+  /* ---------------------------------------------------------------------
+     TYPOGRAPHY
+     Fraunces (serif, editorial) for display + Inter (grotesk) for UI/body.
+     Committed pairing — do not mix in a third family.
+     --------------------------------------------------------------------- */
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-body:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Fluid type scale — minor third at mobile, major third at desktop.
+     clamp(min, preferred, max) so nothing needs a media query. */
+  --t-xs:    0.75rem;                                   /* 12px  — eyebrow/meta */
+  --t-sm:    0.8125rem;                                 /* 13px               */
+  --t-base:  clamp(0.9375rem, 0.90rem + 0.18vw, 1rem);  /* 15 → 16            */
+  --t-md:    clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --t-lg:    clamp(1.125rem, 1.05rem + 0.38vw, 1.375rem);
+  --t-xl:    clamp(1.375rem, 1.22rem + 0.75vw, 1.875rem);
+  --t-2xl:   clamp(1.75rem,  1.48rem + 1.35vw, 2.625rem);
+  --t-3xl:   clamp(2.125rem, 1.68rem + 2.20vw, 3.5rem);
+  --t-4xl:   clamp(2.5rem,   1.75rem + 3.75vw, 5rem);   /* hero headline      */
+
+  --lh-tight:  1.08;
+  --lh-snug:   1.22;
+  --lh-normal: 1.5;
+  --lh-loose:  1.7;
+
+  /* Fraunces optical-size + softness axes, set once so headings stay
+     consistent wherever they appear. */
+  --fraunces-display: "SOFT" 22, "WONK" 1, "opsz" 128;
+  --fraunces-text:    "SOFT" 12, "WONK" 0, "opsz" 24;
+
+  --ls-tight:  -0.022em;
+  --ls-normal: -0.011em;
+  --ls-wide:   0.02em;
+  --ls-caps:   0.14em;   /* eyebrows / small caps labels */
+
+  /* ---------------------------------------------------------------------
+     SPACING — 4px base, geometric-ish progression
+     --------------------------------------------------------------------- */
+  --s-1:  0.25rem;   /*  4 */
+  --s-2:  0.5rem;    /*  8 */
+  --s-3:  0.75rem;   /* 12 */
+  --s-4:  1rem;      /* 16 */
+  --s-5:  1.5rem;    /* 24 */
+  --s-6:  2rem;      /* 32 */
+  --s-7:  2.5rem;    /* 40 */
+  --s-8:  3rem;      /* 48 */
+  --s-9:  4rem;      /* 64 */
+  --s-10: 5rem;      /* 80 */
+  --s-11: 6.5rem;    /* 104 */
+  --s-12: 8rem;      /* 128 */
+
+  /* Vertical rhythm for section padding — generous whitespace is the point. */
+  --section-y:    clamp(4rem, 2.5rem + 7.5vw, 8.5rem);
+  --section-y-sm: clamp(3rem, 2rem + 5vw, 5.5rem);
+
+  /* ---------------------------------------------------------------------
+     LAYOUT
+     --------------------------------------------------------------------- */
+  --container:      1240px;
+  --container-tight: 880px;
+  --container-wide: 1480px;
+  --gutter: clamp(1.25rem, 0.75rem + 2.5vw, 3rem);
+
+  --header-h: 76px;
+
+  /* ---------------------------------------------------------------------
+     RADII — restrained. Cards are near-square; only pills are fully round.
+     --------------------------------------------------------------------- */
+  --r-xs:   2px;
+  --r-sm:   4px;
+  --r-md:   6px;
+  --r-lg:   10px;
+  --r-pill: 999px;
+
+  /* ---------------------------------------------------------------------
+     SHADOWS — warm-tinted, low opacity. Depth comes from layout, not glow.
+     --------------------------------------------------------------------- */
+  --sh-xs: 0 1px 2px rgba(25, 20, 17, 0.05);
+  --sh-sm: 0 2px 6px rgba(25, 20, 17, 0.06);
+  --sh-md: 0 8px 24px -8px rgba(25, 20, 17, 0.14);
+  --sh-lg: 0 18px 44px -14px rgba(25, 20, 17, 0.20);
+  --sh-xl: 0 32px 70px -22px rgba(25, 20, 17, 0.28);
+
+  /* ---------------------------------------------------------------------
+     MOTION — subtle only. No bounce, no springs, no libraries.
+     --------------------------------------------------------------------- */
+  --ease:      cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast:  160ms;
+  --dur:       280ms;
+  --dur-slow:  620ms;
+
+  /* Z-index ladder */
+  --z-base:    1;
+  --z-sticky:  50;
+  --z-header:  100;
+  --z-drawer:  200;
+  --z-modal:   300;
+}
+
+/* --------------------------------------------------------------------------
+   LOGICAL-PROPERTY HELPERS
+   Everything in this project uses logical properties (inline-start/end,
+   margin-inline, etc.) rather than left/right, so adding Arabic later is a
+   `dir="rtl"` flip and nothing more. These tokens flip with direction.
+   -------------------------------------------------------------------------- */
+[dir="ltr"] { --dir: 1; }
+[dir="rtl"] { --dir: -1; }
+
+/* Arabic-ready: when an RTL locale is added, swap the body face here only. */
+[dir="rtl"] body {
+  --font-body:    "Inter", "Noto Sans Arabic", system-ui, sans-serif;
+  --font-display: "Fraunces", "Noto Naskh Arabic", Georgia, serif;
+}

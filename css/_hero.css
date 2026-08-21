@@ -1,0 +1,211 @@
+/* ==========================================================================
+   HERO — full-height photo, dark scrim, trust bar pinned to the bottom edge
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-block-size: 100svh;
+  padding-block-start: calc(var(--header-h) + var(--s-8));
+  background-color: var(--c-ink);
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   MEDIA + SCRIM
+   Two layered gradients: a bottom-up wash for the copy, and a top band so
+   the transparent header stays legible over bright photography.
+   -------------------------------------------------------------------------- */
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.hero__media img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  /* A touch of warmth so stock photography sits inside the palette. */
+  filter: saturate(0.92) contrast(1.02);
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom,
+      rgba(20, 15, 12, 0.62) 0%,
+      rgba(20, 15, 12, 0.10) 26%,
+      rgba(20, 15, 12, 0.10) 40%,
+      rgba(20, 15, 12, 0.74) 82%,
+      rgba(20, 15, 12, 0.92) 100%),
+    linear-gradient(to right,
+      rgba(20, 15, 12, 0.55) 0%,
+      rgba(20, 15, 12, 0.12) 62%,
+      rgba(20, 15, 12, 0.00) 100%);
+}
+[dir="rtl"] .hero__scrim { transform: scaleX(-1); }
+
+/* On phones the copy spans the full width, so the horizontal gradient does
+   almost nothing — lean harder on the vertical wash to keep text legible
+   over bright photography. */
+@media (max-width: 699px) {
+  .hero__scrim {
+    background: linear-gradient(to bottom,
+      rgba(20, 15, 12, 0.66) 0%,
+      rgba(20, 15, 12, 0.42) 22%,
+      rgba(20, 15, 12, 0.52) 45%,
+      rgba(20, 15, 12, 0.82) 80%,
+      rgba(20, 15, 12, 0.94) 100%);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   CONTENT
+   -------------------------------------------------------------------------- */
+.hero__inner {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  padding-block-end: var(--s-9);
+}
+
+.hero__content {
+  max-width: 44ch;
+  color: var(--c-cream);
+}
+
+/* Hero language switcher — the primary one, per the brief. */
+.lang-switch--hero {
+  --ls-border: rgba(251, 248, 243, 0.34);
+  --ls-fg: var(--c-cream);
+  --ls-fg-mute: rgba(251, 248, 243, 0.62);
+  --ls-fg-active: var(--c-cream);
+  margin-block-end: var(--s-6);
+  padding: 0.4rem var(--s-4);
+  background-color: rgba(20, 15, 12, 0.28);
+  backdrop-filter: blur(8px);
+  color: var(--c-cream);
+}
+.lang-switch--hero .lang-switch__btn.is-active {
+  /* Underline rather than a colour change — reads clearly on photography. */
+  box-shadow: inset 0 -1px 0 0 currentColor;
+}
+
+.hero__eyebrow {
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: rgba(251, 248, 243, 0.72);
+  margin-block-end: var(--s-5);
+}
+
+.hero__title {
+  color: var(--c-cream);
+  font-size: var(--t-4xl);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 30px rgba(20, 15, 12, 0.3);
+}
+.hero__title em {
+  font-style: italic;
+  font-variation-settings: "SOFT" 40, "WONK" 1, "opsz" 128;
+  color: var(--c-gold-light); /* light logo gold — legible over photography */
+}
+
+.hero__lede {
+  font-size: var(--t-md);
+  line-height: 1.62;
+  color: rgba(251, 248, 243, 0.86);
+  margin-block-start: var(--s-6);
+  max-width: 46ch;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+  margin-block-start: var(--s-8);
+}
+/* Narrow phones can't fit both CTAs on one line; stacking them full-width
+   reads as a decision rather than a wrap, and gives a bigger tap target. */
+@media (max-width: 479px) {
+  .hero__actions { flex-direction: column; align-items: stretch; }
+  .hero__actions .btn { inline-size: 100%; }
+}
+
+/* --------------------------------------------------------------------------
+   TRUST BAR
+   -------------------------------------------------------------------------- */
+.hero__trust {
+  position: relative;
+  border-block-start: 1px solid rgba(251, 248, 243, 0.16);
+  background-color: rgba(20, 15, 12, 0.34);
+  backdrop-filter: blur(10px);
+}
+
+.trust {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.trust__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+  padding: var(--s-5) 0;
+  padding-inline-end: var(--s-5);
+}
+/* Hairlines between chips, drawn only where they don't hit an edge. */
+.trust__item:nth-child(n + 3) { border-block-start: 1px solid rgba(251, 248, 243, 0.12); }
+.trust__item:nth-child(odd)   { border-inline-end: 1px solid rgba(251, 248, 243, 0.12); padding-inline-start: 0; }
+.trust__item:nth-child(even)  { padding-inline-start: var(--s-5); }
+
+.trust__value {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-display);
+  font-size: var(--t-xl);
+  line-height: 1;
+  color: var(--c-gold-light);
+  letter-spacing: -0.02em;
+}
+.trust__label {
+  font-size: var(--t-xs);
+  line-height: 1.4;
+  color: rgba(251, 248, 243, 0.68);
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (min-width: 700px) {
+  .hero__content { max-width: 52ch; }
+}
+
+@media (min-width: 900px) {
+  .trust { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .trust__item {
+    padding-block: var(--s-6);
+    padding-inline: var(--s-6);
+    border-block-start: 0 !important;
+    border-inline-end: 1px solid rgba(251, 248, 243, 0.12) !important;
+  }
+  .trust__item:first-child { padding-inline-start: 0; }
+  .trust__item:last-child  { border-inline-end: 0 !important; }
+  .trust__value { font-size: var(--t-2xl); }
+}
+
+@media (min-width: 1200px) {
+  .hero__content { max-width: 56ch; }
+  .hero__inner { padding-block-end: var(--s-10); }
+}
+
+/* Short landscape screens (phones turned sideways) shouldn't force 100vh. */
+@media (max-height: 620px) and (min-width: 700px) {
+  .hero { min-block-size: auto; padding-block-end: var(--s-6); }
+}

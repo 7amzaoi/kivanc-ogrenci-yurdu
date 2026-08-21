@@ -1,0 +1,24 @@
+/* ==========================================================================
+   EMISA YURT — main stylesheet
+   Imports only. All rules live in the partials.
+   Order matters: tokens → base → components, in page order.
+   --------------------------------------------------------------------------
+   NOTE ON PRODUCTION: @import issues one request per file, which is fine for
+   a site this size but adds round-trips. To flatten it, concatenate the
+   partials in this order into a single main.min.css (see README).
+   ========================================================================== */
+
+@import url("_foundation.css");
+@import url("_base.css");
+
+@import url("_header.css");
+@import url("_hero.css");
+@import url("_rooms.css");
+@import url("_universities.css");
+@import url("_amenities.css");
+@import url("_about.css");
+@import url("_gallery.css");
+@import url("_testimonials.css");
+@import url("_faq.css");
+@import url("_contact.css");
+@import url("_footer.css");

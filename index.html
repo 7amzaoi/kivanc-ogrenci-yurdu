@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<!-- lang + dir are managed by js/i18n.js; the values here are the boot default. -->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title data-i18n="meta.title">Kıvanç Öğrenci Yurdu — Female Student Residence in Avcılar, Istanbul</title>
+  <meta name="description" data-i18n-attr="content:meta.description"
+        content="Modern, secure student housing in Avcılar, Istanbul. Separate residences for female and male students, minutes from Istanbul's private universities." />
+  <meta name="theme-color" content="#191411" />
+  <meta name="robots" content="index, follow" />
+  <!-- TODO: add <link rel="canonical"> once the real domain is registered. -->
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kıvanç Öğrenci Yurdu" />
+  <meta property="og:title" data-i18n-attr="content:meta.title"
+        content="Kıvanç Öğrenci Yurdu — Female Student Residence in Avcılar, Istanbul" />
+  <meta property="og:description" data-i18n-attr="content:meta.description"
+        content="Modern, secure student housing in Avcılar, Istanbul." />
+  <!-- PLACEHOLDER IMAGE: replace with real property photo (1200×630 social card) -->
+  <meta property="og:image" content="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&h=630&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon: inline SVG wordmark mark, no extra request -->
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/brand/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
+
+  <!-- Fonts: Fraunces (display serif) + Inter (body grotesk) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skipToContent">Skip to content</a>
+
+  <!-- ======================================================================
+       ICON SPRITE — all icons are stroked with currentColor.
+       Referenced as <svg class="icon"><use href="#i-name"></use></svg>
+       ====================================================================== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></symbol>
+      <symbol id="i-desk" viewBox="0 0 24 24"><path d="M3 8h18M4 8v12M20 8v12M3 4h18v4H3zM8 12h5"/></symbol>
+      <symbol id="i-wardrobe" viewBox="0 0 24 24"><path d="M4 3h16v18H4zM12 3v18M9.5 11v2M14.5 11v2"/></symbol>
+      <symbol id="i-bath" viewBox="0 0 24 24"><path d="M3 12h18v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4zM6 12V5a2 2 0 0 1 4 0M5 19l-1 2M19 19l1 2"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-bed" viewBox="0 0 24 24"><path d="M2 18v-7h20v7M2 18v2M22 18v2M2 11V6M6 11V8h5v3"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.8-8 10-4.5-1.2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+      <symbol id="i-camera" viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5zM1 5h15v14H1z"/><circle cx="8.5" cy="12" r="2.5"/></symbol>
+      <symbol id="i-laundry" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="14" r="4"/><path d="M8 6h.01M12 6h.01"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></symbol>
+      <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4zM6 1v3M10 1v3M14 1v3"/></symbol>
+      <symbol id="i-gym" viewBox="0 0 24 24"><path d="M6.5 6.5v11M3.5 9v6M17.5 6.5v11M20.5 9v6M6.5 12h11"/></symbol>
+      <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 2l1.9 5.6L19.5 9.5 13.9 11.4 12 17l-1.9-5.6L4.5 9.5l5.6-1.9zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
+      <symbol id="i-headset" viewBox="0 0 24 24"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><path d="M21 15a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2zM3 15a2 2 0 0 0 2 2h1v-6H5a2 2 0 0 0-2 2zM21 17v1a3 3 0 0 1-3 3h-4"/></symbol>
+      <symbol id="i-bus" viewBox="0 0 24 24"><path d="M4 5h16v11H4zM4 16v3h3v-3M17 16v3h3v-3M2 9h2M20 9h2M4 12h16"/><circle cx="7.5" cy="13.5" r=".6"/><circle cx="16.5" cy="13.5" r=".6"/></symbol>
+      <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4" r="2"/><path d="M11 21l1.5-6-3-2.5V9l4-1.5 3 2.5 2.5 1M9.5 12.5L7 15l-1 6"/></symbol>
+      <symbol id="i-metro" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="13" rx="3"/><path d="M5 10h14M8 20l-2 2M16 20l2 2M8 16.5h.01M16 16.5h.01"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M20.5 12a8.5 8.5 0 0 1-12.7 7.4L3.5 20.5l1.2-4.2A8.5 8.5 0 1 1 20.5 12z"/><path d="M8.8 8.4c.2-.4.4-.4.6-.4h.5c.2 0 .4 0 .6.5l.7 1.7c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a7 7 0 0 0 3 2.6c.3.1.5.1.7-.1l.6-.7c.2-.2.3-.2.6-.1l1.6.8c.3.1.4.2.4.4a2 2 0 0 1-1.3 1.6c-.5.2-1.2.2-3.5-.9a9 9 0 0 1-3.8-4c-.5-1-.6-1.9-.6-2.2 0-.4.2-.6.5-.8z"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M22.5 7a2.8 2.8 0 0 0-2-2C18.8 4.5 12 4.5 12 4.5s-6.8 0-8.5.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 5a2.8 2.8 0 0 0 2 2c1.7.5 8.5.5 8.5.5s6.8 0 8.5-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-5 29 29 0 0 0-.5-5z"/><path d="m10 15 5-3-5-3z"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></symbol>
+      <symbol id="i-quote" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M9.5 6C6.5 7.4 5 9.9 5 13.5V18h6v-6H8.2c.2-1.7 1-2.9 2.6-3.7zm9 0c-3 1.4-4.5 3.9-4.5 7.5V18h6v-6h-2.8c.2-1.7 1-2.9 2.6-3.7z"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.8L12 17.3 6 20.6l1.3-6.8-5-4.7 6.8-.8z"/></symbol>
+      <symbol id="i-expand" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ======================================================================
+       HEADER
+       ====================================================================== -->
+  <header class="header" id="header" data-header>
+    <div class="header__inner container container--wide">
+
+      <a class="brand" href="#top" data-i18n-attr="aria-label:brand.name" aria-label="Kıvanç Öğrenci Yurdu">
+        <!-- Gold-on-transparent extraction of the real badge. It is only legible
+             on a dark surface, which is why the header stays charcoal. -->
+        <img class="brand__badge" src="assets/brand/logo.png" alt="" aria-hidden="true"
+             width="640" height="641" fetchpriority="high" />
+        <span class="brand__text">
+          <span class="brand__name">Kıvanç</span>
+          <span class="brand__suffix" data-i18n="brand.suffix">Öğrenci Yurdu</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#top"          data-i18n="nav.home">Home</a></li>
+          <li><a class="nav__link" href="#rooms"        data-i18n="nav.rooms">Rooms</a></li>
+          <li><a class="nav__link" href="#universities" data-i18n="nav.universities">Universities</a></li>
+          <li><a class="nav__link" href="#amenities"    data-i18n="nav.amenities">Facilities</a></li>
+          <li><a class="nav__link" href="#about"        data-i18n="nav.about">About</a></li>
+          <li><a class="nav__link" href="#contact"      data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <!-- Compact language toggle (the primary one lives in the hero) -->
+        <div class="lang-switch lang-switch--compact" role="group"
+             data-i18n-attr="aria-label:a11y.languageSwitcher" aria-label="Change language">
+          <button type="button" class="lang-switch__btn" data-lang="tr" lang="tr">TR</button>
+          <span class="lang-switch__sep" aria-hidden="true"></span>
+          <button type="button" class="lang-switch__btn" data-lang="en" lang="en">EN</button>
+        </div>
+
+        <a class="btn btn--sm header__cta" href="#contact" data-i18n="nav.cta">Book a Room</a>
+
+        <button type="button" class="nav-toggle" id="nav-toggle"
+                aria-expanded="false" aria-controls="mobile-drawer"
+                data-i18n-attr="aria-label:a11y.openMenu" aria-label="Open menu">
+          <svg class="icon nav-toggle__open"  aria-hidden="true"><use href="#i-menu"></use></svg>
+          <svg class="icon nav-toggle__close" aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div class="drawer" id="mobile-drawer" hidden>
+    <nav class="drawer__nav" data-i18n-attr="aria-label:a11y.mobileNav" aria-label="Mobile navigation">
+      <a class="drawer__link" href="#rooms"        data-i18n="nav.rooms">Rooms</a>
+      <a class="drawer__link" href="#universities" data-i18n="nav.universities">Universities</a>
+      <a class="drawer__link" href="#amenities"    data-i18n="nav.amenities">Facilities</a>
+      <a class="drawer__link" href="#about"        data-i18n="nav.about">About</a>
+      <a class="drawer__link" href="#gallery"      data-i18n="nav.gallery">Gallery</a>
+      <a class="drawer__link" href="#faq"          data-i18n="nav.faq">FAQ</a>
+      <a class="drawer__link" href="#contact"      data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="drawer__foot">
+      <a class="btn btn--block" href="#contact" data-i18n="nav.cta">Book a Room</a>
+      <div class="lang-switch" role="group"
+           data-i18n-attr="aria-label:a11y.languageSwitcher" aria-label="Change language">
+        <button type="button" class="lang-switch__btn" data-lang="tr" lang="tr">Türkçe</button>
+        <span class="lang-switch__sep" aria-hidden="true"></span>
+        <button type="button" class="lang-switch__btn" data-lang="en" lang="en">English</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ====================================================================
+         1. HERO
+         ==================================================================== -->
+    <section class="hero" id="top">
+      <div class="hero__media">
+        <!-- PLACEHOLDER IMAGE: replace with real property photo (residence exterior / lifestyle) -->
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=2000&q=80"
+             data-i18n-attr="alt:hero.imageAlt"
+             alt="Students relaxing in a bright, modern residence common area"
+             fetchpriority="high" width="2000" height="1333" />
+        <div class="hero__scrim" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero__inner container container--wide">
+        <div class="hero__content">
+
+          <!-- Primary language switcher, per brief -->
+          <div class="lang-switch lang-switch--hero" role="group"
+               data-i18n-attr="aria-label:a11y.languageSwitcher" aria-label="Change language">
+            <svg class="icon icon--sm lang-switch__globe" aria-hidden="true"><use href="#i-globe"></use></svg>
+            <button type="button" class="lang-switch__btn" data-lang="tr" lang="tr">TR</button>
+            <span class="lang-switch__sep" aria-hidden="true"></span>
+            <button type="button" class="lang-switch__btn" data-lang="en" lang="en">EN</button>
+          </div>
+
+          <p class="hero__eyebrow" data-i18n="hero.eyebrow">Avcılar · İstanbul</p>
+
+          <h1 class="hero__title" data-i18n-html="hero.title">
+            A student residence that <em>feels like home</em>
+          </h1>
+
+          <p class="hero__lede" data-i18n="hero.lede">A private residence for female students in the heart of Avcılar — professionally managed, secure around the clock, and a short walk from the Metrobüs that reaches five university campuses in under half an hour.</p>
+
+          <div class="hero__actions">
+            <a class="btn btn--lg" href="#rooms" data-i18n="hero.ctaPrimary">View Rooms</a>
+            <a class="btn btn--lg btn--light" href="#contact" data-i18n="hero.ctaSecondary">Book a Visit</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust bar -->
+      <div class="hero__trust">
+        <div class="container container--wide">
+          <ul class="trust">
+            <li class="trust__item">
+              <span class="trust__value" data-i18n="hero.trust.1.value">500+</span>
+              <span class="trust__label" data-i18n="hero.trust.1.label">Students housed since 2013</span>
+            </li>
+            <li class="trust__item">
+              <span class="trust__value" data-i18n="hero.trust.2.value">5 min</span>
+              <span class="trust__label" data-i18n="hero.trust.2.label">To the nearest campus</span>
+            </li>
+            <li class="trust__item">
+              <span class="trust__value" data-i18n="hero.trust.3.value">24/7</span>
+              <span class="trust__label" data-i18n="hero.trust.3.label">Security and on-site staff</span>
+            </li>
+            <li class="trust__item">
+              <span class="trust__value" data-i18n="hero.trust.4.value">3</span>
+              <span class="trust__label" data-i18n="hero.trust.4.label">Room types, one standard</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         2. ROOMS — split by residence
+         ==================================================================== -->
+    <section class="section rooms" id="rooms">
+      <div class="container">
+
+        <div class="section-head section-head--split" data-reveal>
+          <div class="section-head__text">
+            <p class="eyebrow" data-i18n="rooms.eyebrow">Rooms &amp; Rates</p>
+            <h2 data-i18n="rooms.title">Rooms made for study and rest</h2>
+            <p class="section-head__lede" data-i18n="rooms.lede">Three room types in a single, purpose-run building for female students — the same facilities and the same service whichever you choose. Bills, cleaning, laundry and meals are included in every one.</p>
+          </div>
+          <a class="link-arrow" href="#contact">
+            <span data-i18n="rooms.headCta">Ask about availability</span>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"></use></svg>
+          </a>
+        </div>
+
+        <!-- Residence tabs -->
+        <p class="rooms__note" data-reveal data-i18n="rooms.residenceNote">A dedicated building with keycard entry, a resident manager living on site and 24-hour camera monitoring.</p>
+
+        <div data-reveal>
+  <ul class="room-grid">
+                <li class="room-card">
+                  <div class="media media--4x3 room-card__media">
+                    <!-- PLACEHOLDER IMAGE: replace with real property photo (female residence — single room) -->
+                    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=900&q=80"
+                         data-i18n-attr="alt:rooms.f1.alt"
+                         alt="Single room with a bed, study desk and large window"
+                         loading="lazy" width="900" height="675" />
+                  </div>
+                  <div class="room-card__body">
+                    <div class="room-card__head">
+                      <h3 class="room-card__title" data-i18n="rooms.f1.name">Single Room</h3>
+                      <p class="room-card__cap">
+                        <svg class="icon icon--sm" aria-hidden="true"><use href="#i-users"></use></svg>
+                        <span data-i18n="rooms.f1.capacity">1 student</span>
+                      </p>
+                    </div>
+                    <p class="room-card__desc" data-i18n="rooms.f1.desc">Your own room with a private bathroom, a full-size desk and plenty of storage — for students who want quiet and focus.</p>
+                    <ul class="amenity-chips">
+                      <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-wifi"></use></svg><span data-i18n="rooms.amen.wifi">Wi-Fi</span></li>
+                      <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-desk"></use></svg><span data-i18n="rooms.amen.desk">Study desk</span></li>
+                      <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-wardrobe"></use></svg><span data-i18n="rooms.amen.wardrobe">Wardrobe</span></li>
+                      <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-bath"></use></svg><span data-i18n="rooms.amen.ensuite">Ensuite bath</span></li>
+                    </ul>
+                    <div class="room-card__foot">
+                      <p class="price">
+                        <span class="price__from" data-i18n="rooms.priceFrom">From</span>
+                        <span class="price__value" data-i18n="rooms.f1.price">₺X,XXX</span>
+                        <span class="price__unit" data-i18n="rooms.priceUnit">/ month</span>
+                      </p>
+                      <a class="btn btn--sm btn--ghost" href="#contact" data-i18n="rooms.apply">Apply</a>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="room-card">
+                  <div class="media media--4x3 room-card__media">
+                    <!-- PLACEHOLDER IMAGE: replace with real property photo (female residence — twin room) -->
+                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80"
+                         data-i18n-attr="alt:rooms.f2.alt"
+                         alt="Shared twin room with two beds and matching study desks"
+                         loading="lazy" width="900" height="675" />
+                  </div>
+                  <div class="room-card__body">
+                    <div class="room-card__head">
+                      <h3 class="room-card__title" data-i18n="rooms.f2.name">Shared Twin Room</h3>
+                      <p class="room-card__cap">
+                        <svg class="icon icon--sm" aria-hidden="true"><use href="#i-users"></use></svg>
+                        <span data-i18n="rooms.f2.capacity">2 students</span>
+                      </p>
+                    </div>
+                    <p class="room-card__desc" data-i18n="rooms.f2.desc">Two single beds, two desks and two wardrobes in a generous room with a shared bathroom on the floor. Our most popular choice.</p>
+                    <ul class="amenity-chips">
+                      <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-wifi"></use></svg><span data-i18n="rooms.amen.wifi">Wi-Fi</span></li>
+                      <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-desk"></use></svg><span data-i18n="rooms.amen.desk">Study desk</span></li>
+                      <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-wardrobe"></use></svg><span data-i18n="rooms.amen.wardrobe">Wardrobe</span></li>
+                      <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-bath"></use></svg><span data-i18n="rooms.amen.sharedBath">Shared bath</span></li>
+                    </ul>
+                    <div class="room-card__foot">
+                      <p class="price">
+                        <span class="price__from" data-i18n="rooms.priceFrom">From</span>
+                        <span class="price__value" data-i18n="rooms.f2.price">₺X,XXX</span>
+                        <span class="price__unit" data-i18n="rooms.priceUnit">/ month</span>
+                      </p>
+                      <a class="btn btn--sm btn--ghost" href="#contact" data-i18n="rooms.apply">Apply</a>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="room-card">
+                  <div class="media media--4x3 room-card__media">
+                    <!-- PLACEHOLDER IMAGE: replace with real property photo (female residence — triple room) -->
+                    <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=900&q=80"
+                         data-i18n-attr="alt:rooms.f3.alt"
+                         alt="Bright shared room for three students with individual study areas"
+                         loading="lazy" width="900" height="675" />
+                  </div>
+                  <div class="room-card__body">
+                    <div class="room-card__head">
+                      <h3 class="room-card__title" data-i18n="rooms.f3.name">Shared Triple Room</h3>
+                      <p class="room-card__cap">
+                        <svg class="icon icon--sm" aria-hidden="true"><use href="#i-users"></use></svg>
+                        <span data-i18n="rooms.f3.capacity">3 students</span>
+                      </p>
+                    </div>
+                    <p class="room-card__desc" data-i18n="rooms.f3.desc">The most affordable option, without cutting corners: three separate beds, desks and wardrobes, plus the same facilities as every other room.</p>
+                    <ul class="amenity-chips">
+                      <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-wifi"></use></svg><span data-i18n="rooms.amen.wifi">Wi-Fi</span></li>
+                      <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-desk"></use></svg><span data-i18n="rooms.amen.desk">Study desk</span></li>
+                      <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-wardrobe"></use></svg><span data-i18n="rooms.amen.wardrobe">Wardrobe</span></li>
+                      <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-bath"></use></svg><span data-i18n="rooms.amen.sharedBath">Shared bath</span></li>
+                    </ul>
+                    <div class="room-card__foot">
+                      <p class="price">
+                        <span class="price__from" data-i18n="rooms.priceFrom">From</span>
+                        <span class="price__value" data-i18n="rooms.f3.price">₺X,XXX</span>
+                        <span class="price__unit" data-i18n="rooms.priceUnit">/ month</span>
+                      </p>
+                      <a class="btn btn--sm btn--ghost" href="#contact" data-i18n="rooms.apply">Apply</a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+        </div>
+        <p class="rooms__disclaimer" data-reveal data-i18n="rooms.disclaimer">Pricing shown is a placeholder. Final rates depend on room type, contract length and the meal plan you choose — contact us for the current price list.</p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. NEARBY UNIVERSITIES
+         ==================================================================== -->
+    <section class="section section--sand universities" id="universities">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" data-i18n="uni.eyebrow">Getting to class</p>
+          <h2 data-i18n="uni.title">Close to where you study</h2>
+          <p class="section-head__lede" data-i18n="uni.lede">Avcılar sits directly on the Metrobüs corridor, with İstanbul Gelişim inside the district itself and four more campuses within half an hour along the same line. Travel times below are door-to-door by public transport.</p>
+        </div>
+
+        <ul class="uni-grid">
+          <!-- Each card: drop a real logo at assets/logos/<slug>.svg and it replaces the
+               monogram automatically (the <img> removes itself if the file is missing). -->
+          <li class="uni-card" data-reveal>
+            <div class="uni-card__logo">
+              <span class="uni-card__monogram" aria-hidden="true">İGÜ</span>
+              <!-- Real logo. Trimmed + downscaled from the supplied asset pack. -->
+              <img src="assets/logos/gelisim.png" alt="" onerror="this.remove()" loading="lazy" />
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name" data-i18n="uni.1.name">İstanbul Gelişim Üniversitesi</h3>
+              <p class="uni-card__short" data-i18n="uni.1.short">Avcılar Campus</p>
+            </div>
+            <ul class="uni-card__times">
+              <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-bus"></use></svg><span data-i18n="uni.1.time">5 min by Metrobüs</span></li>
+            </ul>
+          </li>
+
+          <li class="uni-card" data-reveal style="--reveal-delay:60ms">
+            <div class="uni-card__logo">
+              <span class="uni-card__monogram" aria-hidden="true">BEY</span>
+              <!-- Real logo. Trimmed + downscaled from the supplied asset pack. -->
+              <img src="assets/logos/beykent.png" alt="" onerror="this.remove()" loading="lazy" />
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name" data-i18n="uni.2.name">Beykent Üniversitesi</h3>
+              <p class="uni-card__short" data-i18n="uni.2.short">Beylikdüzü Campus</p>
+            </div>
+            <ul class="uni-card__times">
+              <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-bus"></use></svg><span data-i18n="uni.2.time">10 min by Metrobüs</span></li>
+            </ul>
+          </li>
+
+          <li class="uni-card" data-reveal style="--reveal-delay:120ms">
+            <div class="uni-card__logo">
+              <span class="uni-card__monogram" aria-hidden="true">İAÜ</span>
+              <!-- Real logo. Trimmed + downscaled from the supplied asset pack. -->
+              <img src="assets/logos/aydin.png" alt="" onerror="this.remove()" loading="lazy" />
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name" data-i18n="uni.3.name">İstanbul Aydın Üniversitesi</h3>
+              <p class="uni-card__short" data-i18n="uni.3.short">Florya Campus</p>
+            </div>
+            <ul class="uni-card__times">
+              <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-bus"></use></svg><span data-i18n="uni.3.time">15 min by Metrobüs</span></li>
+            </ul>
+          </li>
+
+          <li class="uni-card" data-reveal>
+            <div class="uni-card__logo">
+              <span class="uni-card__monogram" aria-hidden="true">AREL</span>
+              <!-- Real logo. Trimmed + downscaled from the supplied asset pack. -->
+              <img src="assets/logos/arel.png" alt="" onerror="this.remove()" loading="lazy" />
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name" data-i18n="uni.4.name">İstanbul Arel Üniversitesi</h3>
+              <p class="uni-card__short" data-i18n="uni.4.short">Tepekent Campus</p>
+            </div>
+            <ul class="uni-card__times">
+              <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-bus"></use></svg><span data-i18n="uni.4.time">20 min by Metrobüs</span></li>
+            </ul>
+          </li>
+
+          <li class="uni-card" data-reveal style="--reveal-delay:60ms">
+            <div class="uni-card__logo">
+              <span class="uni-card__monogram" aria-hidden="true">İZÜ</span>
+              <!-- Real logo. Trimmed + downscaled from the supplied asset pack. -->
+              <img src="assets/logos/izu.png" alt="" onerror="this.remove()" loading="lazy" />
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name" data-i18n="uni.5.name">İstanbul Sabahattin Zaim Üniversitesi</h3>
+              <p class="uni-card__short" data-i18n="uni.5.short">Halkalı Campus</p>
+            </div>
+            <ul class="uni-card__times">
+              <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-bus"></use></svg><span data-i18n="uni.5.time">25 min by Metrobüs + bus</span></li>
+            </ul>
+          </li>
+
+          <li class="uni-card" data-reveal style="--reveal-delay:120ms">
+            <div class="uni-card__logo">
+              <span class="uni-card__monogram" aria-hidden="true">BAU</span>
+              <!-- Real logo. Trimmed + downscaled from the supplied asset pack. -->
+              <img src="assets/logos/bahcesehir.png" alt="" onerror="this.remove()" loading="lazy" />
+            </div>
+            <div class="uni-card__body">
+              <h3 class="uni-card__name" data-i18n="uni.6.name">Bahçeşehir Üniversitesi</h3>
+              <p class="uni-card__short" data-i18n="uni.6.short">Beşiktaş Campus</p>
+            </div>
+            <ul class="uni-card__times">
+              <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-metro"></use></svg><span data-i18n="uni.6.time">55 min by Metrobüs + metro</span></li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="uni-transit" data-reveal>
+          <p class="uni-transit__title" data-i18n="uni.transitTitle">On your doorstep</p>
+          <ul class="uni-transit__list">
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-walk"></use></svg><span data-i18n="uni.transit.1">5 min walk to the Metrobüs</span></li>
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-bus"></use></svg><span data-i18n="uni.transit.2">Five campuses within 25 minutes</span></li>
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-metro"></use></svg><span data-i18n="uni.transit.3">15 min to Halkalı (Marmaray)</span></li>
+          </ul>
+        </div>
+
+        <p class="uni-note" data-i18n="uni.note">Travel times are typical off-peak estimates by public transport and can vary with traffic and time of day.</p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. AMENITIES
+         ==================================================================== -->
+    <section class="section amenities" id="amenities">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" data-i18n="amen.eyebrow">Facilities</p>
+          <h2 data-i18n="amen.title">Everything included, nothing to think about</h2>
+          <p class="section-head__lede" data-i18n="amen.lede">One monthly payment covers the room, the bills and the services around it — so students can put their attention where it belongs.</p>
+        </div>
+
+        <ul class="amen-grid">
+          <li class="amen-card" data-reveal>
+            <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-shield"></use></svg>
+            <h3 class="amen-card__title" data-i18n="amen.1.title">24/7 security</h3>
+            <p class="amen-card__desc" data-i18n="amen.1.desc">Staffed reception day and night, with keycard access at every entrance.</p>
+          </li>
+          <li class="amen-card" data-reveal style="--reveal-delay:50ms">
+            <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-camera"></use></svg>
+            <h3 class="amen-card__title" data-i18n="amen.2.title">CCTV monitoring</h3>
+            <p class="amen-card__desc" data-i18n="amen.2.desc">Cameras across all common areas and entrances, recorded and reviewed.</p>
+          </li>
+          <li class="amen-card" data-reveal style="--reveal-delay:100ms">
+            <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-wifi"></use></svg>
+            <h3 class="amen-card__title" data-i18n="amen.3.title">Fibre Wi-Fi</h3>
+            <p class="amen-card__desc" data-i18n="amen.3.desc">High-speed fibre in every room and lounge, built to handle exam season.</p>
+          </li>
+          <li class="amen-card" data-reveal style="--reveal-delay:150ms">
+            <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-book"></use></svg>
+            <h3 class="amen-card__title" data-i18n="amen.4.title">Study lounges</h3>
+            <p class="amen-card__desc" data-i18n="amen.4.desc">Quiet rooms and group tables for when your desk isn't enough.</p>
+          </li>
+          <li class="amen-card" data-reveal>
+            <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-coffee"></use></svg>
+            <h3 class="amen-card__title" data-i18n="amen.5.title">Cafeteria &amp; kitchen</h3>
+            <p class="amen-card__desc" data-i18n="amen.5.desc">Daily breakfast and dinner, plus shared kitchens on every floor.</p>
+          </li>
+          <li class="amen-card" data-reveal style="--reveal-delay:50ms">
+            <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-laundry"></use></svg>
+            <h3 class="amen-card__title" data-i18n="amen.6.title">Laundry room</h3>
+            <p class="amen-card__desc" data-i18n="amen.6.desc">Washers and dryers included in your rent — no coins, no queues.</p>
+          </li>
+          <li class="amen-card" data-reveal style="--reveal-delay:100ms">
+            <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-gym"></use></svg>
+            <h3 class="amen-card__title" data-i18n="amen.7.title">Fitness room</h3>
+            <p class="amen-card__desc" data-i18n="amen.7.desc">A properly equipped gym in each residence, open from early to late.</p>
+          </li>
+          <li class="amen-card" data-reveal style="--reveal-delay:150ms">
+            <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-sparkle"></use></svg>
+            <h3 class="amen-card__title" data-i18n="amen.8.title">Cleaning service</h3>
+            <p class="amen-card__desc" data-i18n="amen.8.desc">Weekly room cleaning and daily upkeep of every shared space.</p>
+          </li>
+          <li class="amen-card" data-reveal>
+            <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-headset"></use></svg>
+            <h3 class="amen-card__title" data-i18n="amen.9.title">On-site management</h3>
+            <p class="amen-card__desc" data-i18n="amen.9.desc">A resident manager in the building — not a phone number in another city.</p>
+          </li>
+          <li class="amen-card" data-reveal style="--reveal-delay:50ms">
+            <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-bus"></use></svg>
+            <h3 class="amen-card__title" data-i18n="amen.10.title">Transport at the door</h3>
+            <p class="amen-card__desc" data-i18n="amen.10.desc">The Metrobüs, city buses and minibus routes are all a short walk from both buildings.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5. ABOUT / WHY US
+         ==================================================================== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="about__grid">
+
+          <div class="about__media" data-reveal>
+            <div class="media media--4x5">
+              <!-- PLACEHOLDER IMAGE: replace with real property photo (residence exterior or staff/student portrait) -->
+              <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=900&q=80"
+                   data-i18n-attr="alt:about.imageAlt"
+                   alt="Students studying together around a shared table"
+                   loading="lazy" width="900" height="1125" />
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-value" data-i18n="about.statValue">Since 2013</span>
+              <span class="about__stat-label" data-i18n="about.statLabel">Family-run, professionally managed</span>
+            </div>
+          </div>
+
+          <div class="about__content" data-reveal style="--reveal-delay:80ms">
+            <p class="eyebrow" data-i18n="about.eyebrow">About Kıvanç</p>
+            <h2 data-i18n="about.title">Built for students. Answerable to parents.</h2>
+            <p class="about__lede" data-i18n="about.p1">Most of our residents move to Istanbul from another city, and for their families that first year is a leap of faith. We built Kıvanç around that reality: one properly staffed building, clear rules, transparent pricing, and someone reachable whenever a parent needs an answer.</p>
+            <p data-i18n="about.p2">We're not a large chain. The residence is run day to day by the same family that has owned it since 2013, which is why the standards hold.</p>
+
+            <ul class="value-list">
+              <li class="value-item">
+                <svg class="icon value-item__icon" aria-hidden="true"><use href="#i-shield"></use></svg>
+                <div>
+                  <h3 class="value-item__title" data-i18n="about.v1.title">Safety comes first</h3>
+                  <p class="value-item__desc" data-i18n="about.v1.desc">Controlled entry, camera coverage, and staff on site every hour of the day.</p>
+                </div>
+              </li>
+              <li class="value-item">
+                <svg class="icon value-item__icon" aria-hidden="true"><use href="#i-headset"></use></svg>
+                <div>
+                  <h3 class="value-item__title" data-i18n="about.v2.title">We answer in your language</h3>
+                  <p class="value-item__desc" data-i18n="about.v2.desc">Turkish and English support today, with Arabic-speaking staff for international students.</p>
+                </div>
+              </li>
+              <li class="value-item">
+                <svg class="icon value-item__icon" aria-hidden="true"><use href="#i-check"></use></svg>
+                <div>
+                  <h3 class="value-item__title" data-i18n="about.v3.title">Transparent pricing</h3>
+                  <p class="value-item__desc" data-i18n="about.v3.desc">One monthly figure covering bills, cleaning, laundry and meals. No surprises mid-year.</p>
+                </div>
+              </li>
+              <li class="value-item">
+                <svg class="icon value-item__icon" aria-hidden="true"><use href="#i-users"></use></svg>
+                <div>
+                  <h3 class="value-item__title" data-i18n="about.v4.title">A real community</h3>
+                  <p class="value-item__desc" data-i18n="about.v4.desc">Study groups, shared meals and events that make a new city feel smaller.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. GALLERY
+         ==================================================================== -->
+    <section class="section section--sand gallery" id="gallery">
+      <div class="container container--wide">
+        <div class="section-head section-head--split" data-reveal>
+          <div class="section-head__text">
+            <p class="eyebrow" data-i18n="gallery.eyebrow">Gallery</p>
+            <h2 data-i18n="gallery.title">A look inside</h2>
+            <p class="section-head__lede" data-i18n="gallery.lede">Rooms, lounges, kitchens and the spaces in between. Book a visit and we'll show you the rest in person.</p>
+          </div>
+          <a class="link-arrow" href="#contact">
+            <span data-i18n="gallery.cta">Book a visit</span>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"></use></svg>
+          </a>
+        </div>
+
+        <ul class="gallery-grid" data-lightbox>
+          <!-- PLACEHOLDER IMAGE ×8: replace each with real property photography -->
+          <li class="gallery-item">
+            <button type="button" class="gallery-item__btn" data-i18n-attr="aria-label:gallery.1.alt" aria-label="Open photo: study lounge">
+              <div class="media"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80"
+                   data-i18n-attr="alt:gallery.1.alt" alt="Comfortable shared lounge with armchairs and warm lighting" loading="lazy" /></div>
+              <span class="gallery-item__zoom" aria-hidden="true"><svg class="icon icon--sm"><use href="#i-expand"></use></svg></span>
+            </button>
+          </li>
+          <li class="gallery-item">
+            <button type="button" class="gallery-item__btn" data-i18n-attr="aria-label:gallery.2.alt" aria-label="Open photo: bedroom">
+              <div class="media"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80"
+                   data-i18n-attr="alt:gallery.2.alt" alt="Neatly made bed beside a bright window" loading="lazy" /></div>
+              <span class="gallery-item__zoom" aria-hidden="true"><svg class="icon icon--sm"><use href="#i-expand"></use></svg></span>
+            </button>
+          </li>
+          <li class="gallery-item">
+            <button type="button" class="gallery-item__btn" data-i18n-attr="aria-label:gallery.3.alt" aria-label="Open photo: study desk">
+              <div class="media"><img src="https://images.unsplash.com/photo-1519974719765-e6559eac2575?auto=format&fit=crop&w=1400&q=80"
+                   data-i18n-attr="alt:gallery.3.alt" alt="Student working at a desk with a laptop and notebooks" loading="lazy" /></div>
+              <span class="gallery-item__zoom" aria-hidden="true"><svg class="icon icon--sm"><use href="#i-expand"></use></svg></span>
+            </button>
+          </li>
+          <li class="gallery-item">
+            <button type="button" class="gallery-item__btn" data-i18n-attr="aria-label:gallery.4.alt" aria-label="Open photo: common room">
+              <div class="media"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80"
+                   data-i18n-attr="alt:gallery.4.alt" alt="Open common area with sofas and a long shared table" loading="lazy" /></div>
+              <span class="gallery-item__zoom" aria-hidden="true"><svg class="icon icon--sm"><use href="#i-expand"></use></svg></span>
+            </button>
+          </li>
+          <li class="gallery-item">
+            <button type="button" class="gallery-item__btn" data-i18n-attr="aria-label:gallery.5.alt" aria-label="Open photo: shared kitchen">
+              <div class="media"><img src="https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?auto=format&fit=crop&w=900&q=80"
+                   data-i18n-attr="alt:gallery.5.alt" alt="Clean shared kitchen with counter seating" loading="lazy" /></div>
+              <span class="gallery-item__zoom" aria-hidden="true"><svg class="icon icon--sm"><use href="#i-expand"></use></svg></span>
+            </button>
+          </li>
+          <li class="gallery-item">
+            <button type="button" class="gallery-item__btn" data-i18n-attr="aria-label:gallery.6.alt" aria-label="Open photo: fitness room">
+              <div class="media"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80"
+                   data-i18n-attr="alt:gallery.6.alt" alt="Fitness room with free weights and machines" loading="lazy" /></div>
+              <span class="gallery-item__zoom" aria-hidden="true"><svg class="icon icon--sm"><use href="#i-expand"></use></svg></span>
+            </button>
+          </li>
+          <li class="gallery-item">
+            <button type="button" class="gallery-item__btn" data-i18n-attr="aria-label:gallery.7.alt" aria-label="Open photo: building exterior">
+              <div class="media"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80"
+                   data-i18n-attr="alt:gallery.7.alt" alt="Residence building exterior on a bright day" loading="lazy" /></div>
+              <span class="gallery-item__zoom" aria-hidden="true"><svg class="icon icon--sm"><use href="#i-expand"></use></svg></span>
+            </button>
+          </li>
+          <li class="gallery-item">
+            <button type="button" class="gallery-item__btn" data-i18n-attr="aria-label:gallery.8.alt" aria-label="Open photo: library corner">
+              <div class="media"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=80"
+                   data-i18n-attr="alt:gallery.8.alt" alt="Quiet study corner lined with bookshelves" loading="lazy" /></div>
+              <span class="gallery-item__zoom" aria-hidden="true"><svg class="icon icon--sm"><use href="#i-expand"></use></svg></span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Lightbox (built by markup, driven by js/main.js) -->
+    <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true"
+         data-i18n-attr="aria-label:a11y.lightbox" aria-label="Photo viewer">
+      <button type="button" class="lightbox__close" data-lightbox-close
+              data-i18n-attr="aria-label:a11y.close" aria-label="Close">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+      <button type="button" class="lightbox__nav lightbox__nav--prev" data-lightbox-prev
+              data-i18n-attr="aria-label:a11y.prev" aria-label="Previous photo">
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+      </button>
+      <figure class="lightbox__figure">
+        <!-- No src attribute: an empty src="" makes the browser re-request the
+             page itself. js/main.js sets and clears it. -->
+        <img class="lightbox__img" alt="" />
+        <figcaption class="lightbox__caption"></figcaption>
+      </figure>
+      <button type="button" class="lightbox__nav lightbox__nav--next" data-lightbox-next
+              data-i18n-attr="aria-label:a11y.next" aria-label="Next photo">
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+      </button>
+    </div>
+
+    <!-- ====================================================================
+         7. TESTIMONIALS
+         ==================================================================== -->
+    <section class="section section--ink testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow eyebrow--light" data-i18n="test.eyebrow">In their words</p>
+          <h2 data-i18n="test.title">What students and parents tell us</h2>
+        </div>
+
+        <!-- NOTE: sample copy — replace with real, attributed testimonials before launch. -->
+        <ul class="test-grid">
+          <li class="test-card" data-reveal>
+            <svg class="icon icon--lg test-card__quote" aria-hidden="true"><use href="#i-quote"></use></svg>
+            <blockquote class="test-card__quote-text" data-i18n="test.1.quote">I moved from Gaziantep not knowing anyone. Within a week I had a study group and people to eat dinner with. The room is quiet enough to actually work in.</blockquote>
+            <figcaption class="test-card__who">
+              <span class="test-card__name" data-i18n="test.1.name">Zeynep A.</span>
+              <span class="test-card__meta" data-i18n="test.1.meta">2nd year, İstanbul Aydın Üniversitesi</span>
+            </figcaption>
+          </li>
+          <li class="test-card" data-reveal style="--reveal-delay:80ms">
+            <svg class="icon icon--lg test-card__quote" aria-hidden="true"><use href="#i-quote"></use></svg>
+            <blockquote class="test-card__quote-text" data-i18n="test.2.quote">As a father sending his daughter to Istanbul, what mattered was being able to call and reach a person who knew her by name. That has never once failed.</blockquote>
+            <figcaption class="test-card__who">
+              <span class="test-card__name" data-i18n="test.2.name">Mehmet Y.</span>
+              <span class="test-card__meta" data-i18n="test.2.meta">Parent, Konya</span>
+            </figcaption>
+          </li>
+          <li class="test-card" data-reveal style="--reveal-delay:160ms">
+            <svg class="icon icon--lg test-card__quote" aria-hidden="true"><use href="#i-quote"></use></svg>
+            <blockquote class="test-card__quote-text" data-i18n="test.3.quote">The commute was the deciding factor. I'm at the Metrobüs in five minutes and on campus before my first lecture without rushing.</blockquote>
+            <figcaption class="test-card__who">
+              <span class="test-card__name" data-i18n="test.3.name">Elif D.</span>
+              <span class="test-card__meta" data-i18n="test.3.meta">3rd year, İstanbul Gelişim Üniversitesi</span>
+            </figcaption>
+          </li>
+        </ul>
+
+        <p class="test-note" data-i18n="test.note">Sample testimonials shown for layout purposes — real, named reviews will replace these before launch.</p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         8. FAQ
+         ==================================================================== -->
+    <section class="section faq" id="faq">
+      <div class="container">
+        <div class="faq__grid">
+          <div class="faq__aside" data-reveal>
+            <p class="eyebrow" data-i18n="faq.eyebrow">Questions</p>
+            <h2 data-i18n="faq.title">Before you apply</h2>
+            <p class="section-head__lede" data-i18n="faq.lede">If your question isn't here, call or message us — we answer in Turkish and English, seven days a week.</p>
+            <a class="btn btn--ghost faq__cta" href="#contact" data-i18n="faq.cta">Ask us directly</a>
+          </div>
+
+          <ul class="faq__list" data-accordion data-reveal style="--reveal-delay:80ms">
+            <li class="faq-item">
+              <h3 class="faq-item__heading">
+                <button type="button" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-p1" id="faq-t1">
+                  <span data-i18n="faq.1.q">How do I apply for a room?</span>
+                  <svg class="icon faq-item__icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="faq-p1" role="region" aria-labelledby="faq-t1" hidden>
+                <p data-i18n="faq.1.a">Send us the form at the bottom of this page or message us on WhatsApp with your name, university and preferred room type. We'll confirm availability, invite you for a visit, and hold the room with a deposit once you decide.</p>
+              </div>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-item__heading">
+                <button type="button" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-p2" id="faq-t2">
+                  <span data-i18n="faq.2.q">How long is the contract?</span>
+                  <svg class="icon faq-item__icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="faq-p2" role="region" aria-labelledby="faq-t2" hidden>
+                <p data-i18n="faq.2.a">The standard contract runs for the academic year, from September to June. Summer stays and shorter terms are available on request, subject to availability.</p>
+              </div>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-item__heading">
+                <button type="button" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-p3" id="faq-t3">
+                  <span data-i18n="faq.3.q">What does the monthly price include?</span>
+                  <svg class="icon faq-item__icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="faq-p3" role="region" aria-labelledby="faq-t3" hidden>
+                <p data-i18n="faq.3.a">Rent, all utilities, fibre internet, weekly room cleaning, laundry facilities, use of the study lounges and gym, and the daily meal plan. There is no separate bill at the end of the month.</p>
+              </div>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-item__heading">
+                <button type="button" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-p4" id="faq-t4">
+                  <span data-i18n="faq.4.q">Can parents visit, and what are the security rules?</span>
+                  <svg class="icon faq-item__icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="faq-p4" role="region" aria-labelledby="faq-t4" hidden>
+                <p data-i18n="faq.4.a">Families are welcome during visiting hours and are received in the ground-floor lounge. Entry to the residence floors is by keycard and limited to residents and staff. Every entrance is monitored, and reception is staffed 24 hours a day.</p>
+              </div>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-item__heading">
+                <button type="button" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-p5" id="faq-t5">
+                  <span data-i18n="faq.5.q">How is payment made?</span>
+                  <svg class="icon faq-item__icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="faq-p5" role="region" aria-labelledby="faq-t5" hidden>
+                <p data-i18n="faq.5.a">Monthly by bank transfer, or in instalments agreed at signing. We issue a receipt for every payment and never ask for cash without documentation.</p>
+              </div>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-item__heading">
+                <button type="button" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-p6" id="faq-t6">
+                  <span data-i18n="faq.6.q">Is there a curfew?</span>
+                  <svg class="icon faq-item__icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="faq-p6" role="region" aria-labelledby="faq-t6" hidden>
+                <p data-i18n="faq.6.a">Yes. The building closes at 23:00 on weekdays and at midnight at weekends. A student who needs to return later, or to stay out overnight, arranges it with the resident manager in advance and her family is informed.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         9. LOCATION / CONTACT
+         ==================================================================== -->
+    <section class="section section--sand contact" id="contact">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" data-i18n="contact.eyebrow">Visit &amp; apply</p>
+          <h2 data-i18n="contact.title">Come and see it for yourself</h2>
+          <p class="section-head__lede" data-i18n="contact.lede">Tell us which room type you're interested in and we'll get back to you the same day with availability, current prices and a time to visit.</p>
+        </div>
+
+        <div class="contact__grid">
+
+          <!-- Left: details + map -->
+          <div class="contact__aside" data-reveal>
+            <ul class="contact-list">
+              <li class="contact-list__item">
+                <svg class="icon contact-list__icon" aria-hidden="true"><use href="#i-pin"></use></svg>
+                <div>
+                  <p class="contact-list__label" data-i18n="contact.addressLabel">Address</p>
+                  <p class="contact-list__value" data-i18n="contact.address">Cihangir Mah., Kirazlı Cad., 34310 Avcılar / İstanbul</p>
+                  <p class="contact-list__hint" data-i18n="contact.addressHint">Pinned on the map below. Call us for the door number.</p>
+                  <a class="contact-list__directions" href="#" data-contact-map target="_blank" rel="noopener">
+                    <span data-i18n="contact.directions">Get directions</span>
+                    <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"></use></svg>
+                  </a>
+                </div>
+              </li>
+              <li class="contact-list__item">
+                <svg class="icon contact-list__icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+                <div>
+                  <p class="contact-list__label" data-i18n="contact.phoneLabel">Phone</p>
+                  <!-- Replace href + text in i18n/*.json (contact.phone) when the real number is ready. -->
+                  <a class="contact-list__value contact-list__link" href="tel:+905415904445" data-contact-tel data-i18n="contact.phone">+90 541 590 44 45</a>
+                </div>
+              </li>
+              <li class="contact-list__item">
+                <svg class="icon contact-list__icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+                <div>
+                  <p class="contact-list__label" data-i18n="contact.whatsappLabel">WhatsApp</p>
+                  <a class="contact-list__value contact-list__link" href="https://wa.me/905415904445" data-contact-wa target="_blank" rel="noopener" data-i18n="contact.whatsapp">Message us on WhatsApp</a>
+                </div>
+              </li>
+              <li class="contact-list__item">
+                <svg class="icon contact-list__icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+                <div>
+                  <p class="contact-list__label" data-i18n="contact.emailLabel">Email</p>
+                  <a class="contact-list__value contact-list__link" href="mailto:kivancogrenciyurtlari@gmail.com" data-contact-mail data-i18n="contact.email">kivancogrenciyurtlari@gmail.com</a>
+                </div>
+              </li>
+              <li class="contact-list__item">
+                <svg class="icon contact-list__icon" aria-hidden="true"><use href="#i-clock"></use></svg>
+                <div>
+                  <p class="contact-list__label" data-i18n="contact.hoursLabel">Visiting hours</p>
+                  <p class="contact-list__value" data-i18n="contact.hours">Every day, 09:00 – 20:00</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="contact__map">
+            <!-- Google Maps, pinned at the residence. The coordinates here are a
+                 no-JS fallback: js/i18n.js rebuilds this src from contact.mapLat /
+                 contact.mapLng so the map's own UI follows the chosen language.
+                 The two are kept in step by the coordinate check in the verify script.
+                 Deliberately NOT a place-name query - the nearest Google place is a
+                 school, and labelling the residence with it would mislead visitors. -->
+            <iframe
+                title="Map of Kıvanç Öğrenci Yurdu, Avcılar"
+                data-i18n-attr="title:contact.mapTitle"
+                data-contact-mapframe
+                src="https://www.google.com/maps?q=40.9833101,28.7098463&amp;z=17&amp;hl=tr&amp;output=embed"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+              <p class="contact__map-note">
+                <span data-i18n="contact.mapNote">Cihangir Mah., Avcılar — tap the pin for directions.</span>
+                <a class="contact__map-link" href="#" data-contact-map target="_blank" rel="noopener"
+                   data-i18n="contact.directions">Get directions</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: inquiry form -->
+          <div class="contact__form-wrap" data-reveal style="--reveal-delay:80ms">
+            <form class="form" id="inquiry-form" novalidate>
+              <div class="form__row">
+                <div class="field">
+                  <label class="field__label" for="f-name" data-i18n="form.name">Full name</label>
+                  <input class="field__input" type="text" id="f-name" name="name" autocomplete="name" required
+                         data-i18n-attr="placeholder:form.namePh" placeholder="Your name" />
+                  <p class="field__error" data-error-for="f-name" data-i18n="form.errName" hidden>Please enter your name.</p>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="f-phone" data-i18n="form.phone">Phone</label>
+                  <input class="field__input" type="tel" id="f-phone" name="phone" autocomplete="tel" required
+                         data-i18n-attr="placeholder:form.phonePh" placeholder="+90 541 590 44 45" />
+                  <p class="field__error" data-error-for="f-phone" data-i18n="form.errPhone" hidden>Please enter a phone number we can reach you on.</p>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="f-email" data-i18n="form.email">Email</label>
+                <input class="field__input" type="email" id="f-email" name="email" autocomplete="email" required
+                       data-i18n-attr="placeholder:form.emailPh" placeholder="you@example.com" />
+                <p class="field__error" data-error-for="f-email" data-i18n="form.errEmail" hidden>Please enter a valid email address.</p>
+              </div>
+
+              <fieldset class="field field--fieldset">
+                <legend class="field__label" data-i18n="form.interest">Room type</legend>
+                <div class="choice-group choice-group--3">
+                  <label class="choice">
+                    <input type="radio" name="roomType" value="single" required />
+                    <span class="choice__box"></span>
+                    <span class="choice__text" data-i18n="form.roomSingle">Single</span>
+                  </label>
+                  <label class="choice">
+                    <input type="radio" name="roomType" value="twin" required />
+                    <span class="choice__box"></span>
+                    <span class="choice__text" data-i18n="form.roomTwin">Twin</span>
+                  </label>
+                  <label class="choice">
+                    <input type="radio" name="roomType" value="triple" required />
+                    <span class="choice__box"></span>
+                    <span class="choice__text" data-i18n="form.roomTriple">Triple</span>
+                  </label>
+                </div>
+                <p class="field__error" data-error-for="roomType" data-i18n="form.errRoomType" hidden>Please choose a room type.</p>
+              </fieldset>
+
+              <div class="field">
+                <label class="field__label" for="f-message" data-i18n="form.message">Message</label>
+                <textarea class="field__input field__input--area" id="f-message" name="message" rows="4"
+                          data-i18n-attr="placeholder:form.messagePh"
+                          placeholder="Which university do you attend? When would you like to move in?"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--lg btn--block" data-i18n="form.submit">Send inquiry</button>
+
+              <p class="form__note" data-i18n="form.note">By sending this form you agree to be contacted about your inquiry. We never share your details with anyone else.</p>
+
+              <!-- Populated by js/main.js after submit -->
+              <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="container container--wide">
+      <div class="footer__top">
+
+        <div class="footer__brand">
+          <a class="brand brand--footer" href="#top" data-i18n-attr="aria-label:brand.name" aria-label="Kıvanç Öğrenci Yurdu">
+            <img class="brand__badge" src="assets/brand/logo.png" alt="" aria-hidden="true"
+                 width="640" height="641" loading="lazy" />
+            <span class="brand__text">
+              <span class="brand__name">Kıvanç</span>
+              <span class="brand__suffix" data-i18n="brand.suffix">Öğrenci Yurdu</span>
+            </span>
+          </a>
+          <p class="footer__desc" data-i18n="footer.desc">A private residence for female students in Avcılar, İstanbul — professionally managed, secure around the clock, and minutes from Istanbul's private university campuses.</p>
+          <ul class="social">
+            <li><a href="#" data-i18n-attr="aria-label:footer.social.instagram" aria-label="Instagram"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-instagram"></use></svg></a></li>
+            <li><a href="#" data-i18n-attr="aria-label:footer.social.facebook" aria-label="Facebook"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-facebook"></use></svg></a></li>
+            <li><a href="#" data-i18n-attr="aria-label:footer.social.youtube" aria-label="YouTube"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-youtube"></use></svg></a></li>
+            <li><a href="https://wa.me/905415904445" data-contact-wa target="_blank" rel="noopener" data-i18n-attr="aria-label:footer.social.whatsapp" aria-label="WhatsApp"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-whatsapp"></use></svg></a></li>
+          </ul>
+        </div>
+
+        <nav class="footer__col" data-i18n-attr="aria-label:footer.exploreTitle">
+          <h4 class="footer__title" data-i18n="footer.exploreTitle">Explore</h4>
+          <ul class="footer__links">
+            <li><a href="#rooms"        data-i18n="nav.rooms">Rooms</a></li>
+            <li><a href="#universities" data-i18n="nav.universities">Universities</a></li>
+            <li><a href="#amenities"    data-i18n="nav.amenities">Facilities</a></li>
+            <li><a href="#gallery"      data-i18n="nav.gallery">Gallery</a></li>
+            <li><a href="#faq"          data-i18n="nav.faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" data-i18n-attr="aria-label:footer.residencesTitle">
+          <h4 class="footer__title" data-i18n="footer.residencesTitle">Rooms</h4>
+          <ul class="footer__links">
+            <li><a href="#rooms" data-i18n="rooms.f1.name">Single Room</a></li>
+            <li><a href="#rooms" data-i18n="rooms.f2.name">Shared Twin Room</a></li>
+            <li><a href="#rooms" data-i18n="rooms.f3.name">Shared Triple Room</a></li>
+            <li><a href="#contact" data-i18n="footer.bookVisit">Book a visit</a></li>
+            <li><a href="#contact" data-i18n="footer.applyNow">Apply now</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col">
+          <h4 class="footer__title" data-i18n="footer.contactTitle">Contact</h4>
+          <ul class="footer__links">
+            <li><a href="tel:+905415904445" data-contact-tel data-i18n="contact.phone">+90 541 590 44 45</a></li>
+            <li><a href="mailto:kivancogrenciyurtlari@gmail.com" data-contact-mail data-i18n="contact.email">kivancogrenciyurtlari@gmail.com</a></li>
+            <li><a href="#" data-contact-map target="_blank" rel="noopener"
+                   data-i18n="contact.address">Cihangir Mah., Kirazlı Cad., 34310 Avcılar / İstanbul</a></li>
+          </ul>
+          <div class="lang-switch lang-switch--footer" role="group"
+               data-i18n-attr="aria-label:a11y.languageSwitcher" aria-label="Change language">
+            <button type="button" class="lang-switch__btn" data-lang="tr" lang="tr">Türkçe</button>
+            <span class="lang-switch__sep" aria-hidden="true"></span>
+            <button type="button" class="lang-switch__btn" data-lang="en" lang="en">English</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p data-i18n="footer.copyright">© 2026 Kıvanç Öğrenci Yurdu. All rights reserved.</p>
+        <p class="footer__legal">
+          <a href="#" data-i18n="footer.privacy">Privacy</a>
+          <span aria-hidden="true">·</span>
+          <a href="#" data-i18n="footer.terms">Terms</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp CTA -->
+  <a class="wa-fab" href="https://wa.me/905415904445" data-contact-wa target="_blank" rel="noopener"
+     data-i18n-attr="aria-label:a11y.whatsappFab" aria-label="Message us on WhatsApp">
+    <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+  </a>
+
+  <!-- Translation data as a plain script, so the page also works when opened
+       straight from disk (file://), where fetch() is blocked. Over HTTP the
+       JSON files are fetched instead and stay authoritative.
+       Regenerate after editing i18n/*.json:  python tools/build-i18n.py -->
+  <script src="i18n/bundle.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

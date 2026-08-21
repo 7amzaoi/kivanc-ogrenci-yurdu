@@ -1,0 +1,60 @@
+/* ==========================================================================
+   AMENITIES — icon grid
+   Deliberately borderless: the grid reads as a printed spec sheet, held
+   together by hairlines rather than a field of boxes.
+   ========================================================================== */
+
+.amen-grid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: 1fr;
+  background-color: var(--c-line-soft);
+  border: 1px solid var(--c-line-soft);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.amen-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  padding: var(--s-6);
+  background-color: var(--c-cream);
+  transition: background-color var(--dur) var(--ease);
+}
+.amen-card:hover { background-color: var(--c-sand); }
+
+.amen-card__icon {
+  color: var(--c-accent);
+  margin-block-end: var(--s-2);
+  transition: transform var(--dur) var(--ease);
+}
+.amen-card:hover .amen-card__icon { transform: translateY(-2px); }
+
+.amen-card__title {
+  font-family: var(--font-body);
+  font-size: var(--t-base);
+  font-weight: 600;
+  letter-spacing: var(--ls-normal);
+  color: var(--c-ink);
+  line-height: 1.3;
+}
+
+.amen-card__desc {
+  font-size: var(--t-sm);
+  line-height: 1.6;
+  color: var(--c-ink-mute);
+}
+
+@media (min-width: 560px) {
+  .amen-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 880px) {
+  .amen-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1180px) {
+  .amen-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .amen-card { padding: var(--s-6) var(--s-5); }
+}

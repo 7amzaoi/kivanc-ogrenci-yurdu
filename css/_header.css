@@ -1,0 +1,300 @@
+/* ==========================================================================
+   HEADER + MOBILE DRAWER
+   Transparent over the hero, solid CHARCOAL once scrolled — not cream.
+   That is a brand constraint, not a taste call: the Kıvanç badge is gold and
+   only reads on a dark surface (2.28:1 on cream vs 7.43:1 on ink), so the
+   header must never turn light underneath it.
+   ========================================================================== */
+
+.header {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: var(--z-header);
+
+  /* Swapped wholesale by .is-scrolled — every child reads these two. */
+  --hd-fg: var(--c-cream);
+  --hd-fg-mute: rgba(251, 248, 243, 0.78);
+
+  color: var(--hd-fg);
+  background-color: transparent;
+  border-block-end: 1px solid transparent;
+  transition:
+    background-color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+
+.header.is-scrolled {
+  background-color: rgba(20, 16, 13, 0.90);
+  backdrop-filter: saturate(140%) blur(12px);
+  border-block-end-color: rgba(232, 206, 134, 0.16);
+}
+.header.is-scrolled.is-lifted { box-shadow: 0 8px 30px -12px rgba(0, 0, 0, 0.55); }
+
+.header__inner {
+  block-size: var(--header-h);
+  display: flex;
+  align-items: center;
+  gap: var(--s-6);
+}
+
+/* --------------------------------------------------------------------------
+   BRAND WORDMARK
+   -------------------------------------------------------------------------- */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  flex: none;
+  margin-inline-end: auto;
+}
+
+/* The badge is a detailed circular seal — at header size its ring of text is
+   decorative, so the name is carried by the wordmark beside it and the image
+   is aria-hidden. */
+.brand__badge {
+  inline-size: 44px;
+  block-size: 44px;
+  flex: none;
+  object-fit: contain;
+}
+
+.brand__text {
+  display: flex;
+  align-items: baseline;
+  gap: 0.34em;
+  line-height: 1;
+}
+.brand__name {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-display);
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  color: var(--hd-fg, var(--c-ink));
+}
+.brand__suffix {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-caps);
+  color: var(--hd-fg-mute, var(--c-ink-mute));
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   NAV
+   -------------------------------------------------------------------------- */
+.nav { display: none; }
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: var(--s-6);
+}
+
+.nav__link {
+  position: relative;
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: var(--hd-fg-mute);
+  padding-block: var(--s-2);
+  transition: color var(--dur-fast) var(--ease);
+}
+.nav__link::after {
+  content: "";
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inline-size: 100%;
+  block-size: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: var(--nav-origin, left);
+  transition: transform var(--dur) var(--ease);
+}
+[dir="rtl"] .nav__link::after { --nav-origin: right; }
+
+.nav__link:hover,
+.nav__link.is-current { color: var(--hd-fg); }
+.nav__link:hover::after,
+.nav__link.is-current::after { transform: scaleX(1); }
+
+/* --------------------------------------------------------------------------
+   HEADER ACTIONS
+   -------------------------------------------------------------------------- */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  flex: none;
+}
+
+.header__cta { display: none; }
+.header .btn--sm {
+  --btn-bg: var(--c-accent);
+  --btn-bd: var(--c-accent);
+  --btn-fg: var(--c-cream);
+}
+.header .btn--sm:hover {
+  --btn-bg: var(--c-gold);
+  --btn-bd: var(--c-gold);
+  --btn-fg: #16120F;
+}
+
+.nav-toggle {
+  display: grid;
+  place-items: center;
+  inline-size: 42px;
+  block-size: 42px;
+  margin-inline-end: calc(var(--s-2) * -1);
+  color: var(--hd-fg);
+  border-radius: var(--r-sm);
+}
+.nav-toggle__close { display: none; }
+.nav-toggle[aria-expanded="true"] .nav-toggle__open  { display: none; }
+.nav-toggle[aria-expanded="true"] .nav-toggle__close { display: block; }
+
+/* --------------------------------------------------------------------------
+   LANGUAGE SWITCHER — one component, three placements
+   -------------------------------------------------------------------------- */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: 0.3rem var(--s-3);
+  border: 1px solid var(--ls-border, var(--c-line));
+  border-radius: var(--r-pill);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+}
+
+.lang-switch__btn {
+  color: var(--ls-fg-mute, var(--c-ink-faint));
+  padding: 0.15rem 0.2rem;
+  border-radius: var(--r-xs);
+  text-transform: uppercase;
+  transition: color var(--dur-fast) var(--ease);
+}
+.lang-switch__btn:hover { color: var(--ls-fg, var(--c-ink)); }
+.lang-switch__btn.is-active { color: var(--ls-fg-active, var(--c-accent)); }
+
+.lang-switch__sep {
+  inline-size: 1px;
+  block-size: 12px;
+  background-color: var(--ls-border, var(--c-line));
+}
+.lang-switch__globe { opacity: 0.7; }
+
+/* Header placement — inherits the header's light/dark state */
+.lang-switch--compact {
+  display: none;
+  --ls-border: color-mix(in srgb, currentColor 28%, transparent);
+  --ls-fg: var(--hd-fg);
+  --ls-fg-mute: var(--hd-fg-mute);
+  --ls-fg-active: var(--hd-fg);
+}
+.header.is-scrolled .lang-switch--compact { --ls-fg-active: var(--c-gold-light); }
+
+/* --------------------------------------------------------------------------
+   MOBILE DRAWER
+   -------------------------------------------------------------------------- */
+.drawer {
+  position: fixed;
+  inset-block-start: var(--header-h);
+  inset-block-end: 0;
+  inset-inline: 0;
+  z-index: var(--z-drawer);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--s-8);
+  padding: var(--s-8) var(--gutter) var(--s-9);
+  background-color: #16120F;
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+/* `display: flex` above outranks the UA stylesheet's `[hidden] {display:none}`
+   (same specificity, author sheet wins), so without this the closed drawer
+   stays laid out — an invisible full-screen layer eating every tap on mobile.
+   JS toggles the `hidden` attribute, so this is what actually removes it. */
+.drawer[hidden] { display: none; }
+
+.drawer.is-open { opacity: 1; transform: none; }
+
+.drawer__nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer__link {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-display);
+  font-size: var(--t-xl);
+  color: var(--c-cream);
+  padding-block: var(--s-4);
+  border-block-end: 1px solid rgba(251, 248, 243, 0.12);
+  transition: color var(--dur-fast) var(--ease), padding-inline-start var(--dur-fast) var(--ease);
+}
+.drawer__link:hover {
+  color: var(--c-gold-light);
+  padding-inline-start: var(--s-2);
+}
+
+.drawer__foot {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s-5);
+}
+
+/* Header sits above the drawer so the close button stays reachable. */
+.drawer-open .header {
+  background-color: #16120F;
+  border-block-end-color: rgba(251, 248, 243, 0.12);
+}
+.drawer .lang-switch {
+  --ls-border: rgba(251, 248, 243, 0.24);
+  --ls-fg: var(--c-cream);
+  --ls-fg-mute: rgba(251, 248, 243, 0.6);
+  --ls-fg-active: var(--c-gold-light);
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (min-width: 700px) {
+  .lang-switch--compact { display: inline-flex; }
+}
+
+/* The nav appears at 1080px, not 980px. The badge lockup is ~228px wide, and
+   brand + nav + actions measures ~1006px in Turkish — more than the 907px a
+   980px viewport leaves inside the gutters, so the actions used to overflow.
+   Measured, not guessed; re-check both numbers if the wordmark changes. */
+@media (min-width: 1080px) {
+  :root { --header-h: 88px; }
+
+  .nav { display: block; margin-inline-end: auto; }
+  .header__cta { display: inline-flex; }
+  .nav-toggle { display: none; }
+  .drawer { display: none !important; }
+
+  .brand { margin-inline-end: var(--s-6); }
+  .header__inner { gap: var(--s-6); }
+}
+
+/* In the band where the nav is present but space is tightest, the badge plus
+   "Kıvanç" carries the brand on its own and the descriptor steps aside. */
+@media (min-width: 1080px) and (max-width: 1319px) {
+  .brand__suffix { display: none; }
+}
+
+@media (min-width: 1320px) {
+  .brand { margin-inline-end: var(--s-8); }
+  .header__inner { gap: var(--s-8); }
+}

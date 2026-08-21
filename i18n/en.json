@@ -1,0 +1,356 @@
+{
+  "meta": {
+    "title": "Kıvanç Öğrenci Yurdu — Female Student Residence in Avcılar, Istanbul",
+    "description": "A private residence for female students in Avcılar, Istanbul. Secure, professionally managed rooms minutes from Istanbul's private universities."
+  },
+  "brand": {
+    "suffix": "Öğrenci Yurdu",
+    "name": "Kıvanç Öğrenci Yurdu"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "languageSwitcher": "Change language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mobileNav": "Mobile navigation",
+    "lightbox": "Photo viewer",
+    "close": "Close",
+    "prev": "Previous photo",
+    "next": "Next photo",
+    "whatsappFab": "Message us on WhatsApp"
+  },
+  "nav": {
+    "home": "Home",
+    "rooms": "Rooms",
+    "universities": "Universities",
+    "amenities": "Facilities",
+    "about": "About",
+    "gallery": "Gallery",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "cta": "Book a Room"
+  },
+  "hero": {
+    "eyebrow": "Avcılar · İstanbul",
+    "title": "A student residence that <em>feels like home</em>",
+    "lede": "A private residence for female students in the heart of Avcılar — professionally managed, secure around the clock, and a short walk from the Metrobüs that reaches five university campuses in under half an hour.",
+    "ctaPrimary": "View Rooms",
+    "ctaSecondary": "Book a Visit",
+    "imageAlt": "Students relaxing in a bright, modern residence common area",
+    "trust": {
+      "1": {
+        "value": "500+",
+        "label": "Students housed since 2013"
+      },
+      "2": {
+        "value": "5 min",
+        "label": "To the nearest campus"
+      },
+      "3": {
+        "value": "24/7",
+        "label": "Security and on-site staff"
+      },
+      "4": {
+        "value": "3",
+        "label": "Room types, one standard"
+      }
+    }
+  },
+  "rooms": {
+    "eyebrow": "Rooms & Rates",
+    "title": "Rooms made for study and rest",
+    "lede": "Three room types in a single, purpose-run building for female students — the same facilities and the same service whichever you choose. Bills, cleaning, laundry and meals are included in every one.",
+    "headCta": "Ask about availability",
+    "priceFrom": "From",
+    "priceUnit": "/ month",
+    "apply": "Apply",
+    "disclaimer": "Pricing shown is a placeholder. Final rates depend on room type, contract length and the meal plan you choose — contact us for the current price list.",
+    "amen": {
+      "wifi": "Wi-Fi",
+      "desk": "Study desk",
+      "wardrobe": "Wardrobe",
+      "ensuite": "Ensuite bath",
+      "sharedBath": "Shared bath"
+    },
+    "f1": {
+      "name": "Single Room",
+      "capacity": "1 student",
+      "desc": "Your own room with a private bathroom, a full-size desk and plenty of storage — for students who want quiet and focus.",
+      "price": "₺X,XXX",
+      "alt": "Single room with a bed, study desk and large window"
+    },
+    "f2": {
+      "name": "Shared Twin Room",
+      "capacity": "2 students",
+      "desc": "Two single beds, two desks and two wardrobes in a generous room with a shared bathroom on the floor. Our most popular choice.",
+      "price": "₺X,XXX",
+      "alt": "Shared twin room with two beds and matching study desks"
+    },
+    "f3": {
+      "name": "Shared Triple Room",
+      "capacity": "3 students",
+      "desc": "The most affordable option, without cutting corners: three separate beds, desks and wardrobes, plus the same facilities as every other room.",
+      "price": "₺X,XXX",
+      "alt": "Shared room with bunk beds and individual storage"
+    },
+    "residenceNote": "A dedicated building with keycard entry, a resident manager living on site and 24-hour camera monitoring."
+  },
+  "uni": {
+    "eyebrow": "Getting to class",
+    "title": "Close to where you study",
+    "lede": "Avcılar sits directly on the Metrobüs corridor, with İstanbul Gelişim inside the district itself and four more campuses within half an hour along the same line. Travel times below are door-to-door by public transport.",
+    "transitTitle": "On your doorstep",
+    "note": "Travel times are typical off-peak estimates by public transport and can vary with traffic and time of day.",
+    "transit": {
+      "1": "5 min walk to the Metrobüs",
+      "2": "Five campuses within 25 minutes",
+      "3": "15 min to Halkalı (Marmaray)"
+    },
+    "1": {
+      "name": "İstanbul Gelişim Üniversitesi",
+      "short": "Avcılar Campus",
+      "time": "5 min by Metrobüs"
+    },
+    "2": {
+      "name": "Beykent Üniversitesi",
+      "short": "Beylikdüzü Campus",
+      "time": "10 min by Metrobüs"
+    },
+    "3": {
+      "name": "İstanbul Aydın Üniversitesi",
+      "short": "Florya Campus",
+      "time": "15 min by Metrobüs"
+    },
+    "4": {
+      "name": "İstanbul Arel Üniversitesi",
+      "short": "Tepekent Campus",
+      "time": "20 min by Metrobüs"
+    },
+    "5": {
+      "name": "İstanbul Sabahattin Zaim Üniversitesi",
+      "short": "Halkalı Campus",
+      "time": "25 min by Metrobüs + bus"
+    },
+    "6": {
+      "name": "Bahçeşehir Üniversitesi",
+      "short": "Beşiktaş Campus",
+      "time": "55 min by Metrobüs + metro"
+    }
+  },
+  "amen": {
+    "eyebrow": "Facilities",
+    "title": "Everything included, nothing to think about",
+    "lede": "One monthly payment covers the room, the bills and the services around it — so students can put their attention where it belongs.",
+    "1": {
+      "title": "24/7 security",
+      "desc": "Staffed reception day and night, with keycard access at every entrance."
+    },
+    "2": {
+      "title": "CCTV monitoring",
+      "desc": "Cameras across all common areas and entrances, recorded and reviewed."
+    },
+    "3": {
+      "title": "Fibre Wi-Fi",
+      "desc": "High-speed fibre in every room and lounge, built to handle exam season."
+    },
+    "4": {
+      "title": "Study lounges",
+      "desc": "Quiet rooms and group tables for when your desk isn't enough."
+    },
+    "5": {
+      "title": "Cafeteria & kitchen",
+      "desc": "Daily breakfast and dinner, plus shared kitchens on every floor."
+    },
+    "6": {
+      "title": "Laundry room",
+      "desc": "Washers and dryers included in your rent — no coins, no queues."
+    },
+    "7": {
+      "title": "Fitness room",
+      "desc": "A properly equipped gym in each residence, open from early to late."
+    },
+    "8": {
+      "title": "Cleaning service",
+      "desc": "Weekly room cleaning and daily upkeep of every shared space."
+    },
+    "9": {
+      "title": "On-site management",
+      "desc": "A resident manager in the building — not a phone number in another city."
+    },
+    "10": {
+      "title": "Transport at the door",
+      "desc": "The Metrobüs, city buses and minibus routes are all a short walk from both buildings."
+    }
+  },
+  "about": {
+    "eyebrow": "About Kıvanç",
+    "title": "Built for students. Answerable to parents.",
+    "p1": "Most of our residents move to Istanbul from another city, and for their families that first year is a leap of faith. We built Kıvanç around that reality: one properly staffed building, clear rules, transparent pricing, and someone reachable whenever a parent needs an answer.",
+    "p2": "We're not a large chain. The residence is run day to day by the same family that has owned it since 2013, which is why the standards hold.",
+    "statValue": "Since 2013",
+    "statLabel": "Family-run, professionally managed",
+    "imageAlt": "Students studying together around a shared table",
+    "v1": {
+      "title": "Safety comes first",
+      "desc": "Controlled entry, camera coverage, and staff on site every hour of the day."
+    },
+    "v2": {
+      "title": "We answer in your language",
+      "desc": "Turkish and English support today, with Arabic-speaking staff for international students."
+    },
+    "v3": {
+      "title": "Transparent pricing",
+      "desc": "One monthly figure covering bills, cleaning, laundry and meals. No surprises mid-year."
+    },
+    "v4": {
+      "title": "A real community",
+      "desc": "Study groups, shared meals and events that make a new city feel smaller."
+    }
+  },
+  "gallery": {
+    "eyebrow": "Gallery",
+    "title": "A look inside",
+    "lede": "Rooms, lounges, kitchens and the spaces in between. Book a visit and we'll show you the rest in person.",
+    "cta": "Book a visit",
+    "1": {
+      "alt": "Common lounge with armchairs and floor lamps"
+    },
+    "2": {
+      "alt": "Quiet seating corner in the common lounge"
+    },
+    "3": {
+      "alt": "Study desk by a window surrounded by plants"
+    },
+    "4": {
+      "alt": "Students cooking together in a shared kitchen"
+    },
+    "5": {
+      "alt": "Study lounge with bookshelves and armchairs"
+    },
+    "6": {
+      "alt": "Fitness room with racks of free weights"
+    },
+    "7": {
+      "alt": "Residence building exterior at dusk"
+    },
+    "8": {
+      "alt": "Modern shared bathroom with a walk-in shower"
+    }
+  },
+  "test": {
+    "eyebrow": "In their words",
+    "title": "What students and parents tell us",
+    "note": "Sample testimonials shown for layout purposes — real, named reviews will replace these before launch.",
+    "1": {
+      "quote": "I moved from Gaziantep not knowing anyone. Within a week I had a study group and people to eat dinner with. The room is quiet enough to actually work in.",
+      "name": "Zeynep A.",
+      "meta": "2nd year, İstanbul Aydın Üniversitesi"
+    },
+    "2": {
+      "quote": "As a father sending his daughter to Istanbul, what mattered was being able to call and reach a person who knew her by name. That has never once failed.",
+      "name": "Mehmet Y.",
+      "meta": "Parent, Konya"
+    },
+    "3": {
+      "quote": "The commute was the deciding factor. I'm at the Metrobüs in five minutes and on campus before my first lecture without rushing.",
+      "name": "Elif D.",
+      "meta": "3rd year, İstanbul Gelişim Üniversitesi"
+    }
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Before you apply",
+    "lede": "If your question isn't here, call or message us — we answer in Turkish and English, seven days a week.",
+    "cta": "Ask us directly",
+    "1": {
+      "q": "How do I apply for a room?",
+      "a": "Send us the form at the bottom of this page or message us on WhatsApp with your name, university and preferred room type. We'll confirm availability, invite you for a visit, and hold the room with a deposit once you decide."
+    },
+    "2": {
+      "q": "How long is the contract?",
+      "a": "The standard contract runs for the academic year, from September to June. Summer stays and shorter terms are available on request, subject to availability."
+    },
+    "3": {
+      "q": "What does the monthly price include?",
+      "a": "Rent, all utilities, fibre internet, weekly room cleaning, laundry facilities, use of the study lounges and gym, and the daily meal plan. There is no separate bill at the end of the month."
+    },
+    "4": {
+      "q": "Can parents visit, and what are the security rules?",
+      "a": "Families are welcome during visiting hours and are received in the ground-floor lounge. Entry to the residence floors is by keycard and limited to residents and staff. Every entrance is monitored, and reception is staffed 24 hours a day."
+    },
+    "5": {
+      "q": "How is payment made?",
+      "a": "Monthly by bank transfer, or in instalments agreed at signing. We issue a receipt for every payment and never ask for cash without documentation."
+    },
+    "6": {
+      "q": "Is there a curfew?",
+      "a": "Yes. The building closes at 23:00 on weekdays and at midnight at weekends. A student who needs to return later, or to stay out overnight, arranges it with the resident manager in advance and her family is informed."
+    }
+  },
+  "contact": {
+    "eyebrow": "Visit & apply",
+    "title": "Come and see it for yourself",
+    "lede": "Tell us which room type you're interested in and we'll get back to you the same day with availability, current prices and a time to visit.",
+    "addressLabel": "Address",
+    "address": "Cihangir Mah., Kirazlı Cad., 34310 Avcılar / İstanbul",
+    "addressHint": "Pinned on the map below. Call us for the door number.",
+    "phoneLabel": "Phone",
+    "phone": "+90 541 590 44 45",
+    "whatsappLabel": "WhatsApp",
+    "whatsapp": "Message us on WhatsApp",
+    "emailLabel": "Email",
+    "email": "kivancogrenciyurtlari@gmail.com",
+    "hoursLabel": "Visiting hours",
+    "hours": "Every day, 09:00 – 20:00",
+    "mapTitle": "Map of Kıvanç Öğrenci Yurdu, Avcılar",
+    "mapNote": "Cihangir Mah., Avcılar — tap the pin for directions.",
+    "_comment": "SINGLE SOURCE OF TRUTH for contact details. js/i18n.js writes phoneRaw / waNumber / emailRaw into the tel:, wa.me and mailto: links, and builds both the Google Maps directions links and the embedded map iframe from mapLat / mapLng. The iframe in index.html also carries the coordinates as a no-JS fallback; tools/verify keeps the two in step.",
+    "phoneRaw": "+905415904445",
+    "waNumber": "905415904445",
+    "emailRaw": "kivancogrenciyurtlari@gmail.com",
+    "directions": "Get directions",
+    "mapLat": "40.9833101",
+    "mapLng": "28.7098463"
+  },
+  "form": {
+    "name": "Full name",
+    "namePh": "Your name",
+    "errName": "Please enter your name.",
+    "phone": "Phone",
+    "phonePh": "+90 541 590 44 45",
+    "errPhone": "Please enter a phone number we can reach you on.",
+    "email": "Email",
+    "emailPh": "you@example.com",
+    "errEmail": "Please enter a valid email address.",
+    "interest": "Room type",
+    "message": "Message",
+    "messagePh": "Which university do you attend? When would you like to move in?",
+    "submit": "Send inquiry",
+    "note": "By sending this form you agree to be contacted about your inquiry. We never share your details with anyone else.",
+    "sending": "Opening your email app…",
+    "success": "Thank you — your email app should now be open with your inquiry ready to send.",
+    "error": "Something went wrong. Please call or message us on WhatsApp instead.",
+    "mailSubject": "Room inquiry — Kıvanç Öğrenci Yurdu",
+    "roomSingle": "Single",
+    "roomTwin": "Twin",
+    "roomTriple": "Triple",
+    "errRoomType": "Please choose a room type."
+  },
+  "footer": {
+    "desc": "A private residence for female students in Avcılar, İstanbul — professionally managed, secure around the clock, and minutes from Istanbul's private university campuses.",
+    "exploreTitle": "Explore",
+    "residencesTitle": "Rooms",
+    "contactTitle": "Contact",
+    "bookVisit": "Book a visit",
+    "applyNow": "Apply now",
+    "copyright": "© 2026 Kıvanç Öğrenci Yurdu. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "social": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "youtube": "YouTube",
+      "whatsapp": "WhatsApp"
+    }
+  }
+}

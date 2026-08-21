@@ -1,0 +1,32 @@
+# OS / sync cruft
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+*.lnk
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs and local scratch
+*.log
+npm-debug.log*
+.cache/
+tmp/
+temp/
+
+# Dependencies (none today — the site is dependency-free, but keep the guard
+# in case a tool is added later)
+node_modules/
+__pycache__/
+*.pyc
+
+# NOTE: i18n/bundle.js IS committed on purpose. It is generated from
+# i18n/*.json by tools/build-i18n.py, but the site needs it at runtime to work
+# when opened from disk (file://), and there is no build step on deploy.
+# Regenerate and commit it whenever the JSON changes.

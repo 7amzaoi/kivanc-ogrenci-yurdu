@@ -1,0 +1,67 @@
+/* ==========================================================================
+   TESTIMONIALS — on the dark ink section
+   ========================================================================== */
+
+.test-grid {
+  display: grid;
+  gap: var(--s-5);
+  grid-template-columns: 1fr;
+}
+
+.test-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+  padding: var(--s-6);
+  background-color: rgba(251, 248, 243, 0.045);
+  border: 1px solid rgba(251, 248, 243, 0.12);
+  border-radius: var(--r-lg);
+  transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+.test-card:hover {
+  background-color: rgba(251, 248, 243, 0.075);
+  border-color: rgba(251, 248, 243, 0.22);
+}
+
+.test-card__quote {
+  color: var(--c-accent);
+  opacity: 0.9;
+}
+
+.test-card__quote-text {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-text);
+  font-size: var(--t-md);
+  line-height: 1.5;
+  letter-spacing: -0.012em;
+  color: rgba(251, 248, 243, 0.92);
+}
+
+.test-card__who {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-block-start: auto;
+  padding-block-start: var(--s-4);
+  border-block-start: 1px solid rgba(251, 248, 243, 0.12);
+}
+.test-card__name {
+  font-size: var(--t-sm);
+  font-weight: 600;
+  color: var(--c-cream);
+}
+.test-card__meta {
+  font-size: var(--t-xs);
+  color: rgba(251, 248, 243, 0.55);
+}
+
+.test-note {
+  margin-block-start: var(--s-7);
+  font-size: var(--t-sm);
+  color: rgba(251, 248, 243, 0.55); /* AA on --c-ink: 5.84:1 */
+  max-width: 62ch;
+}
+
+@media (min-width: 760px) {
+  .test-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-5); }
+}

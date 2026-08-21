@@ -1,0 +1,164 @@
+/* ==========================================================================
+   NEARBY UNIVERSITIES — proof-of-location card grid
+   ========================================================================== */
+
+.uni-grid {
+  display: grid;
+  gap: var(--s-4);
+  grid-template-columns: 1fr;
+}
+
+.uni-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    "logo body"
+    "times times";
+  align-items: center;
+  gap: var(--s-4) var(--s-5);
+  padding: var(--s-5);
+  background-color: var(--c-cream);
+  border: 1px solid var(--c-line-soft);
+  border-radius: var(--r-lg);
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+.uni-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sh-md);
+  border-color: var(--c-accent-line);
+}
+
+/* Logo well ---------------------------------------------------------------
+   The monogram is the visible default. Dropping a real file at
+   assets/logos/<slug>.svg layers it on top and hides the monogram; if the
+   file is missing the <img> removes itself (see the onerror in index.html).
+   ------------------------------------------------------------------------- */
+.uni-card__logo {
+  grid-area: logo;
+  position: relative;
+  display: grid;
+  place-items: center;
+  /* Wider than tall on purpose: real university marks are mostly horizontal
+     wordmark lockups (Gelişim's is 2.4:1). In a square well, `contain` would
+     shrink those to an illegible strip while square crests filled the box. */
+  inline-size: 92px;
+  block-size: 64px;
+  flex: none;
+  background-color: var(--c-sand);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+.uni-card__monogram {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-text);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--c-accent);
+}
+.uni-card__logo img {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+  padding: var(--s-2);
+  background-color: var(--c-sand);
+}
+
+.uni-card__body { grid-area: body; min-width: 0; }
+
+.uni-card__name {
+  font-size: var(--t-md);
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-text);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--c-ink);
+}
+.uni-card__short {
+  font-size: var(--t-xs);
+  color: var(--c-ink-faint);
+  margin-block-start: var(--s-1);
+}
+
+.uni-card__times {
+  grid-area: times;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+  padding-block-start: var(--s-4);
+  border-block-start: 1px solid var(--c-line-soft);
+}
+.uni-card__times li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: var(--c-ink-soft);
+}
+.uni-card__times .icon { color: var(--c-accent); }
+
+/* --------------------------------------------------------------------------
+   TRANSIT STRIP — the "you can walk to it" reassurance
+   -------------------------------------------------------------------------- */
+.uni-transit {
+  display: grid;
+  gap: var(--s-4);
+  align-items: center;
+  margin-block-start: var(--s-8);
+  padding: var(--s-6);
+  background-color: var(--c-ink);
+  color: rgba(251, 248, 243, 0.8);
+  border-radius: var(--r-lg);
+}
+
+.uni-transit__title {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-display);
+  font-size: var(--t-lg);
+  color: var(--c-cream);
+  letter-spacing: -0.02em;
+}
+
+.uni-transit__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3) var(--s-6);
+}
+.uni-transit__list li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  font-size: var(--t-sm);
+}
+.uni-transit__list .icon { color: var(--c-gold-light); }
+
+.uni-note {
+  margin-block-start: var(--s-5);
+  font-size: var(--t-sm);
+  color: var(--c-ink-faint);
+  max-width: 62ch;
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (min-width: 640px) {
+  .uni-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1000px) {
+  .uni-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-5); }
+  .uni-card { padding: var(--s-6); }
+
+  .uni-transit {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--s-8);
+    padding: var(--s-6) var(--s-8);
+  }
+}

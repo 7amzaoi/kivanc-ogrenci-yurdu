@@ -164,6 +164,40 @@
     });
   }
 
+  /* ---- figures further down the page ---------------------------------- */
+  /**
+   * Anything marked [data-count] counts up the first time it scrolls into
+   * view, rather than on load like the hero figures — a number that finished
+   * counting before the reader arrived may as well not have animated.
+   */
+  function initFacts() {
+    var els = $$("[data-count]");
+    if (!els.length || prefersReducedMotion || !("IntersectionObserver" in window)) return;
+
+    var armed = false;
+    afterTranslation(function () {
+      if (armed) return;            // i18n:changed fires again on every switch
+      armed = true;
+
+      var played = false;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting || played) return;
+          played = true;
+          io.disconnect();
+          els.forEach(function (el, i) {
+            var spec = parseStat(el.textContent.trim());
+            if (!spec) return;
+            el.textContent = spec.prefix + "0" + spec.suffix;
+            setTimeout(function () { countUp(el, spec, 1200); }, i * 130);
+          });
+        });
+      }, { threshold: 0.5 });
+
+      els.forEach(function (el) { io.observe(el); });
+    });
+  }
+
   /* ======================================================================
      SCROLL EXPAND
      A framed image that opens to full bleed as the page scrolls past it,
@@ -707,6 +741,7 @@
     initHeader();
     initHeadline();
     initStats();
+    initFacts();
     initScrollExpand();
     initDrawer();
     initAccordion();

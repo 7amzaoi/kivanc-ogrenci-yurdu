@@ -60,6 +60,8 @@
       <symbol id="i-gym" viewBox="0 0 24 24"><path d="M6.5 6.5v11M3.5 9v6M17.5 6.5v11M20.5 9v6M6.5 12h11"/></symbol>
       <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 2l1.9 5.6L19.5 9.5 13.9 11.4 12 17l-1.9-5.6L4.5 9.5l5.6-1.9zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
       <symbol id="i-headset" viewBox="0 0 24 24"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><path d="M21 15a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2zM3 15a2 2 0 0 0 2 2h1v-6H5a2 2 0 0 0-2 2zM21 17v1a3 3 0 0 1-3 3h-4"/></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></symbol>
+      <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 2.7 6.6 8.1a7.6 7.6 0 1 0 10.8 0z"/><path d="M12 18a3.5 3.5 0 0 1-3.5-3.5"/></symbol>
       <symbol id="i-bus" viewBox="0 0 24 24"><path d="M4 5h16v11H4zM4 16v3h3v-3M17 16v3h3v-3M2 9h2M20 9h2M4 12h16"/><circle cx="7.5" cy="13.5" r=".6"/><circle cx="16.5" cy="13.5" r=".6"/></symbol>
       <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4" r="2"/><path d="M11 21l1.5-6-3-2.5V9l4-1.5 3 2.5 2.5 1M9.5 12.5L7 15l-1 6"/></symbol>
       <symbol id="i-metro" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="13" rx="3"/><path d="M5 10h14M8 20l-2 2M16 20l2 2M8 16.5h.01M16 16.5h.01"/></symbol>
@@ -214,7 +216,7 @@
               <span class="trust__label" data-i18n="hero.trust.3.label">Security and on-site staff</span>
             </li>
             <li class="trust__item">
-              <span class="trust__value" data-i18n="hero.trust.4.value">3</span>
+              <span class="trust__value" data-i18n="hero.trust.4.value">4</span>
               <span class="trust__label" data-i18n="hero.trust.4.label">Room types, one standard</span>
             </li>
           </ul>
@@ -583,48 +585,58 @@
           </li>
           <li class="amen-card" data-reveal style="--reveal-delay:50ms">
             <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-camera"></use></svg>
-            <h3 class="amen-card__title" data-i18n="amen.2.title">CCTV monitoring</h3>
-            <p class="amen-card__desc" data-i18n="amen.2.desc">Cameras across all common areas and entrances, recorded and reviewed.</p>
+            <h3 class="amen-card__title" data-i18n="amen.2.title">24/7 camera recording</h3>
+            <p class="amen-card__desc" data-i18n="amen.2.desc">Every common area and entrance is recorded around the clock and reviewed regularly.</p>
           </li>
           <li class="amen-card" data-reveal style="--reveal-delay:100ms">
+            <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <h3 class="amen-card__title" data-i18n="amen.11.title">Entry and exit notifications</h3>
+            <p class="amen-card__desc" data-i18n="amen.11.desc">Every entry and exit is logged. Families who want it are told instantly on WhatsApp or Telegram.</p>
+          </li>
+          <li class="amen-card" data-reveal style="--reveal-delay:150ms">
             <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-wifi"></use></svg>
             <h3 class="amen-card__title" data-i18n="amen.3.title">Fibre Wi-Fi</h3>
             <p class="amen-card__desc" data-i18n="amen.3.desc">High-speed fibre in every room and lounge, built to handle exam season.</p>
           </li>
-          <li class="amen-card" data-reveal style="--reveal-delay:150ms">
-            <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-book"></use></svg>
+          <li class="amen-card" data-reveal>
+            <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-bed"></use></svg>
             <h3 class="amen-card__title" data-i18n="amen.4.title">Hotel-style rooms</h3>
             <p class="amen-card__desc" data-i18n="amen.4.desc">A TV, a mini fridge and a private bathroom in every room, with brand-new furniture.</p>
           </li>
-          <li class="amen-card" data-reveal>
+          <li class="amen-card" data-reveal style="--reveal-delay:50ms">
             <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-coffee"></use></svg>
             <h3 class="amen-card__title" data-i18n="amen.5.title">Breakfast included</h3>
             <p class="amen-card__desc" data-i18n="amen.5.desc">Breakfast every morning is part of the monthly fee, with no separate charge.</p>
           </li>
-          <li class="amen-card" data-reveal style="--reveal-delay:50ms">
+          <li class="amen-card" data-reveal style="--reveal-delay:100ms">
+            <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-droplet"></use></svg>
+            <h3 class="amen-card__title" data-i18n="amen.12.title">Hot water, always</h3>
+            <p class="amen-card__desc" data-i18n="amen.12.desc">Hot water at any hour of the day, included in the monthly fee.</p>
+          </li>
+          <li class="amen-card" data-reveal style="--reveal-delay:150ms">
             <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-laundry"></use></svg>
             <h3 class="amen-card__title" data-i18n="amen.6.title">Laundry room</h3>
             <p class="amen-card__desc" data-i18n="amen.6.desc">Washers and dryers included in your rent — no coins, no queues.</p>
           </li>
-          <li class="amen-card" data-reveal style="--reveal-delay:100ms">
-            <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-gym"></use></svg>
-            <h3 class="amen-card__title" data-i18n="amen.7.title">See it before you come</h3>
-            <p class="amen-card__desc" data-i18n="amen.7.desc">Can't visit in person? We'll walk you through the rooms live on a video call.</p>
-          </li>
-          <li class="amen-card" data-reveal style="--reveal-delay:150ms">
+          <li class="amen-card" data-reveal>
             <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-sparkle"></use></svg>
             <h3 class="amen-card__title" data-i18n="amen.8.title">Cleaning service</h3>
             <p class="amen-card__desc" data-i18n="amen.8.desc">Weekly room cleaning and daily upkeep of every shared space.</p>
           </li>
-          <li class="amen-card" data-reveal>
+          <li class="amen-card" data-reveal style="--reveal-delay:50ms">
             <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-headset"></use></svg>
             <h3 class="amen-card__title" data-i18n="amen.9.title">On-site management</h3>
             <p class="amen-card__desc" data-i18n="amen.9.desc">A resident manager in the building — not a phone number in another city.</p>
           </li>
-          <li class="amen-card" data-reveal style="--reveal-delay:50ms">
+          <li class="amen-card" data-reveal style="--reveal-delay:100ms">
+            <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+            <h3 class="amen-card__title" data-i18n="amen.7.title">See it before you come</h3>
+            <p class="amen-card__desc" data-i18n="amen.7.desc">Can't visit in person? We'll walk you through the rooms live on a video call.</p>
+          </li>
+          <li class="amen-card" data-reveal style="--reveal-delay:150ms">
             <svg class="icon icon--lg amen-card__icon" aria-hidden="true"><use href="#i-bus"></use></svg>
             <h3 class="amen-card__title" data-i18n="amen.10.title">Transport at the door</h3>
-            <p class="amen-card__desc" data-i18n="amen.10.desc">The Metrobüs, city buses and minibus routes are all a short walk from both buildings.</p>
+            <p class="amen-card__desc" data-i18n="amen.10.desc">The Metrobüs, city buses and minibus routes are all a short walk from the door.</p>
           </li>
         </ul>
       </div>
@@ -635,16 +647,33 @@
          ==================================================================== -->
     <section class="section about" id="about">
       <div class="container">
-        <div class="about__intro" data-reveal>
-          <p class="eyebrow" data-i18n="about.eyebrow">About Kıvanç</p>
-          <h2 data-i18n="about.title">Built for students. Answerable to parents.</h2>
-          <p class="about__lede" data-i18n="about.p1">Most of our residents move to Istanbul from another city, and for their families that first year is a leap of faith. We built Kıvanç around that reality: one properly staffed building, clear rules, transparent pricing, and someone reachable whenever a parent needs an answer.</p>
-          <p data-i18n="about.p2">We're not a large chain. The residence is run day to day by the same family that has owned it since 2013, which is why the standards hold.</p>
+        <div class="about__intro">
 
-          <p class="about__stat">
-            <span class="about__stat-value" data-i18n="about.statValue">Since 2013</span>
-            <span class="about__stat-label" data-i18n="about.statLabel">Family-run, professionally managed</span>
-          </p>
+          <div class="about__head" data-reveal>
+            <p class="eyebrow" data-i18n="about.eyebrow">About Kıvanç</p>
+            <h2 data-i18n="about.title">Built for students. Answerable to parents.</h2>
+
+            <p class="about__seal">
+              <span class="about__seal-value" data-i18n="about.sealValue">Since 2013</span>
+              <span class="about__seal-label" data-i18n="about.sealLabel">Family-run, professionally managed</span>
+            </p>
+          </div>
+
+          <div class="about__body" data-reveal style="--reveal-delay:90ms">
+            <p class="about__lede" data-i18n="about.p1">Most of our residents move to Istanbul from another city, and for their families that first year is a leap of faith. We built Kıvanç around that reality: one properly staffed building, clear rules, transparent pricing, and someone reachable whenever a parent needs an answer.</p>
+            <p class="about__text" data-i18n="about.p2">We're not a large chain. The residence is run day to day by the same family that has owned it since 2013, which is why the standards hold.</p>
+
+            <ul class="about__facts">
+              <li class="fact">
+                <span class="fact__value" data-count data-i18n="about.fact1.value">45</span>
+                <span class="fact__label" data-i18n="about.fact1.label">rooms in the building</span>
+              </li>
+              <li class="fact">
+                <span class="fact__value" data-count data-i18n="about.fact2.value">5</span>
+                <span class="fact__label" data-i18n="about.fact2.label">campuses within 30 minutes</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -674,7 +703,7 @@
                 <svg class="icon value-item__icon" aria-hidden="true"><use href="#i-shield"></use></svg>
                 <div>
                   <h3 class="value-item__title" data-i18n="about.v1.title">Safety comes first</h3>
-                  <p class="value-item__desc" data-i18n="about.v1.desc">Controlled entry, camera coverage, and staff on site every hour of the day.</p>
+                  <p class="value-item__desc" data-i18n="about.v1.desc">Controlled entry, 24/7 camera recording and staff on site at every hour — and entries and exits reported to the family as they happen.</p>
                 </div>
               </li>
               <li class="value-item" style="--i:1">
@@ -909,7 +938,7 @@
                 </button>
               </h3>
               <div class="faq-item__panel" id="faq-p4" role="region" aria-labelledby="faq-t4" hidden>
-                <p data-i18n="faq.4.a">Families are welcome during visiting hours and are received in the ground-floor lounge. Entry to the residence floors is by keycard and limited to residents and staff. Every entrance is monitored, and reception is staffed 24 hours a day.</p>
+                <p data-i18n="faq.4.a">Families are welcome during visiting hours and are received in the ground-floor lounge. Entry to the residence floors is by keycard and limited to residents and staff. Every entrance is recorded around the clock, reception is staffed 24 hours a day, and each student's entry and exit can be sent straight to her family on WhatsApp or Telegram.</p>
               </div>
             </li>
             <li class="faq-item">

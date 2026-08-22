@@ -54,7 +54,10 @@
   .amen-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
+/* Twelve facilities, so the column count must divide twelve: 1, 2, 3 or 4.
+   This grid used to go 5-up, which left the last two stranded on their own
+   row — and 3-up stranded one. Do not add a 5-up step. */
 @media (min-width: 1180px) {
-  .amen-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .amen-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .amen-card { padding: var(--s-6) var(--s-5); }
 }

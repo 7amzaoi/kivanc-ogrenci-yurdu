@@ -51,7 +51,7 @@
         "label": "Güvenlik ve bina içi personel"
       },
       "4": {
-        "value": "3",
+        "value": "4",
         "label": "Oda tipi, tek standart"
       }
     }
@@ -173,8 +173,8 @@
       "desc": "Gece gündüz personelli resepsiyon ve tüm girişlerde kartlı geçiş sistemi."
     },
     "2": {
-      "title": "Kamera takibi",
-      "desc": "Tüm ortak alanlarda ve girişlerde kayıt altına alınan, düzenli izlenen kameralar."
+      "title": "7/24 kamera kaydı",
+      "desc": "Tüm ortak alanlar ve girişler gün boyu kesintisiz kaydedilir ve düzenli olarak izlenir."
     },
     "3": {
       "title": "Fiber Wi-Fi",
@@ -206,7 +206,15 @@
     },
     "10": {
       "title": "Kapıda toplu taşıma",
-      "desc": "Metrobüs, otobüs ve minibüs hatları; her iki binaya da kısa bir yürüyüş mesafesinde."
+      "desc": "Metrobüs, otobüs ve minibüs hatları; binaya kısa bir yürüyüş mesafesinde."
+    },
+    "11": {
+      "title": "Giriş-çıkış bildirimi",
+      "desc": "Öğrencinin binaya her giriş ve çıkışı kaydedilir. İsteyen aileye WhatsApp veya Telegram üzerinden anında bildirilir."
+    },
+    "12": {
+      "title": "Kesintisiz sıcak su",
+      "desc": "Günün her saatinde sıcak su; aylık ücrete dahildir."
     }
   },
   "about": {
@@ -214,12 +222,10 @@
     "title": "Öğrenci için kurulduk. Aileye hesap veriyoruz.",
     "p1": "Öğrencilerimizin çoğu İstanbul'a başka bir şehirden geliyor ve aileleri için o ilk yıl büyük bir güven meselesi. Kıvanç'ı tam da bu gerçeğin üzerine kurduk: gerçekten personelli tek bir bina, net kurallar, şeffaf fiyatlandırma ve bir veli soru sorduğunda her zaman ulaşılabilen bir muhatap.",
     "p2": "Büyük bir zincir değiliz. Yurdu, 2013'ten bu yana sahibi olan aile günlük olarak kendisi yönetiyor; standartların korunmasının sebebi de bu.",
-    "statValue": "2013'ten beri",
-    "statLabel": "Aile işletmesi, profesyonel yönetim",
     "imageAlt": "Ortak bir masanın etrafında birlikte ders çalışan öğrenciler",
     "v1": {
       "title": "Önce güvenlik",
-      "desc": "Kontrollü giriş, kamera kapsaması ve günün her saatinde binada personel."
+      "desc": "Kontrollü giriş, 7/24 kamera kaydı ve günün her saatinde binada personel; giriş-çıkışlar anında aileye bildirilir."
     },
     "v2": {
       "title": "Sizin dilinizden konuşuyoruz",
@@ -235,7 +241,17 @@
     },
     "tagline": "Başarılı Bir Gelecek İçin",
     "scrollHint": "Kaydırın",
-    "overlayTitle": "Günlük hayatta bunun karşılığı"
+    "overlayTitle": "Günlük hayatta bunun karşılığı",
+    "sealValue": "2013'ten beri",
+    "sealLabel": "Aile işletmesi, profesyonel yönetim",
+    "fact1": {
+      "value": "45",
+      "label": "binadaki oda sayısı"
+    },
+    "fact2": {
+      "value": "5",
+      "label": "kampüs 30 dakika içinde"
+    }
   },
   "gallery": {
     "eyebrow": "Galeri",
@@ -306,7 +322,7 @@
     },
     "4": {
       "q": "Veliler ziyaret edebilir mi, güvenlik kuralları nedir?",
-      "a": "Aileleri ziyaret saatleri içinde memnuniyetle ağırlıyor ve giriş katındaki salonda karşılıyoruz. Yatakhane katlarına giriş kartlıdır ve yalnızca öğrenciler ile personel içindir. Tüm girişler kamerayla izlenir, resepsiyon 24 saat personellidir."
+      "a": "Aileleri ziyaret saatleri içinde memnuniyetle ağırlıyor ve giriş katındaki salonda karşılıyoruz. Yatakhane katlarına giriş kartlıdır ve yalnızca öğrenciler ile personel içindir. Tüm girişler gün boyu kesintisiz kaydedilir, resepsiyon 24 saat personellidir ve öğrencinin giriş-çıkışı istenirse WhatsApp veya Telegram üzerinden doğrudan ailesine iletilir."
     },
     "5": {
       "q": "Ödeme nasıl yapılıyor?",

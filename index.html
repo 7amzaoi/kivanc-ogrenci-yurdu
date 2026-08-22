@@ -635,58 +635,76 @@
          ==================================================================== -->
     <section class="section about" id="about">
       <div class="container">
-        <div class="about__grid">
+        <div class="about__intro" data-reveal>
+          <p class="eyebrow" data-i18n="about.eyebrow">About Kıvanç</p>
+          <h2 data-i18n="about.title">Built for students. Answerable to parents.</h2>
+          <p class="about__lede" data-i18n="about.p1">Most of our residents move to Istanbul from another city, and for their families that first year is a leap of faith. We built Kıvanç around that reality: one properly staffed building, clear rules, transparent pricing, and someone reachable whenever a parent needs an answer.</p>
+          <p data-i18n="about.p2">We're not a large chain. The residence is run day to day by the same family that has owned it since 2013, which is why the standards hold.</p>
 
-          <div class="about__media" data-reveal>
-            <div class="media media--4x5">
-              <!-- PLACEHOLDER IMAGE: replace with real property photo (residence exterior or staff/student portrait) -->
-              <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=900&q=80"
-                   data-i18n-attr="alt:about.imageAlt"
-                   alt="Students studying together around a shared table"
-                   loading="lazy" width="900" height="1125" />
-            </div>
-            <div class="about__stat">
-              <span class="about__stat-value" data-i18n="about.statValue">Since 2013</span>
-              <span class="about__stat-label" data-i18n="about.statLabel">Family-run, professionally managed</span>
-            </div>
-          </div>
+          <p class="about__stat">
+            <span class="about__stat-value" data-i18n="about.statValue">Since 2013</span>
+            <span class="about__stat-label" data-i18n="about.statLabel">Family-run, professionally managed</span>
+          </p>
+        </div>
+      </div>
 
-          <div class="about__content" data-reveal style="--reveal-delay:80ms">
-            <p class="eyebrow" data-i18n="about.eyebrow">About Kıvanç</p>
-            <h2 data-i18n="about.title">Built for students. Answerable to parents.</h2>
-            <p class="about__lede" data-i18n="about.p1">Most of our residents move to Istanbul from another city, and for their families that first year is a leap of faith. We built Kıvanç around that reality: one properly staffed building, clear rules, transparent pricing, and someone reachable whenever a parent needs an answer.</p>
-            <p data-i18n="about.p2">We're not a large chain. The residence is run day to day by the same family that has owned it since 2013, which is why the standards hold.</p>
+      <!-- Scroll-expand stage. The frame opens to full bleed as the page
+           scrolls past it; js/main.js drives it. Config lives in data-*
+           attributes so it can be tuned without touching the script. -->
+      <div class="scroll-expand" data-scroll-expand
+           data-start-width="46" data-start-height="62" data-start-radius="10"
+           data-media-zoom="1.3" data-scroll-distance="1.15" data-hold-distance="0.4"
+           data-smoothing="0.09" data-overlay-scrim="1">
+        <div class="scroll-expand__track">
+          <div class="scroll-expand__stage">
 
-            <ul class="value-list">
-              <li class="value-item">
+            <div class="scroll-expand__frame">
+              <!-- PLACEHOLDER IMAGE: replace with real property photo (residence exterior or student life) -->
+              <img class="scroll-expand__media"
+                   src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=2000&q=80"
+                   data-i18n-attr="alt:about.imageAlt" alt="Students studying together around a shared table"
+                   loading="lazy" width="2000" height="1333" draggable="false" />
+              <div class="scroll-expand__scrim" aria-hidden="true"></div>
+
+              <div class="scroll-expand__overlay">
+                <div class="container">
+                  <p class="scroll-expand__kicker" data-i18n="about.overlayTitle">What that looks like day to day</p>
+                  <ul class="value-list">
+              <li class="value-item" style="--i:0">
                 <svg class="icon value-item__icon" aria-hidden="true"><use href="#i-shield"></use></svg>
                 <div>
                   <h3 class="value-item__title" data-i18n="about.v1.title">Safety comes first</h3>
                   <p class="value-item__desc" data-i18n="about.v1.desc">Controlled entry, camera coverage, and staff on site every hour of the day.</p>
                 </div>
               </li>
-              <li class="value-item">
+              <li class="value-item" style="--i:1">
                 <svg class="icon value-item__icon" aria-hidden="true"><use href="#i-headset"></use></svg>
                 <div>
                   <h3 class="value-item__title" data-i18n="about.v2.title">We answer in your language</h3>
                   <p class="value-item__desc" data-i18n="about.v2.desc">Turkish and English support today, with Arabic-speaking staff for international students.</p>
                 </div>
               </li>
-              <li class="value-item">
+              <li class="value-item" style="--i:2">
                 <svg class="icon value-item__icon" aria-hidden="true"><use href="#i-check"></use></svg>
                 <div>
                   <h3 class="value-item__title" data-i18n="about.v3.title">Transparent pricing</h3>
                   <p class="value-item__desc" data-i18n="about.v3.desc">One monthly figure covering bills, cleaning, laundry and meals. No surprises mid-year.</p>
                 </div>
               </li>
-              <li class="value-item">
+              <li class="value-item" style="--i:3">
                 <svg class="icon value-item__icon" aria-hidden="true"><use href="#i-users"></use></svg>
                 <div>
                   <h3 class="value-item__title" data-i18n="about.v4.title">A real community</h3>
                   <p class="value-item__desc" data-i18n="about.v4.desc">Study groups, shared meals and events that make a new city feel smaller.</p>
                 </div>
               </li>
-            </ul>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <p class="scroll-expand__title" data-i18n="about.tagline">For a successful future</p>
+            <p class="scroll-expand__hint" data-i18n="about.scrollHint">Scroll</p>
           </div>
         </div>
       </div>

@@ -238,7 +238,10 @@ window.I18N_BUNDLE = {
       "v4": {
         "title": "A real community",
         "desc": "Study groups, shared meals and events that make a new city feel smaller."
-      }
+      },
+      "tagline": "For a successful future",
+      "scrollHint": "Scroll",
+      "overlayTitle": "What that looks like day to day"
     },
     "gallery": {
       "eyebrow": "Gallery",
@@ -663,7 +666,10 @@ window.I18N_BUNDLE = {
       "v4": {
         "title": "Gerçek bir topluluk",
         "desc": "Yeni bir şehri küçültecek çalışma grupları, ortak sofralar ve etkinlikler."
-      }
+      },
+      "tagline": "Başarılı Bir Gelecek İçin",
+      "scrollHint": "Kaydırın",
+      "overlayTitle": "Günlük hayatta bunun karşılığı"
     },
     "gallery": {
       "eyebrow": "Galeri",

@@ -158,6 +158,50 @@ which only makes sense per person. Worth confirming in writing before launch.
 
 ---
 
+## The About section's scroll-expand
+
+The photograph in About starts as a small framed rectangle and opens to full
+bleed as the page scrolls past it, while the brand tagline lifts away and the
+four value props fade in over the picture.
+
+The technique is taken from the React `ScrollExpand` component on
+[reactbits.dev](https://reactbits.dev). This project has no framework and no
+build step, so the component was **not** copied — it was reimplemented in
+`js/main.js` (`initScrollExpand`) keeping the same maths: smoothstep easing, a
+`clip-path: inset()` frame, a counter-zoom on the media so the picture appears
+to sit still while the window onto it grows, and a sticky stage inside a tall
+track that supplies the scroll distance.
+
+Tuning lives in `data-*` attributes on the element in `index.html`, so it can be
+adjusted without touching the script:
+
+| attribute | default | meaning |
+|---|---|---|
+| `data-start-width` / `data-start-height` | 46 / 62 | resting frame size, % of the stage |
+| `data-start-radius` / `data-end-radius` | 10 / 0 | corner radius, px |
+| `data-media-zoom` | 1.3 | zoom at rest; eases to 1 |
+| `data-scroll-distance` | 1.15 | length of the expansion, in viewport heights |
+| `data-hold-distance` | 0.4 | extra scroll held at full bleed |
+| `data-smoothing` | 0.09 | follow time in seconds; 0 locks to the scrollbar |
+| `data-overlay-scrim` | 1 | strength of the scrim that fades in behind the copy |
+
+**The scrim is not decoration.** The value props sit on top of a photograph, so
+the copy band is weighted to near-opaque ink rather than a light wash — contrast
+there has to be predictable rather than lucky. Measured against the rendered
+pixels, the worst pairing is 9.9:1 and the rest 10–16:1, and it stays safe if the
+photograph is swapped.
+
+Three states, all verified:
+
+- **normal** — the expansion runs on scroll
+- **`prefers-reduced-motion`** — the script collapses the track and shows the
+  finished state, so the section becomes an ordinary full-bleed band instead of
+  a long stretch of empty scrolling
+- **no JavaScript** — nothing sets the inline styles, so CSS falls back to a
+  plain framed image with the copy visible over it
+
+---
+
 ## Contact details — change them in ONE place
 
 The phone, WhatsApp number and email are **not** hardcoded in the HTML. They live at the

@@ -1,7 +1,7 @@
 /* ==========================================================================
    main.js — interaction layer
    Sticky header · hero entrance · mobile drawer · FAQ accordion ·
-   gallery lightbox · scroll reveal · inquiry form
+   gallery lightbox · scroll reveal · scroll-expand · inquiry form
    All modules are independent; a missing element simply skips its module.
    ========================================================================== */
 
@@ -162,6 +162,151 @@
         setTimeout(function () { countUp(el, spec, 1400); }, 200 + i * 110);
       });
     });
+  }
+
+  /* ======================================================================
+     SCROLL EXPAND
+     A framed image that opens to full bleed as the page scrolls past it,
+     with a headline that lifts away and overlay content that fades in.
+
+     Ported from the React ScrollExpand component (reactbits.dev) — this
+     project has no framework and no build step, so the technique is kept
+     and the implementation is rewritten: same smoothstep easing, clip-path
+     inset frame, counter-zoom on the media, and a sticky stage inside a
+     tall track that supplies the scroll distance.
+     ====================================================================== */
+  function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
+
+  function smoothstep(edge0, edge1, x) {
+    var t = clamp((x - edge0) / ((edge1 - edge0) || 1e-6), 0, 1);
+    return t * t * (3 - 2 * t);
+  }
+
+  function initScrollExpand() {
+    var root = $("[data-scroll-expand]");
+    if (!root) return;
+
+    var track   = $(".scroll-expand__track", root);
+    var stage   = $(".scroll-expand__stage", root);
+    var frame   = $(".scroll-expand__frame", root);
+    var media   = $(".scroll-expand__media", root);
+    var scrim   = $(".scroll-expand__scrim", root);
+    var title   = $(".scroll-expand__title", root);
+    var hint    = $(".scroll-expand__hint", root);
+    var overlay = $(".scroll-expand__overlay", root);
+    if (!track || !stage || !frame || !media) return;
+
+    function num(name, fallback) {
+      var v = parseFloat(root.getAttribute("data-" + name));
+      return isFinite(v) ? v : fallback;
+    }
+
+    var cfg = {
+      startWidth:     num("start-width", 42),
+      startHeight:    num("start-height", 58),
+      startRadius:    num("start-radius", 10),
+      endRadius:      num("end-radius", 0),
+      mediaZoom:      num("media-zoom", 1.35),
+      scrollDistance: num("scroll-distance", 1.2),
+      holdDistance:   num("hold-distance", 0.35),
+      smoothing:      num("smoothing", 0.1),
+      overlayScrim:   num("overlay-scrim", 0.45)
+    };
+
+    var raf = 0, current = 0, target = 0, stageH = 0, running = false;
+
+    function applyProgress(p) {
+      var e = smoothstep(0, 1, p);
+
+      var w = cfg.startWidth + (100 - cfg.startWidth) * e;
+      var h = cfg.startHeight + (100 - cfg.startHeight) * e;
+      var ix = Math.max(0, (100 - w) / 2);
+      var iy = Math.max(0, (100 - h) / 2);
+      var r = cfg.startRadius + (cfg.endRadius - cfg.startRadius) * e;
+      frame.style.clipPath = "inset(" + iy + "% " + ix + "% " + iy + "% " + ix + "% round " + r + "px)";
+
+      // The media counter-zooms as the frame opens, so the picture appears to
+      // sit still while the window onto it grows.
+      media.style.transform = "scale(" + (cfg.mediaZoom + (1 - cfg.mediaZoom) * e) + ")";
+
+      if (scrim) scrim.style.opacity = String(cfg.overlayScrim * e);
+
+      if (title) {
+        var out = smoothstep(0.4, 0.88, p);
+        title.style.opacity = String(1 - out);
+        title.style.transform = "translate3d(0," + (-28 * out) + "px,0) scale(" + (1 + 0.06 * out) + ")";
+      }
+      if (hint) {
+        var gone = smoothstep(0, 0.12, p);
+        hint.style.opacity = String(1 - gone);
+        hint.style.transform = "translate3d(0," + (8 * gone) + "px,0)";
+      }
+      if (overlay) {
+        var inn = smoothstep(0.68, 1, p);
+        overlay.style.opacity = String(inn);
+        overlay.style.transform = "translate3d(0," + (18 * (1 - inn)) + "px,0)";
+        // Only clickable once it has actually arrived.
+        overlay.style.pointerEvents = inn > 0.9 ? "auto" : "none";
+      }
+    }
+
+    function measure() {
+      stageH = window.innerHeight;
+      stage.style.height = stageH + "px";
+      track.style.height =
+        (stageH * (1 + Math.max(0, cfg.scrollDistance) + Math.max(0, cfg.holdDistance))) + "px";
+      stage.style.setProperty("--se-title-size",
+        clamp(root.clientWidth * 0.06, 24, 68) + "px");
+    }
+
+    function readProgress() {
+      var span = stageH * Math.max(0.01, cfg.scrollDistance);
+      return clamp(-track.getBoundingClientRect().top / span, 0, 1);
+    }
+
+    function tick(){
+      var k = cfg.smoothing <= 0 ? 1 : 1 - Math.exp(-1 / (60 * cfg.smoothing));
+      current += (target - current) * k;
+      if (Math.abs(target - current) < 0.0004) { current = target; running = false; }
+      applyProgress(current);
+      raf = running ? requestAnimationFrame(tick) : 0;
+    }
+
+    function onScroll() {
+      target = readProgress();
+      if (cfg.smoothing <= 0) { current = target; applyProgress(current); return; }
+      if (running) return;
+      running = true;
+      if (!raf) raf = requestAnimationFrame(tick);
+    }
+
+    function onResize() {
+      measure();
+      target = current = readProgress();
+      applyProgress(current);
+    }
+
+    if (prefersReducedMotion) {
+      // No scroll choreography: show the finished state and collapse the
+      // track so the section does not become a long stretch of empty scroll.
+      root.classList.add("is-static");
+      stage.style.height = "";
+      track.style.height = "";
+      applyProgress(1);
+      return;
+    }
+
+    root.classList.add("is-live");
+    measure();
+    target = current = readProgress();
+    applyProgress(current);
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
+    if ("ResizeObserver" in window) new ResizeObserver(onResize).observe(root);
+
+    // The overlay holds translated copy; a language switch can reflow it.
+    document.addEventListener("i18n:changed", onResize);
   }
 
   /* ======================================================================
@@ -562,6 +707,7 @@
     initHeader();
     initHeadline();
     initStats();
+    initScrollExpand();
     initDrawer();
     initAccordion();
     initLightbox();

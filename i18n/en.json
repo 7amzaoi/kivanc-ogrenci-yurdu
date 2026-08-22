@@ -232,7 +232,10 @@
     "v4": {
       "title": "A real community",
       "desc": "Study groups, shared meals and events that make a new city feel smaller."
-    }
+    },
+    "tagline": "For a successful future",
+    "scrollHint": "Scroll",
+    "overlayTitle": "What that looks like day to day"
   },
   "gallery": {
     "eyebrow": "Gallery",

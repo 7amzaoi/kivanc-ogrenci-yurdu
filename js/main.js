@@ -392,7 +392,8 @@
       }
 
       var t = window.I18N ? window.I18N.t : function (k) { return k; };
-      var roomKeys = { single: "form.roomSingle", twin: "form.roomTwin", triple: "form.roomTriple" };
+      var roomKeys = { single: "form.roomSingle", twin: "form.roomTwin",
+                       triple: "form.roomTriple", quad: "form.roomQuad" };
       var roomType = form.querySelector('input[name="roomType"]:checked').value;
       var roomLabel = t(roomKeys[roomType] || "form.roomSingle");
 

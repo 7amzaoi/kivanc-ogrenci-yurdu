@@ -1,0 +1,334 @@
+/* ==========================================================================
+   ROOMS PAGE (rooms.html)
+   Page head · alternating room rows · rate table · features · included · CTA
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   PAGE HEAD
+   A dark band under the fixed charcoal header, so the header has something to
+   sit on from the very top of a subpage (there is no full-bleed hero here).
+   -------------------------------------------------------------------------- */
+.page-head {
+  background-color: var(--c-ink);
+  color: rgba(251, 248, 243, 0.72);
+  padding-block: calc(var(--header-h) + var(--s-9)) var(--s-9);
+}
+
+.page-head__back {
+  color: var(--c-gold-light);
+  margin-block-end: var(--s-6);
+}
+/* This arrow points back, against the reading direction. */
+.link-arrow--back svg { transform: scaleX(-1); }
+[dir="rtl"] .link-arrow--back svg { transform: none; }
+
+.page-head__title {
+  color: var(--c-cream);
+  font-size: var(--t-3xl);
+  max-width: 18ch;
+}
+
+.page-head__lede {
+  margin-block-start: var(--s-5);
+  max-width: 62ch;
+  font-size: var(--t-md);
+  color: rgba(251, 248, 243, 0.7);
+}
+
+.page-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-6) var(--s-8);
+  margin-block-start: var(--s-8);
+  padding-block-start: var(--s-7);
+  border-block-start: 1px solid rgba(251, 248, 243, 0.14);
+}
+.page-stats li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+}
+.page-stats__value {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-display);
+  font-size: var(--t-2xl);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--c-gold-light);
+}
+.page-stats__label {
+  font-size: var(--t-sm);
+  color: rgba(251, 248, 243, 0.62);
+  max-width: 14ch;
+}
+
+/* --------------------------------------------------------------------------
+   ROOM ROWS
+   -------------------------------------------------------------------------- */
+.room-rows .container {
+  display: grid;
+  gap: var(--s-10);
+}
+
+.room-row {
+  display: grid;
+  gap: var(--s-6);
+  align-items: center;
+}
+
+.room-row__media { border-radius: var(--r-lg); }
+.room-row:hover .media img { transform: scale(1.03); }
+
+.room-row__cap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+.room-row__title {
+  font-size: var(--t-2xl);
+  margin-block-start: var(--s-3);
+}
+
+.room-row__desc {
+  margin-block-start: var(--s-4);
+  max-width: 52ch;
+  color: var(--c-ink-mute);
+  font-size: var(--t-base);
+}
+
+.room-row .amenity-chips { margin-block-start: var(--s-5); }
+
+/* Rate block: monthly / per term / payment plan --------------------------- */
+.rate {
+  display: grid;
+  gap: var(--s-4);
+  margin-block-start: var(--s-6);
+  padding-block: var(--s-5);
+  border-block: 1px solid var(--c-line-soft);
+}
+.rate__cell dt {
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-ink-faint);
+  margin-block-end: var(--s-2);
+}
+.rate__cell dd { margin: 0; }
+.rate__value {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-display);
+  font-size: var(--t-xl);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--c-ink);
+  white-space: nowrap;
+}
+.rate__note {
+  font-size: var(--t-xs);
+  color: var(--c-ink-mute);
+  margin-block-start: var(--s-1);
+}
+.rate__plan {
+  font-size: var(--t-sm);
+  font-weight: 600;
+  color: var(--c-accent);
+  line-height: 1.35;
+}
+
+.room-row__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-4) var(--s-6);
+  margin-block-start: var(--s-6);
+}
+
+/* --------------------------------------------------------------------------
+   RATE TABLE
+   -------------------------------------------------------------------------- */
+.rate-table__wrap {
+  /* Four money columns cannot compress below a readable width, so the table
+     scrolls inside its own box rather than pushing the page sideways. */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  background-color: var(--c-cream);
+}
+
+.rate-table {
+  inline-size: 100%;
+  min-inline-size: 560px;
+  border-collapse: collapse;
+  font-size: var(--t-sm);
+}
+.rate-table th,
+.rate-table td {
+  padding: var(--s-4) var(--s-5);
+  text-align: start;
+  border-block-end: 1px solid var(--c-line-soft);
+  white-space: nowrap;
+}
+.rate-table thead th {
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--c-ink-faint);
+  background-color: var(--c-sand);
+}
+.rate-table tbody th {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-text);
+  font-size: var(--t-md);
+  font-weight: 400;
+  color: var(--c-ink);
+  white-space: normal;
+  min-inline-size: 12ch;
+}
+.rate-table tbody td:nth-child(2) {
+  font-weight: 600;
+  color: var(--c-accent);
+}
+.rate-table tbody tr:last-child th,
+.rate-table tbody tr:last-child td { border-block-end: 0; }
+.rate-table tbody tr:hover { background-color: var(--c-sand); }
+
+.rate-table__note {
+  margin-block-start: var(--s-5);
+  font-size: var(--t-sm);
+  color: var(--c-ink-faint);
+  max-width: 68ch;
+}
+
+/* --------------------------------------------------------------------------
+   ROOM FEATURES
+   -------------------------------------------------------------------------- */
+.feature-list {
+  display: grid;
+  gap: var(--s-4);
+}
+.feature {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--s-4);
+  align-items: start;
+  padding: var(--s-5) var(--s-6);
+  background-color: var(--c-sand);
+  border-radius: var(--r-lg);
+  font-size: var(--t-md);
+  color: var(--c-ink);
+}
+.feature__icon {
+  color: var(--c-accent);
+  margin-block-start: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   INCLUDED IN THE PRICE (on the dark section)
+   -------------------------------------------------------------------------- */
+.included__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background-color: rgba(251, 248, 243, 0.14);
+  border: 1px solid rgba(251, 248, 243, 0.14);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.included__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-3);
+  padding: var(--s-6) var(--s-4);
+  background-color: var(--c-ink);
+  text-align: center;
+  font-size: var(--t-sm);
+  color: var(--c-cream);
+}
+.included__icon { color: var(--c-gold-light); }
+
+/* --------------------------------------------------------------------------
+   VIDEO TOUR + CLOSING CTA
+   -------------------------------------------------------------------------- */
+.room-cta__grid {
+  display: grid;
+  gap: var(--s-5);
+}
+.room-cta__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s-4);
+  padding: var(--s-7);
+  background-color: var(--c-cream);
+  border: 1px solid var(--c-line-soft);
+  border-radius: var(--r-lg);
+  color: var(--c-ink-mute);
+}
+.room-cta__icon { color: var(--c-accent); }
+.room-cta__title {
+  font-size: var(--t-xl);
+  color: var(--c-ink);
+}
+.room-cta__card .btn,
+.room-cta__actions { margin-block-start: var(--s-2); }
+
+.room-cta__card--accent {
+  background-color: var(--c-ink);
+  border-color: var(--c-ink);
+  color: rgba(251, 248, 243, 0.72);
+}
+.room-cta__card--accent .room-cta__title { color: var(--c-cream); }
+.room-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-4) var(--s-6);
+}
+.link-arrow--light { color: var(--c-gold-light); }
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE: the button through to this page
+   -------------------------------------------------------------------------- */
+.rooms__cta {
+  display: flex;
+  justify-content: center;
+  margin-block-start: var(--s-8);
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (min-width: 560px) {
+  .rate { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-5); }
+  .included__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 900px) {
+  .feature-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-5); }
+  .room-cta__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-6); }
+  .included__grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1000px) {
+  .room-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--s-9);
+  }
+  /* Alternate which side the photograph sits on, so a list of four rooms
+     reads as a sequence rather than a repeated template. */
+  .room-row:nth-child(even) .room-row__media { order: 2; }
+
+  .page-head__title { font-size: var(--t-4xl); }
+  .rate-table { min-inline-size: 0; }
+}

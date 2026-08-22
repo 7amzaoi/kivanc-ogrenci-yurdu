@@ -58,42 +58,63 @@
   },
   "rooms": {
     "eyebrow": "Odalar ve Fiyatlar",
-    "title": "Ders çalışmak ve dinlenmek için tasarlanmış odalar",
-    "lede": "Kız öğrenciler için tek bir binada üç oda tipi — hangisini seçerseniz seçin aynı imkânlar, aynı hizmet. Faturalar, temizlik, çamaşırhane ve yemek hepsine dahildir.",
+    "title": "Otel tipi odalar, dört farklı seçenek",
+    "lede": "Bina genelinde dört farklı büyüklükte 45 oda. Hepsi otel tipi: oda içinde banyo ve WC, TV, mini buzdolabı ve sıfır genç odası takımı. Aralarındaki tek fark kaç kişi kaldığı ve bunun aylık ücrete yansıması.",
     "headCta": "Boş yer durumunu sorun",
-    "priceFrom": "Başlangıç",
+    "priceFrom": "Kişi başı",
     "priceUnit": "/ ay",
     "apply": "Başvur",
-    "disclaimer": "Gösterilen fiyatlar örnek amaçlıdır. Kesin ücretler oda tipine, sözleşme süresine ve seçtiğiniz yemek planına göre değişir — güncel fiyat listesi için bize ulaşın.",
+    "disclaimer": "Yeni dönem kampanya fiyatlarıdır, kişi başıdır. Dönemlik ücret 10 ayı kapsar ve peşinat + taksit şeklinde ödenebilir — ayrıntılı döküm odalar sayfasındadır.",
     "amen": {
       "wifi": "Wi-Fi",
       "desk": "Çalışma masası",
       "wardrobe": "Gardırop",
       "ensuite": "Oda içi banyo",
-      "sharedBath": "Ortak banyo"
+      "tv": "TV",
+      "fridge": "Mini buzdolabı"
     },
     "f1": {
       "name": "Tek Kişilik Oda",
       "capacity": "1 öğrenci",
-      "desc": "Kendine ait banyosu, geniş bir çalışma masası ve bol dolap alanı olan özel bir oda — sessizlik ve odaklanma isteyen öğrenciler için.",
-      "price": "₺X.XXX",
-      "alt": "Yatak, çalışma masası ve geniş pencereli tek kişilik oda"
+      "desc": "Kendinize ait otel tipi bir oda: oda içinde banyo ve WC, TV, mini buzdolabı ve sıfır genç odası takımı.",
+      "price": "₺30.000",
+      "alt": "Yatak, çalışma masası ve geniş pencereli tek kişilik oda",
+      "priceTerm": "₺300.000",
+      "instalments": "10",
+      "payment": "1 peşin + 10 taksit"
     },
     "f2": {
       "name": "İki Kişilik Oda",
       "capacity": "2 öğrenci",
-      "desc": "İki tek kişilik yatak, iki masa ve iki gardıroba sahip ferah bir oda; banyo kat içinde ortak kullanımda. En çok tercih edilen seçeneğimiz.",
-      "price": "₺X.XXX",
-      "alt": "İki yataklı ve iki çalışma masalı paylaşımlı oda"
+      "desc": "Oda içinde banyo ve WC, TV ve mini buzdolabı bulunan otel tipi iki kişilik oda. En çok tercih edilen seçeneğimiz.",
+      "price": "₺24.000",
+      "alt": "İki yataklı ve iki çalışma masalı paylaşımlı oda",
+      "priceTerm": "₺240.000",
+      "instalments": "9",
+      "payment": "1 peşin + 9 taksit"
     },
     "f3": {
       "name": "Üç Kişilik Oda",
       "capacity": "3 öğrenci",
-      "desc": "En ekonomik seçenek, hiçbir şeyden ödün vermeden: üç ayrı yatak, üç masa, üç gardırop ve diğer tüm odalarla aynı imkânlar.",
-      "price": "₺X.XXX",
-      "alt": "Ranzalı ve kişisel dolapları olan paylaşımlı oda"
+      "desc": "Üç yatak; banyo ve WC oda içinde, TV ve mini buzdolabı dahil — aynı standart, daha uygun aylık ücret.",
+      "price": "₺18.000",
+      "alt": "Ranzalı ve kişisel dolapları olan paylaşımlı oda",
+      "priceTerm": "₺180.000",
+      "instalments": "9",
+      "payment": "1 peşin + 9 taksit"
     },
-    "residenceNote": "Kartlı geçiş sistemi, binada ikamet eden bir yurt müdürü ve 24 saat kamera takibi bulunan müstakil bir bina."
+    "residenceNote": "Kartlı geçiş sistemi, binada ikamet eden bir yurt müdürü ve 24 saat kamera takibi bulunan müstakil bir bina.",
+    "allRoomsCta": "Tüm odaları ve fiyatları gör",
+    "f4": {
+      "name": "Dört Kişilik Oda",
+      "capacity": "4 öğrenci",
+      "desc": "Dört yatak ve binadaki en uygun ücret; banyo, WC, TV ve mini buzdolabı diğer tüm odalarla aynı.",
+      "price": "₺15.000",
+      "priceTerm": "₺150.000",
+      "instalments": "9",
+      "alt": "Dört kişilik otel tipi oda",
+      "payment": "1 peşin + 9 taksit"
+    }
   },
   "uni": {
     "eyebrow": "Kampüse ulaşım",
@@ -154,20 +175,20 @@
       "desc": "Her odada ve salonda yüksek hızlı fiber internet; sınav dönemine dayanacak altyapı."
     },
     "4": {
-      "title": "Çalışma salonları",
-      "desc": "Masanız yetmediğinde sessiz odalar ve grup çalışma masaları."
+      "title": "Otel tipi odalar",
+      "desc": "Her odada TV, mini buzdolabı ve oda içi banyo; mobilyaların tamamı sıfır."
     },
     "5": {
-      "title": "Yemekhane ve mutfak",
-      "desc": "Her gün kahvaltı ve akşam yemeği, ayrıca her katta ortak mutfak."
+      "title": "Kahvaltı dahil",
+      "desc": "Her sabah kahvaltı aylık ücrete dahildir, ayrıca ücret alınmaz."
     },
     "6": {
       "title": "Çamaşırhane",
       "desc": "Kiraya dahil çamaşır ve kurutma makineleri — jeton yok, sıra yok."
     },
     "7": {
-      "title": "Spor salonu",
-      "desc": "Her iki binada da tam donanımlı, sabahtan geç saatlere kadar açık spor salonu."
+      "title": "Gelmeden önce görün",
+      "desc": "Yerinde göremiyor musunuz? Odaları görüntülü görüşmeyle canlı olarak gösteriyoruz."
     },
     "8": {
       "title": "Temizlik hizmeti",
@@ -292,8 +313,8 @@
     "title": "Gelin, kendi gözünüzle görün",
     "lede": "Hangi oda tipiyle ilgilendiğinizi yazın; boş yer durumu, güncel fiyatlar ve ziyaret saati için aynı gün içinde size dönelim.",
     "addressLabel": "Adres",
-    "address": "Cihangir Mah., Kirazlı Cad., 34310 Avcılar / İstanbul",
-    "addressHint": "Aşağıdaki haritada işaretli. Kapı numarası için bizi arayın.",
+    "address": "Cihangir Mah., Kirazlı Cad. No:18, 34310 Avcılar / İstanbul",
+    "addressHint": "Aşağıdaki haritada işaretli. No:18'den zili çalabilirsiniz.",
     "phoneLabel": "Telefon",
     "phone": "+90 541 590 44 45",
     "whatsappLabel": "WhatsApp",
@@ -334,7 +355,8 @@
     "roomSingle": "Tek kişilik",
     "roomTwin": "İki kişilik",
     "roomTriple": "Üç kişilik",
-    "errRoomType": "Lütfen bir oda tipi seçin."
+    "errRoomType": "Lütfen bir oda tipi seçin.",
+    "roomQuad": "Dört kişilik"
   },
   "footer": {
     "desc": "Avcılar, İstanbul'da kız öğrenciler için özel yurt — profesyonel yönetim, 7/24 güvenlik ve vakıf üniversitesi kampüslerine dakikalar mesafe.",
@@ -352,5 +374,46 @@
       "youtube": "YouTube",
       "whatsapp": "WhatsApp"
     }
+  },
+  "roomsPage": {
+    "metaTitle": "Odalar ve Fiyatlar — Kıvanç Öğrenci Yurdu, Avcılar",
+    "metaDescription": "Avcılar, İstanbul'da 45 otel tipi oda. Tek, iki, üç ve dört kişilik odalar kişi başı aylık 15.000 TL'den başlar; kahvaltı, internet, temizlik ve çamaşır dahildir.",
+    "eyebrow": "Odalar ve Fiyatlar",
+    "title": "Bütün odalar, bütün fiyatlar",
+    "lede": "Yeni dönem kampanya fiyatları. Ücretler kişi başıdır: oda ne kadar çok paylaşılırsa aylık maliyet o kadar düşer, odanın standardı ise değişmez.",
+    "backHome": "Ana sayfaya dön",
+    "statRooms": "binadaki oda sayısı",
+    "statTypes": "oda tipi",
+    "statTerm": "dönem ayı",
+    "tableTitle": "Fiyatlar bir bakışta",
+    "colRoom": "Oda",
+    "colMonthly": "Aylık",
+    "colTerm": "Dönemlik",
+    "colPayment": "Ödeme planı",
+    "perMonth": "TL / ay",
+    "perTerm": "TL / dönem",
+    "perPersonNote": "Tüm ücretler kişi başı ve aylıktır. Dönemlik ücret 10 aylık akademik dönemi kapsar.",
+    "featuresTitle": "Her odada olanlar",
+    "featuresLede": "Hangi büyüklüğü seçerseniz seçin, 45 odanın tamamında aynı donanım.",
+    "feat1": "Otel tipi odalar",
+    "feat2": "TV, mini buzdolabı, WC ve banyo oda içinde",
+    "feat3": "Sıfır genç odası takımı ve sıfır mobilyalar",
+    "feat4": "Yatak, yorgan ve yastık sıfır olarak teslim edilir",
+    "includedTitle": "Fiyata dahil hizmetler",
+    "includedLede": "Tek bir aylık rakam. Ay sonunda ayrıca fatura çıkmaz.",
+    "inc1": "Kahvaltı",
+    "inc2": "İnternet",
+    "inc3": "Temizlik",
+    "inc4": "Sıcak su",
+    "inc5": "Güvenlik",
+    "inc6": "Çamaşır hizmeti",
+    "videoTitle": "Yerinde göremiyor musunuz?",
+    "videoLede": "Dilerseniz odalarımızı görüntülü görüşme ile canlı olarak gösterelim — size uygun bir saatte WhatsApp'tan yazmanız yeterli.",
+    "videoCta": "Görüntülü tur ayarla",
+    "ctaTitle": "Oda ayırtmaya hazır mısınız?",
+    "ctaLede": "Hangi oda tipini istediğinizi yazın, boş yer durumunu aynı gün teyit edelim.",
+    "ctaPrimary": "Talep gönder",
+    "ctaSecondary": "WhatsApp'tan yazın",
+    "termLength": "10 ay"
   }
 }

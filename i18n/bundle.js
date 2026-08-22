@@ -64,42 +64,63 @@ window.I18N_BUNDLE = {
     },
     "rooms": {
       "eyebrow": "Rooms & Rates",
-      "title": "Rooms made for study and rest",
-      "lede": "Three room types in a single, purpose-run building for female students — the same facilities and the same service whichever you choose. Bills, cleaning, laundry and meals are included in every one.",
+      "title": "Hotel-style rooms, four ways to share",
+      "lede": "45 rooms across the building, in four sizes. Every one of them is hotel-style — its own bathroom and WC inside the room, a TV, a mini fridge and a brand-new study set. What changes between them is how many people share, and what that does to the monthly rate.",
       "headCta": "Ask about availability",
-      "priceFrom": "From",
+      "priceFrom": "Per person",
       "priceUnit": "/ month",
       "apply": "Apply",
-      "disclaimer": "Pricing shown is a placeholder. Final rates depend on room type, contract length and the meal plan you choose — contact us for the current price list.",
+      "disclaimer": "Campaign rates for the new term, per person. The term price covers 10 months and can be paid as a deposit plus instalments — the full breakdown is on the rooms page.",
       "amen": {
         "wifi": "Wi-Fi",
         "desk": "Study desk",
         "wardrobe": "Wardrobe",
-        "ensuite": "Ensuite bath",
-        "sharedBath": "Shared bath"
+        "ensuite": "Private bathroom",
+        "tv": "TV",
+        "fridge": "Mini fridge"
       },
       "f1": {
         "name": "Single Room",
         "capacity": "1 student",
-        "desc": "Your own room with a private bathroom, a full-size desk and plenty of storage — for students who want quiet and focus.",
-        "price": "₺X,XXX",
-        "alt": "Single room with a bed, study desk and large window"
+        "desc": "A hotel-style room of your own, with a private bathroom and WC, a TV, a mini fridge and a brand-new study set.",
+        "price": "₺30.000",
+        "alt": "Single room with a bed, study desk and large window",
+        "priceTerm": "₺300.000",
+        "instalments": "10",
+        "payment": "1 deposit + 10 instalments"
       },
       "f2": {
-        "name": "Shared Twin Room",
+        "name": "Double Room",
         "capacity": "2 students",
-        "desc": "Two single beds, two desks and two wardrobes in a generous room with a shared bathroom on the floor. Our most popular choice.",
-        "price": "₺X,XXX",
-        "alt": "Shared twin room with two beds and matching study desks"
+        "desc": "Two beds in a hotel-style room with its own bathroom and WC, a TV and a mini fridge. Our most popular choice.",
+        "price": "₺24.000",
+        "alt": "Shared twin room with two beds and matching study desks",
+        "priceTerm": "₺240.000",
+        "instalments": "9",
+        "payment": "1 deposit + 9 instalments"
       },
       "f3": {
-        "name": "Shared Triple Room",
+        "name": "Triple Room",
         "capacity": "3 students",
-        "desc": "The most affordable option, without cutting corners: three separate beds, desks and wardrobes, plus the same facilities as every other room.",
-        "price": "₺X,XXX",
-        "alt": "Shared room with bunk beds and individual storage"
+        "desc": "Three beds, with the bathroom and WC inside the room, a TV and a mini fridge — the same standard at a lower monthly rate.",
+        "price": "₺18.000",
+        "alt": "Shared room with bunk beds and individual storage",
+        "priceTerm": "₺180.000",
+        "instalments": "9",
+        "payment": "1 deposit + 9 instalments"
       },
-      "residenceNote": "A dedicated building with keycard entry, a resident manager living on site and 24-hour camera monitoring."
+      "residenceNote": "A dedicated building with keycard entry, a resident manager living on site and 24-hour camera monitoring.",
+      "allRoomsCta": "See all rooms and prices",
+      "f4": {
+        "name": "Quad Room",
+        "capacity": "4 students",
+        "desc": "Four beds and the most affordable rate in the building, with the same private bathroom, TV and mini fridge as every other room.",
+        "price": "₺15.000",
+        "priceTerm": "₺150.000",
+        "instalments": "9",
+        "alt": "Hotel-style room with four beds",
+        "payment": "1 deposit + 9 instalments"
+      }
     },
     "uni": {
       "eyebrow": "Getting to class",
@@ -160,20 +181,20 @@ window.I18N_BUNDLE = {
         "desc": "High-speed fibre in every room and lounge, built to handle exam season."
       },
       "4": {
-        "title": "Study lounges",
-        "desc": "Quiet rooms and group tables for when your desk isn't enough."
+        "title": "Hotel-style rooms",
+        "desc": "A TV, a mini fridge and a private bathroom in every room, with brand-new furniture."
       },
       "5": {
-        "title": "Cafeteria & kitchen",
-        "desc": "Daily breakfast and dinner, plus shared kitchens on every floor."
+        "title": "Breakfast included",
+        "desc": "Breakfast every morning is part of the monthly fee, with no separate charge."
       },
       "6": {
         "title": "Laundry room",
         "desc": "Washers and dryers included in your rent — no coins, no queues."
       },
       "7": {
-        "title": "Fitness room",
-        "desc": "A properly equipped gym in each residence, open from early to late."
+        "title": "See it before you come",
+        "desc": "Can't visit in person? We'll walk you through the rooms live on a video call."
       },
       "8": {
         "title": "Cleaning service",
@@ -298,8 +319,8 @@ window.I18N_BUNDLE = {
       "title": "Come and see it for yourself",
       "lede": "Tell us which room type you're interested in and we'll get back to you the same day with availability, current prices and a time to visit.",
       "addressLabel": "Address",
-      "address": "Cihangir Mah., Kirazlı Cad., 34310 Avcılar / İstanbul",
-      "addressHint": "Pinned on the map below. Call us for the door number.",
+      "address": "Cihangir Mah., Kirazlı Cad. No:18, 34310 Avcılar / İstanbul",
+      "addressHint": "Pinned on the map below. Ring the bell at No:18.",
       "phoneLabel": "Phone",
       "phone": "+90 541 590 44 45",
       "whatsappLabel": "WhatsApp",
@@ -338,9 +359,10 @@ window.I18N_BUNDLE = {
       "error": "Something went wrong. Please call or message us on WhatsApp instead.",
       "mailSubject": "Room inquiry — Kıvanç Öğrenci Yurdu",
       "roomSingle": "Single",
-      "roomTwin": "Twin",
+      "roomTwin": "Double",
       "roomTriple": "Triple",
-      "errRoomType": "Please choose a room type."
+      "errRoomType": "Please choose a room type.",
+      "roomQuad": "Quad"
     },
     "footer": {
       "desc": "A private residence for female students in Avcılar, İstanbul — professionally managed, secure around the clock, and minutes from Istanbul's private university campuses.",
@@ -358,6 +380,47 @@ window.I18N_BUNDLE = {
         "youtube": "YouTube",
         "whatsapp": "WhatsApp"
       }
+    },
+    "roomsPage": {
+      "metaTitle": "Rooms & Prices — Kıvanç Öğrenci Yurdu, Avcılar",
+      "metaDescription": "45 hotel-style rooms in Avcılar, İstanbul. Single, double, triple and quad rooms from 15.000 TL per person per month, breakfast, internet, cleaning and laundry included.",
+      "eyebrow": "Rooms & Prices",
+      "title": "Every room, every rate",
+      "lede": "Campaign prices for the new term. Rates are per person: the more a room is shared, the lower the monthly cost, and the room itself is the same standard either way.",
+      "backHome": "Back to home",
+      "statRooms": "rooms in the building",
+      "statTypes": "room sizes",
+      "statTerm": "months per term",
+      "tableTitle": "Prices at a glance",
+      "colRoom": "Room",
+      "colMonthly": "Monthly",
+      "colTerm": "Per term",
+      "colPayment": "Payment plan",
+      "perMonth": "TL / month",
+      "perTerm": "TL / term",
+      "perPersonNote": "All rates are per person, per month. The term price covers the 10-month academic term.",
+      "featuresTitle": "What every room has",
+      "featuresLede": "The same specification in all 45 rooms, whichever size you choose.",
+      "feat1": "Hotel-style rooms",
+      "feat2": "TV, mini fridge, WC and bathroom inside the room",
+      "feat3": "Brand-new furniture and study set",
+      "feat4": "Bed, duvet and pillow supplied new",
+      "includedTitle": "Included in the price",
+      "includedLede": "One monthly figure. No separate bills at the end of the month.",
+      "inc1": "Breakfast",
+      "inc2": "Internet",
+      "inc3": "Cleaning",
+      "inc4": "Hot water",
+      "inc5": "Security",
+      "inc6": "Laundry service",
+      "videoTitle": "Can't visit in person?",
+      "videoLede": "We'll walk you through the rooms live on a video call, whenever suits you — just message us on WhatsApp.",
+      "videoCta": "Arrange a video tour",
+      "ctaTitle": "Ready to reserve a room?",
+      "ctaLede": "Tell us which size you're after and we'll confirm availability the same day.",
+      "ctaPrimary": "Send an enquiry",
+      "ctaSecondary": "Message on WhatsApp",
+      "termLength": "10 months"
     }
   },
   "tr": {
@@ -420,42 +483,63 @@ window.I18N_BUNDLE = {
     },
     "rooms": {
       "eyebrow": "Odalar ve Fiyatlar",
-      "title": "Ders çalışmak ve dinlenmek için tasarlanmış odalar",
-      "lede": "Kız öğrenciler için tek bir binada üç oda tipi — hangisini seçerseniz seçin aynı imkânlar, aynı hizmet. Faturalar, temizlik, çamaşırhane ve yemek hepsine dahildir.",
+      "title": "Otel tipi odalar, dört farklı seçenek",
+      "lede": "Bina genelinde dört farklı büyüklükte 45 oda. Hepsi otel tipi: oda içinde banyo ve WC, TV, mini buzdolabı ve sıfır genç odası takımı. Aralarındaki tek fark kaç kişi kaldığı ve bunun aylık ücrete yansıması.",
       "headCta": "Boş yer durumunu sorun",
-      "priceFrom": "Başlangıç",
+      "priceFrom": "Kişi başı",
       "priceUnit": "/ ay",
       "apply": "Başvur",
-      "disclaimer": "Gösterilen fiyatlar örnek amaçlıdır. Kesin ücretler oda tipine, sözleşme süresine ve seçtiğiniz yemek planına göre değişir — güncel fiyat listesi için bize ulaşın.",
+      "disclaimer": "Yeni dönem kampanya fiyatlarıdır, kişi başıdır. Dönemlik ücret 10 ayı kapsar ve peşinat + taksit şeklinde ödenebilir — ayrıntılı döküm odalar sayfasındadır.",
       "amen": {
         "wifi": "Wi-Fi",
         "desk": "Çalışma masası",
         "wardrobe": "Gardırop",
         "ensuite": "Oda içi banyo",
-        "sharedBath": "Ortak banyo"
+        "tv": "TV",
+        "fridge": "Mini buzdolabı"
       },
       "f1": {
         "name": "Tek Kişilik Oda",
         "capacity": "1 öğrenci",
-        "desc": "Kendine ait banyosu, geniş bir çalışma masası ve bol dolap alanı olan özel bir oda — sessizlik ve odaklanma isteyen öğrenciler için.",
-        "price": "₺X.XXX",
-        "alt": "Yatak, çalışma masası ve geniş pencereli tek kişilik oda"
+        "desc": "Kendinize ait otel tipi bir oda: oda içinde banyo ve WC, TV, mini buzdolabı ve sıfır genç odası takımı.",
+        "price": "₺30.000",
+        "alt": "Yatak, çalışma masası ve geniş pencereli tek kişilik oda",
+        "priceTerm": "₺300.000",
+        "instalments": "10",
+        "payment": "1 peşin + 10 taksit"
       },
       "f2": {
         "name": "İki Kişilik Oda",
         "capacity": "2 öğrenci",
-        "desc": "İki tek kişilik yatak, iki masa ve iki gardıroba sahip ferah bir oda; banyo kat içinde ortak kullanımda. En çok tercih edilen seçeneğimiz.",
-        "price": "₺X.XXX",
-        "alt": "İki yataklı ve iki çalışma masalı paylaşımlı oda"
+        "desc": "Oda içinde banyo ve WC, TV ve mini buzdolabı bulunan otel tipi iki kişilik oda. En çok tercih edilen seçeneğimiz.",
+        "price": "₺24.000",
+        "alt": "İki yataklı ve iki çalışma masalı paylaşımlı oda",
+        "priceTerm": "₺240.000",
+        "instalments": "9",
+        "payment": "1 peşin + 9 taksit"
       },
       "f3": {
         "name": "Üç Kişilik Oda",
         "capacity": "3 öğrenci",
-        "desc": "En ekonomik seçenek, hiçbir şeyden ödün vermeden: üç ayrı yatak, üç masa, üç gardırop ve diğer tüm odalarla aynı imkânlar.",
-        "price": "₺X.XXX",
-        "alt": "Ranzalı ve kişisel dolapları olan paylaşımlı oda"
+        "desc": "Üç yatak; banyo ve WC oda içinde, TV ve mini buzdolabı dahil — aynı standart, daha uygun aylık ücret.",
+        "price": "₺18.000",
+        "alt": "Ranzalı ve kişisel dolapları olan paylaşımlı oda",
+        "priceTerm": "₺180.000",
+        "instalments": "9",
+        "payment": "1 peşin + 9 taksit"
       },
-      "residenceNote": "Kartlı geçiş sistemi, binada ikamet eden bir yurt müdürü ve 24 saat kamera takibi bulunan müstakil bir bina."
+      "residenceNote": "Kartlı geçiş sistemi, binada ikamet eden bir yurt müdürü ve 24 saat kamera takibi bulunan müstakil bir bina.",
+      "allRoomsCta": "Tüm odaları ve fiyatları gör",
+      "f4": {
+        "name": "Dört Kişilik Oda",
+        "capacity": "4 öğrenci",
+        "desc": "Dört yatak ve binadaki en uygun ücret; banyo, WC, TV ve mini buzdolabı diğer tüm odalarla aynı.",
+        "price": "₺15.000",
+        "priceTerm": "₺150.000",
+        "instalments": "9",
+        "alt": "Dört kişilik otel tipi oda",
+        "payment": "1 peşin + 9 taksit"
+      }
     },
     "uni": {
       "eyebrow": "Kampüse ulaşım",
@@ -516,20 +600,20 @@ window.I18N_BUNDLE = {
         "desc": "Her odada ve salonda yüksek hızlı fiber internet; sınav dönemine dayanacak altyapı."
       },
       "4": {
-        "title": "Çalışma salonları",
-        "desc": "Masanız yetmediğinde sessiz odalar ve grup çalışma masaları."
+        "title": "Otel tipi odalar",
+        "desc": "Her odada TV, mini buzdolabı ve oda içi banyo; mobilyaların tamamı sıfır."
       },
       "5": {
-        "title": "Yemekhane ve mutfak",
-        "desc": "Her gün kahvaltı ve akşam yemeği, ayrıca her katta ortak mutfak."
+        "title": "Kahvaltı dahil",
+        "desc": "Her sabah kahvaltı aylık ücrete dahildir, ayrıca ücret alınmaz."
       },
       "6": {
         "title": "Çamaşırhane",
         "desc": "Kiraya dahil çamaşır ve kurutma makineleri — jeton yok, sıra yok."
       },
       "7": {
-        "title": "Spor salonu",
-        "desc": "Her iki binada da tam donanımlı, sabahtan geç saatlere kadar açık spor salonu."
+        "title": "Gelmeden önce görün",
+        "desc": "Yerinde göremiyor musunuz? Odaları görüntülü görüşmeyle canlı olarak gösteriyoruz."
       },
       "8": {
         "title": "Temizlik hizmeti",
@@ -654,8 +738,8 @@ window.I18N_BUNDLE = {
       "title": "Gelin, kendi gözünüzle görün",
       "lede": "Hangi oda tipiyle ilgilendiğinizi yazın; boş yer durumu, güncel fiyatlar ve ziyaret saati için aynı gün içinde size dönelim.",
       "addressLabel": "Adres",
-      "address": "Cihangir Mah., Kirazlı Cad., 34310 Avcılar / İstanbul",
-      "addressHint": "Aşağıdaki haritada işaretli. Kapı numarası için bizi arayın.",
+      "address": "Cihangir Mah., Kirazlı Cad. No:18, 34310 Avcılar / İstanbul",
+      "addressHint": "Aşağıdaki haritada işaretli. No:18'den zili çalabilirsiniz.",
       "phoneLabel": "Telefon",
       "phone": "+90 541 590 44 45",
       "whatsappLabel": "WhatsApp",
@@ -696,7 +780,8 @@ window.I18N_BUNDLE = {
       "roomSingle": "Tek kişilik",
       "roomTwin": "İki kişilik",
       "roomTriple": "Üç kişilik",
-      "errRoomType": "Lütfen bir oda tipi seçin."
+      "errRoomType": "Lütfen bir oda tipi seçin.",
+      "roomQuad": "Dört kişilik"
     },
     "footer": {
       "desc": "Avcılar, İstanbul'da kız öğrenciler için özel yurt — profesyonel yönetim, 7/24 güvenlik ve vakıf üniversitesi kampüslerine dakikalar mesafe.",
@@ -714,6 +799,47 @@ window.I18N_BUNDLE = {
         "youtube": "YouTube",
         "whatsapp": "WhatsApp"
       }
+    },
+    "roomsPage": {
+      "metaTitle": "Odalar ve Fiyatlar — Kıvanç Öğrenci Yurdu, Avcılar",
+      "metaDescription": "Avcılar, İstanbul'da 45 otel tipi oda. Tek, iki, üç ve dört kişilik odalar kişi başı aylık 15.000 TL'den başlar; kahvaltı, internet, temizlik ve çamaşır dahildir.",
+      "eyebrow": "Odalar ve Fiyatlar",
+      "title": "Bütün odalar, bütün fiyatlar",
+      "lede": "Yeni dönem kampanya fiyatları. Ücretler kişi başıdır: oda ne kadar çok paylaşılırsa aylık maliyet o kadar düşer, odanın standardı ise değişmez.",
+      "backHome": "Ana sayfaya dön",
+      "statRooms": "binadaki oda sayısı",
+      "statTypes": "oda tipi",
+      "statTerm": "dönem ayı",
+      "tableTitle": "Fiyatlar bir bakışta",
+      "colRoom": "Oda",
+      "colMonthly": "Aylık",
+      "colTerm": "Dönemlik",
+      "colPayment": "Ödeme planı",
+      "perMonth": "TL / ay",
+      "perTerm": "TL / dönem",
+      "perPersonNote": "Tüm ücretler kişi başı ve aylıktır. Dönemlik ücret 10 aylık akademik dönemi kapsar.",
+      "featuresTitle": "Her odada olanlar",
+      "featuresLede": "Hangi büyüklüğü seçerseniz seçin, 45 odanın tamamında aynı donanım.",
+      "feat1": "Otel tipi odalar",
+      "feat2": "TV, mini buzdolabı, WC ve banyo oda içinde",
+      "feat3": "Sıfır genç odası takımı ve sıfır mobilyalar",
+      "feat4": "Yatak, yorgan ve yastık sıfır olarak teslim edilir",
+      "includedTitle": "Fiyata dahil hizmetler",
+      "includedLede": "Tek bir aylık rakam. Ay sonunda ayrıca fatura çıkmaz.",
+      "inc1": "Kahvaltı",
+      "inc2": "İnternet",
+      "inc3": "Temizlik",
+      "inc4": "Sıcak su",
+      "inc5": "Güvenlik",
+      "inc6": "Çamaşır hizmeti",
+      "videoTitle": "Yerinde göremiyor musunuz?",
+      "videoLede": "Dilerseniz odalarımızı görüntülü görüşme ile canlı olarak gösterelim — size uygun bir saatte WhatsApp'tan yazmanız yeterli.",
+      "videoCta": "Görüntülü tur ayarla",
+      "ctaTitle": "Oda ayırtmaya hazır mısınız?",
+      "ctaLede": "Hangi oda tipini istediğinizi yazın, boş yer durumunu aynı gün teyit edelim.",
+      "ctaPrimary": "Talep gönder",
+      "ctaSecondary": "WhatsApp'tan yazın",
+      "termLength": "10 ay"
     }
   }
 };

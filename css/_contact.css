@@ -257,8 +257,9 @@
 @media (min-width: 560px) {
   .form__row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .choice-group { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  /* Three room types tile evenly only in three columns. */
+    /* Three room types tile evenly in three columns, four in two. */
   .choice-group--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .choice-group--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (min-width: 980px) {

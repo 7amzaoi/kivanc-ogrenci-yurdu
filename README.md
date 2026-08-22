@@ -31,7 +31,8 @@ Then open <http://localhost:8000>.
 ## File structure
 
 ```
-index.html                 Single page, all sections, semantic markup with data-i18n keys
+index.html                 Homepage — all sections, semantic markup with data-i18n keys
+rooms.html                 GENERATED rooms & prices page (see Rooms page below)
 css/
   _foundation.css          Design tokens ONLY — colors, type scale, spacing, shadows, motion
   _base.css                Reset, element defaults, shared primitives (.container, .btn, .eyebrow…)
@@ -46,6 +47,7 @@ css/
   _faq.css                 FAQ accordion
   _contact.css             Contact details, map, inquiry form
   _footer.css              Footer + floating WhatsApp button
+  _roomspage.css           rooms.html: page head, room rows, rate table, features
   main.css                 @imports the partials in order
 js/
   i18n.js                  Translation loader / DOM applier / language persistence
@@ -56,6 +58,7 @@ i18n/
   bundle.js                GENERATED from the two above; makes file:// work
 tools/
   build-i18n.py            Regenerates i18n/bundle.js
+  build-rooms-page.py      Regenerates rooms.html
 assets/
   brand/                   Kıvanç logo, favicons (see Brand assets)
   logos/                   University logos
@@ -64,7 +67,7 @@ assets/
 
 **One residence.** The site describes a single, female-only residence, matching the logo
 (`KIZ ÖĞRENCİ YURDU`). There is no residence switcher and no second tone in the palette —
-the room grid is a plain three-card grid. If a second building is ever added, that means
+the room grid is a plain four-card grid (single, double, triple, quad). If a second building is ever added, that means
 reintroducing a tab UI, a second set of room keys, and a way to tell the two apart; it is
 not a copy change.
 
@@ -125,6 +128,36 @@ preview will quietly show the old copy, so it is worth doing every time.
 
 ---
 
+## The rooms page
+
+`rooms.html` is **generated** — do not edit it by hand. The site has no templating,
+so a second page would otherwise mean four hand-maintained copies of the header,
+drawer, icon sprite and footer. Instead `tools/build-rooms-page.py` lifts those blocks
+straight out of `index.html` and writes the page around them, so the shell is identical
+by construction and in-page links are rewritten to point back at the homepage.
+
+```
+index.html  (header, drawer, sprite, footer)  ─┐
+i18n/en.json  (rooms.*, roomsPage.*)          ─┼─> tools/build-rooms-page.py ─> rooms.html
+```
+
+Re-run it after touching either input:
+
+```bash
+python tools/build-rooms-page.py
+```
+
+The verify pass regenerates the page and fails if the committed copy differs, and
+separately checks that the header and footer still match `index.html` and that every
+cross-page link and anchor resolves.
+
+**Prices live in the JSON**, per room type: `price` (monthly), `priceTerm` (per term),
+`instalments` and the assembled `payment` string. They came from the client's campaign
+poster and are **per person** — the poster shows the rate falling as occupancy rises,
+which only makes sense per person. Worth confirming in writing before launch.
+
+---
+
 ## Contact details — change them in ONE place
 
 The phone, WhatsApp number and email are **not** hardcoded in the HTML. They live at the
@@ -143,10 +176,10 @@ strings just above them (`contact.phone` renders as `+90 541 590 44 45`).
 `data-contact-wa` and `data-contact-mail` on the page — the header, the contact section,
 the footer and the floating WhatsApp button. Change the JSON, the whole site updates.
 
-**Address and map.** The residence is pinned at **40.9833145, 28.7098389** — Cihangir
-Mah., Kirazlı Cad., 34310 Avcılar. The street and postcode were reverse-geocoded from
-those coordinates (OpenStreetMap/Nominatim, consistent at zoom 17 and 18); the **door
-number is still missing**, which is why `contact.addressHint` asks visitors to call.
+**Address and map.** The residence is pinned at **40.9833101, 28.7098463** —
+**Cihangir Mah., Kirazlı Cad. No:18, 34310 Avcılar / İstanbul**, as printed on the
+client's price poster. The street was independently confirmed twice: reverse-geocoded
+from the coordinates, and rendered on Kirazlı Cd. by Google's own map.
 
 The coordinates live in `contact.mapLat` / `contact.mapLng`, and `js/i18n.js` builds every
 "Get directions" link from them — the contact card, the strip under the map, and the
@@ -338,14 +371,21 @@ itself. An Arabic webfont is already stubbed in `_foundation.css` under `[dir="r
 Done since the first build: real logo and brand identity, real phone/WhatsApp/email,
 Avcılar location and travel times, all six university logos, female-only structure.
 
-- [ ] Replace the remaining placeholder photos (`grep "PLACEHOLDER IMAGE" index.html`)
-- [ ] Real prices — currently `₺X.XXX`; remove `rooms.disclaimer` once they are real
+- [ ] Replace the remaining placeholder photos (`grep -c "PLACEHOLDER IMAGE" index.html rooms.html`)
+- [ ] **Ask the client for the original building photograph.** The price poster contains a
+      real night shot of the building with its signage, but only at 443x418px with the logo
+      across it — too small to use. The full-resolution original would beat every stock photo
+      on the site, starting with the hero
+- [ ] Confirm prices are **per person** (assumed from the poster's falling rate), and that
+      the single room really is "1 peşin + 10 taksit" while the others are +9 — that asymmetry
+      is printed on the poster and may be a typo
+- [ ] Two homepage facilities were replaced because the poster contradicted or omitted them:
+      "breakfast **and dinner**" became breakfast only, and the gym and study lounges gave way
+      to hotel-style rooms and the video tour. Add them back if the building really has them
 - [ ] Real testimonials — currently sample copy; remove `test.note` once replaced
 - [ ] Confirm the trust-bar figures: `500+` students and `since 2013` are placeholders
       built around the logo's date; the curfew times in `faq.6.a` are assumed too
 - [ ] Verify university travel times against current İETT/Metrobüs schedules
-- [ ] Add the door number. The street is confirmed — Google's own map renders the pin on
-      **Kirazlı Cd.**, matching the reverse geocode — but no building number was supplied
 - [ ] Sanity-check the pin itself: both Google links you sent resolve to **Özel Nilgün
       Eroğlu Ortaokul**, a school. If the residence is on that campus this is right; if the
       school was only a nearby landmark, move `contact.mapLat` / `mapLng` (and the iframe)

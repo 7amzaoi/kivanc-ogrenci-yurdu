@@ -1,6 +1,6 @@
 /* ==========================================================================
    main.js — interaction layer
-   Sticky header · mobile drawer · FAQ accordion ·
+   Sticky header · hero entrance · mobile drawer · FAQ accordion ·
    gallery lightbox · scroll reveal · inquiry form
    All modules are independent; a missing element simply skips its module.
    ========================================================================== */
@@ -41,6 +41,127 @@
 
     window.addEventListener("resize", update, { passive: true });
     update();
+  }
+
+  /* ======================================================================
+     HERO ENTRANCE
+     The headline reveals word by word and the stat numbers count up.
+
+     Both have to run AFTER i18n has written the copy, because i18n replaces
+     the headline's innerHTML (it contains an <em>) and the stat values. So
+     they hang off the i18n:changed event rather than DOMContentLoaded, and
+     re-run whenever the language changes.
+     ====================================================================== */
+  function afterTranslation(fn) {
+    // If i18n already applied before we got here, run now as well.
+    if (window.I18N && window.I18N.current) fn();
+    document.addEventListener("i18n:changed", fn);
+  }
+
+  /* ---- headline ------------------------------------------------------- */
+  function splitWords(el) {
+    var index = 0;
+
+    function walk(node) {
+      var kids = Array.prototype.slice.call(node.childNodes);
+      kids.forEach(function (child) {
+        if (child.nodeType === 3) {
+          // Split on spaces but keep them, so the sentence still reads as one
+          // run of text to a screen reader and copies correctly.
+          var frag = document.createDocumentFragment();
+          child.nodeValue.split(/(\s+)/).forEach(function (part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+            var outer = document.createElement("span");
+            outer.className = "word";
+            var inner = document.createElement("span");
+            inner.className = "word__in";
+            inner.style.setProperty("--i", index++);
+            inner.textContent = part;
+            outer.appendChild(inner);
+            frag.appendChild(outer);
+          });
+          node.replaceChild(frag, child);
+        } else if (child.nodeType === 1) {
+          walk(child);
+        }
+      });
+    }
+
+    walk(el);
+    return index;
+  }
+
+  function initHeadline() {
+    var title = $(".hero__title");
+    if (!title) return;
+
+    afterTranslation(function () {
+      if (prefersReducedMotion) { title.classList.add("is-shown"); return; }
+      // i18n has just rewritten innerHTML, so the previous spans are gone.
+      splitWords(title);
+      title.classList.remove("is-shown");
+      // Next frame, so the starting transform is committed before it animates.
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { title.classList.add("is-shown"); });
+      });
+    });
+  }
+
+  /* ---- stat numbers --------------------------------------------------- */
+  /**
+   * Split "500+" into {prefix:"", digits:"500", suffix:"+"}. Values without a
+   * countable number — "7/24" is a phrase, not a quantity — return null and
+   * are left alone.
+   */
+  function parseStat(text) {
+    if (text.indexOf("/") !== -1) return null;
+    var m = /^(\D*?)([\d][\d.,]*)(.*)$/.exec(text);
+    if (!m) return null;
+    var raw = m[2];
+    var sep = /[.,]/.test(raw) ? raw.replace(/[^.,]/g, "").charAt(0) : "";
+    var value = parseInt(raw.replace(/[^\d]/g, ""), 10);
+    if (!isFinite(value)) return null;
+    return { prefix: m[1], value: value, suffix: m[3], sep: sep };
+  }
+
+  function format(n, sep) {
+    var s = String(n);
+    if (!sep) return s;
+    return s.replace(/\B(?=(\d{3})+(?!\d))/g, sep);
+  }
+
+  function countUp(el, spec, duration) {
+    var start = null;
+    function frame(now) {
+      if (start === null) start = now;
+      var t = Math.min((now - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - t, 3);           // easeOutCubic
+      el.textContent = spec.prefix + format(Math.round(spec.value * eased), spec.sep) + spec.suffix;
+      if (t < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function initStats() {
+    var values = $$(".trust__value");
+    if (!values.length) return;
+
+    var played = false;
+
+    afterTranslation(function () {
+      // The figures are re-rendered on every language switch; only animate the
+      // first time, so switching language doesn't replay the whole hero.
+      if (played || prefersReducedMotion) return;
+      played = true;
+
+      values.forEach(function (el, i) {
+        var spec = parseStat(el.textContent.trim());
+        if (!spec) return;
+        el.textContent = spec.prefix + "0" + spec.suffix;
+        setTimeout(function () { countUp(el, spec, 1400); }, 200 + i * 110);
+      });
+    });
   }
 
   /* ======================================================================
@@ -439,6 +560,8 @@
      ====================================================================== */
   function init() {
     initHeader();
+    initHeadline();
+    initStats();
     initDrawer();
     initAccordion();
     initLightbox();

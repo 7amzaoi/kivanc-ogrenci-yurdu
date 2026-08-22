@@ -118,6 +118,55 @@
   color: var(--c-gold-light); /* light logo gold — legible over photography */
 }
 
+/* --------------------------------------------------------------------------
+   HEADLINE WORD REVEAL
+   js/main.js wraps each word in .word > .word__in after i18n has written the
+   copy, then adds .is-shown. Without JS the spans never exist and these rules
+   simply do not apply, so the headline renders normally.
+   -------------------------------------------------------------------------- */
+.hero__title .word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  /* Breathing room for descenders (ğ, ş, y) and the italic overhang, cancelled
+     by equal negative margins so the headline's metrics are unchanged. */
+  padding: 0.10em 0.07em 0.18em;
+  margin: -0.10em -0.07em -0.18em;
+}
+.hero__title .word__in {
+  display: inline-block;
+  transform: translateY(115%);
+  opacity: 0;
+  transition:
+    transform 0.85s var(--ease-out),
+    opacity 0.5s var(--ease-out);
+  /* Offset so the words begin roughly in step with the rest of the hero,
+     which starts animating without waiting for the translations. */
+  transition-delay: calc(0.2s + var(--i, 0) * 55ms);
+}
+.hero__title.is-shown .word__in {
+  transform: none;
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   HERO ENTRANCE
+   -------------------------------------------------------------------------- */
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(14px); }
+}
+.lang-switch--hero { animation: hero-in 0.7s var(--ease-out) 0.05s backwards; }
+.hero__eyebrow     { animation: hero-in 0.7s var(--ease-out) 0.15s backwards; }
+.hero__lede        { animation: hero-in 0.7s var(--ease-out) 0.55s backwards; }
+.hero__actions     { animation: hero-in 0.7s var(--ease-out) 0.70s backwards; }
+.hero__trust       { animation: hero-in 0.8s var(--ease-out) 0.85s backwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  /* Belt and braces: the JS also skips the reveal, but if the words are ever
+     split anyway they must not be left sitting outside their mask. */
+  .hero__title .word__in { transform: none; opacity: 1; }
+}
+
 .hero__lede {
   font-size: var(--t-md);
   line-height: 1.62;
@@ -173,6 +222,9 @@
   line-height: 1;
   color: var(--c-gold-light);
   letter-spacing: -0.02em;
+  /* Equal-width digits, so a number counting up from 0 does not jitter as the
+     glyphs change underneath it. */
+  font-variant-numeric: tabular-nums;
 }
 .trust__label {
   font-size: var(--t-xs);

@@ -282,7 +282,7 @@ assets/logos/gelisim.png     İstanbul Gelişim
 assets/logos/beykent.png     Beykent
 assets/logos/aydin.png       İstanbul Aydın
 assets/logos/arel.png        İstanbul Arel
-assets/logos/izu.png         İstanbul Sabahattin Zaim
+assets/logos/biruni.png      Biruni
 assets/logos/bahcesehir.png  Bahçeşehir (the İstanbul mark, NOT one of the Cyprus files)
 ```
 

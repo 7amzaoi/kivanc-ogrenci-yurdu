@@ -9,7 +9,7 @@ whose logo was in the supplied asset pack.
 | `beykent.png`    | Beykent Üniversitesi                   | Beylikdüzü |
 | `aydin.png`      | İstanbul Aydın Üniversitesi           | Florya |
 | `arel.png`       | İstanbul Arel Üniversitesi            | Tepekent |
-| `izu.png`        | İstanbul Sabahattin Zaim Üniversitesi | Halkalı |
+| `biruni.png`     | Biruni Üniversitesi                    | Topkapı |
 | `bahcesehir.png` | Bahçeşehir Üniversitesi (**İstanbul**) | Beşiktaş |
 
 Watch out: the asset pack contains four "Bahçeşehir" files and three of them are the

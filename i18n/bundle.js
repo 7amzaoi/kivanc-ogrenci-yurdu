@@ -158,10 +158,10 @@ window.I18N_BUNDLE = {
         "duration": "20 min"
       },
       "5": {
-        "name": "İstanbul Sabahattin Zaim Üniversitesi",
-        "short": "Halkalı Campus",
-        "time": "25 min by Metrobüs + bus",
-        "duration": "25 min"
+        "name": "Biruni Üniversitesi",
+        "short": "Topkapı Campus",
+        "time": "30 min by Metrobüs",
+        "duration": "30 min"
       },
       "6": {
         "name": "Bahçeşehir Üniversitesi",
@@ -583,10 +583,10 @@ window.I18N_BUNDLE = {
         "duration": "20 dk"
       },
       "5": {
-        "name": "İstanbul Sabahattin Zaim Üniversitesi",
-        "short": "Halkalı Yerleşkesi",
-        "time": "Metrobüs + otobüs ile 25 dk",
-        "duration": "25 dk"
+        "name": "Biruni Üniversitesi",
+        "short": "Topkapı Yerleşkesi",
+        "time": "Metrobüs ile 30 dk",
+        "duration": "30 dk"
       },
       "6": {
         "name": "Bahçeşehir Üniversitesi",

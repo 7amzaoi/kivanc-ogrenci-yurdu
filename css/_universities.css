@@ -13,8 +13,7 @@
   grid-template-columns: auto minmax(0, 1fr);
   grid-template-areas:
     "logo body"
-    "times times"
-    "journey journey";
+    "times times";
   align-items: center;
   gap: var(--s-4) var(--s-5);
   padding: var(--s-5);
@@ -88,6 +87,8 @@
 
 .uni-card__times {
   grid-area: times;
+  /* Cross-fades with .uni-journey, which occupies the same grid cell. */
+  transition: opacity var(--dur-fast) var(--ease);
   display: flex;
   flex-wrap: wrap;
   gap: var(--s-4);
@@ -111,20 +112,27 @@
    .uni-card__times above, so the whole strip is aria-hidden.
    -------------------------------------------------------------------------- */
 .uni-journey {
-  grid-area: journey;
+  /* Deliberately the SAME grid cell as .uni-card__times, so the two cross-fade
+     in place. An earlier version expanded the card on hover, which grew its
+     grid row, pushed the row below it down, and slid cards out from under the
+     cursor — a hover effect must never reflow the page. */
+  grid-area: times;
+  align-self: center;
+
   display: flex;
   align-items: center;
   gap: var(--s-4);
+  padding-block-start: var(--s-4);
 
-  /* Collapsed until hover. A fixed max-height is enough — the strip is always
-     one line — and it animates everywhere, unlike height: auto. */
-  max-block-size: 0;
-  opacity: 0;
+  /* The rail below is translated by nearly its own width to carry the vehicle
+     across. It is invisible, but it still extends past the card and counts
+     toward the document's scroll width — which pushed the page sideways when a
+     card in the last column was hovered. Clip it at the strip. */
   overflow: hidden;
-  transition:
-    max-block-size var(--dur) var(--ease),
-    opacity var(--dur-fast) var(--ease),
-    margin-block-start var(--dur) var(--ease);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-fast) var(--ease);
 }
 
 .uni-journey__track {
@@ -208,11 +216,10 @@
    On touch the strip never renders and the card keeps its compact height. */
 @media (hover: hover) and (pointer: fine) {
   .uni-card:hover .uni-journey,
-  .uni-card:focus-within .uni-journey {
-    max-block-size: 2.5rem;
-    opacity: 1;
-    margin-block-start: var(--s-4);
-  }
+  .uni-card:focus-within .uni-journey { opacity: 1; }
+
+  .uni-card:hover .uni-card__times,
+  .uni-card:focus-within .uni-card__times { opacity: 0; }
 
   .uni-card:hover .uni-journey__rail,
   .uni-card:focus-within .uni-journey__rail {

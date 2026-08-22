@@ -130,32 +130,38 @@
     "1": {
       "name": "İstanbul Gelişim Üniversitesi",
       "short": "Avcılar Campus",
-      "time": "5 min by Metrobüs"
+      "time": "5 min by Metrobüs",
+      "duration": "5 min"
     },
     "2": {
       "name": "Beykent Üniversitesi",
       "short": "Beylikdüzü Campus",
-      "time": "10 min by Metrobüs"
+      "time": "10 min by Metrobüs",
+      "duration": "10 min"
     },
     "3": {
       "name": "İstanbul Aydın Üniversitesi",
       "short": "Florya Campus",
-      "time": "15 min by Metrobüs"
+      "time": "15 min by Metrobüs",
+      "duration": "15 min"
     },
     "4": {
       "name": "İstanbul Arel Üniversitesi",
       "short": "Tepekent Campus",
-      "time": "20 min by Metrobüs"
+      "time": "20 min by Metrobüs",
+      "duration": "20 min"
     },
     "5": {
       "name": "İstanbul Sabahattin Zaim Üniversitesi",
       "short": "Halkalı Campus",
-      "time": "25 min by Metrobüs + bus"
+      "time": "25 min by Metrobüs + bus",
+      "duration": "25 min"
     },
     "6": {
       "name": "Bahçeşehir Üniversitesi",
       "short": "Beşiktaş Campus",
-      "time": "55 min by Metrobüs + metro"
+      "time": "55 min by Metrobüs + metro",
+      "duration": "55 min"
     }
   },
   "amen": {

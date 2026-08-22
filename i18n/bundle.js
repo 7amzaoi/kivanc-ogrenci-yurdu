@@ -136,32 +136,38 @@ window.I18N_BUNDLE = {
       "1": {
         "name": "İstanbul Gelişim Üniversitesi",
         "short": "Avcılar Campus",
-        "time": "5 min by Metrobüs"
+        "time": "5 min by Metrobüs",
+        "duration": "5 min"
       },
       "2": {
         "name": "Beykent Üniversitesi",
         "short": "Beylikdüzü Campus",
-        "time": "10 min by Metrobüs"
+        "time": "10 min by Metrobüs",
+        "duration": "10 min"
       },
       "3": {
         "name": "İstanbul Aydın Üniversitesi",
         "short": "Florya Campus",
-        "time": "15 min by Metrobüs"
+        "time": "15 min by Metrobüs",
+        "duration": "15 min"
       },
       "4": {
         "name": "İstanbul Arel Üniversitesi",
         "short": "Tepekent Campus",
-        "time": "20 min by Metrobüs"
+        "time": "20 min by Metrobüs",
+        "duration": "20 min"
       },
       "5": {
         "name": "İstanbul Sabahattin Zaim Üniversitesi",
         "short": "Halkalı Campus",
-        "time": "25 min by Metrobüs + bus"
+        "time": "25 min by Metrobüs + bus",
+        "duration": "25 min"
       },
       "6": {
         "name": "Bahçeşehir Üniversitesi",
         "short": "Beşiktaş Campus",
-        "time": "55 min by Metrobüs + metro"
+        "time": "55 min by Metrobüs + metro",
+        "duration": "55 min"
       }
     },
     "amen": {
@@ -555,32 +561,38 @@ window.I18N_BUNDLE = {
       "1": {
         "name": "İstanbul Gelişim Üniversitesi",
         "short": "Avcılar Yerleşkesi",
-        "time": "Metrobüs ile 5 dk"
+        "time": "Metrobüs ile 5 dk",
+        "duration": "5 dk"
       },
       "2": {
         "name": "Beykent Üniversitesi",
         "short": "Beylikdüzü Yerleşkesi",
-        "time": "Metrobüs ile 10 dk"
+        "time": "Metrobüs ile 10 dk",
+        "duration": "10 dk"
       },
       "3": {
         "name": "İstanbul Aydın Üniversitesi",
         "short": "Florya Yerleşkesi",
-        "time": "Metrobüs ile 15 dk"
+        "time": "Metrobüs ile 15 dk",
+        "duration": "15 dk"
       },
       "4": {
         "name": "İstanbul Arel Üniversitesi",
         "short": "Tepekent Yerleşkesi",
-        "time": "Metrobüs ile 20 dk"
+        "time": "Metrobüs ile 20 dk",
+        "duration": "20 dk"
       },
       "5": {
         "name": "İstanbul Sabahattin Zaim Üniversitesi",
         "short": "Halkalı Yerleşkesi",
-        "time": "Metrobüs + otobüs ile 25 dk"
+        "time": "Metrobüs + otobüs ile 25 dk",
+        "duration": "25 dk"
       },
       "6": {
         "name": "Bahçeşehir Üniversitesi",
         "short": "Beşiktaş Yerleşkesi",
-        "time": "Metrobüs + metro ile 55 dk"
+        "time": "Metrobüs + metro ile 55 dk",
+        "duration": "55 dk"
       }
     },
     "amen": {

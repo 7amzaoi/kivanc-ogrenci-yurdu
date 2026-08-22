@@ -13,7 +13,8 @@
   grid-template-columns: auto minmax(0, 1fr);
   grid-template-areas:
     "logo body"
-    "times times";
+    "times times"
+    "journey journey";
   align-items: center;
   gap: var(--s-4) var(--s-5);
   padding: var(--s-5);
@@ -102,6 +103,141 @@
   color: var(--c-ink-soft);
 }
 .uni-card__times .icon { color: var(--c-accent); }
+
+/* --------------------------------------------------------------------------
+   JOURNEY STRIP — revealed on hover
+   A vehicle crosses a track from the residence to the campus, with the
+   duration alongside. Decorative: the same time is already stated in
+   .uni-card__times above, so the whole strip is aria-hidden.
+   -------------------------------------------------------------------------- */
+.uni-journey {
+  grid-area: journey;
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+
+  /* Collapsed until hover. A fixed max-height is enough — the strip is always
+     one line — and it animates everywhere, unlike height: auto. */
+  max-block-size: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-block-size var(--dur) var(--ease),
+    opacity var(--dur-fast) var(--ease),
+    margin-block-start var(--dur) var(--ease);
+}
+
+.uni-journey__track {
+  position: relative;
+  flex: 1;
+  min-inline-size: 0;
+  block-size: 2px;
+  border-radius: var(--r-pill);
+  /* The un-travelled part of the route. */
+  background-image: repeating-linear-gradient(
+    to right, var(--c-line) 0 3px, transparent 3px 7px);
+}
+
+/* The travelled part, filling in behind the vehicle. */
+.uni-journey__track::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline: 0;
+  border-radius: inherit;
+  background-color: var(--c-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+[dir="rtl"] .uni-journey__track::after { transform-origin: right center; }
+
+/* A full-width rail: translating it by a percentage moves the vehicle by that
+   share of the TRACK, which is the one length CSS cannot otherwise measure. */
+.uni-journey__rail {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline: 0;
+  block-size: 0;
+}
+
+.uni-journey__vehicle {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 0;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  padding-inline: 3px;
+  /* Sits on the line rather than being crossed by it. */
+  background-color: var(--c-cream);
+  color: var(--c-accent);
+}
+
+.uni-journey__time {
+  flex: none;
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  color: var(--c-accent);
+  white-space: nowrap;
+}
+
+/* Each loop fades in at the origin and out at the destination. Without that,
+   the vehicle snaps back across the whole track on every repeat, which reads
+   as a glitch rather than a journey. */
+@keyframes journey-move {
+  0%        { transform: translateX(0);                    opacity: 0; }
+  12%       { opacity: 1; }
+  88%       { opacity: 1; }
+  100%      { transform: translateX(calc(100% - 22px));    opacity: 0; }
+}
+@keyframes journey-move-rtl {
+  0%        { transform: translateX(0);                    opacity: 0; }
+  12%       { opacity: 1; }
+  88%       { opacity: 1; }
+  100%      { transform: translateX(calc(-100% + 22px));   opacity: 0; }
+}
+@keyframes journey-fill {
+  0%        { transform: scaleX(0);  opacity: 0; }
+  12%       { opacity: 1; }
+  88%       { opacity: 1; }
+  100%      { transform: scaleX(1);  opacity: 0; }
+}
+
+/* Hover is the trigger, so the whole thing is limited to devices that have it.
+   On touch the strip never renders and the card keeps its compact height. */
+@media (hover: hover) and (pointer: fine) {
+  .uni-card:hover .uni-journey,
+  .uni-card:focus-within .uni-journey {
+    max-block-size: 2.5rem;
+    opacity: 1;
+    margin-block-start: var(--s-4);
+  }
+
+  .uni-card:hover .uni-journey__rail,
+  .uni-card:focus-within .uni-journey__rail {
+    animation: journey-move var(--journey-dur, 1.6s) var(--ease-out) infinite;
+  }
+  [dir="rtl"] .uni-card:hover .uni-journey__rail,
+  [dir="rtl"] .uni-card:focus-within .uni-journey__rail {
+    animation-name: journey-move-rtl;
+  }
+
+  .uni-card:hover .uni-journey__track::after,
+  .uni-card:focus-within .uni-journey__track::after {
+    animation: journey-fill var(--journey-dur, 1.6s) var(--ease-out) infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Still reveal the strip, but do not drive anything across the screen:
+     show the completed journey instead. */
+  .uni-journey__rail { transform: translateX(calc(100% - 22px)); }
+  [dir="rtl"] .uni-journey__rail { transform: translateX(calc(-100% + 22px)); }
+  .uni-journey__track::after { transform: scaleX(1); }
+  .uni-card:hover .uni-journey__rail,
+  .uni-card:hover .uni-journey__track::after { animation: none; }
+}
 
 /* --------------------------------------------------------------------------
    TRANSIT STRIP — the "you can walk to it" reassurance

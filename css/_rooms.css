@@ -26,6 +26,12 @@
 }
 
 .room-card {
+  /* The footer layout depends on how wide the CARD is, not the viewport — the
+     same card is 560px in a two-up grid and 330px in a four-up one. A container
+     query asks the right question; viewport breakpoints only approximated it. */
+  container-type: inline-size;
+  container-name: roomcard;
+
   display: flex;
   flex-direction: column;
   background-color: var(--c-cream);
@@ -168,24 +174,31 @@
 /* --------------------------------------------------------------------------
    BREAKPOINTS
    -------------------------------------------------------------------------- */
-/* Below this the card is too narrow to hold the price and the Apply button
-   side by side, so the button takes the full width instead of half-wrapping. */
-@media (max-width: 479px) {
+/* Under ~330px of card there is not room for the price and the Apply button
+   on one line (the price block measures ~168px, the button ~91px). Rather than
+   let them half-wrap, the button takes the full width. */
+@container roomcard (max-width: 330px) {
   .room-card__foot { align-items: stretch; }
   .room-card__foot .btn { inline-size: 100%; }
 }
 
+/* Browsers without container queries keep the old viewport approximation. */
+@supports not (container-type: inline-size) {
+  @media (max-width: 479px) {
+    .room-card__foot { align-items: stretch; }
+    .room-card__foot .btn { inline-size: 100%; }
+  }
+}
 
-/* Column counts are set by the widest thing a card must hold on one line:
-   the price block plus the Apply button, which measures ~284px in Turkish
-   ("BAŞLANGIÇ" is longer than "FROM"). Adding the 2x32px card padding, a card
-   needs ~350px, so 2-up needs ~800px of viewport and 3-up needs ~1240px.
-   Going multi-column any earlier makes the footer wrap. */
-@media (min-width: 800px) {
+
+/* There are four room types, so the column count must divide four: 1, 2 or 4.
+   Three columns leaves the fourth card stranded on a row of its own, which is
+   what this grid used to do between 1240px and up. Do not add a 3-up step. */
+@media (min-width: 700px) {
   .room-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 
-@media (min-width: 1240px) {
-  .room-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-6); }
+@media (min-width: 1280px) {
+  .room-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-5); }
 }

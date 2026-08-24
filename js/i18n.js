@@ -107,7 +107,14 @@
       }
     }
 
-    return fetch(BASE_PATH + lang + ".json", { cache: "no-cache" })
+    /* cache: "no-cache" revalidates the *browser* cache but says nothing to a
+       CDN edge, which happily served a stale tr.json for an hour after a
+       deploy. tools/package.py stamps window.__ASSET_V with a hash of the
+       content, so a changed translation is a changed URL and therefore a
+       cache miss everywhere. Absent (dev, or file://) it is simply omitted. */
+    var v = window.__ASSET_V ? "?v=" + window.__ASSET_V : "";
+
+    return fetch(BASE_PATH + lang + ".json" + v, { cache: "no-cache" })
       .then(function (res) {
         if (!res.ok) throw new Error("HTTP " + res.status);
         return res.json();

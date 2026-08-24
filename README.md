@@ -518,9 +518,22 @@ relative links to `css/` would break.
    Paste the address into a WhatsApp message to yourself: if the preview card
    shows the entrance photograph, `og:image` resolved correctly.
 
-Caching note: assets are cached for a year and there is no filename hashing.
-If you later replace a photograph or edit the CSS, either give the file a new
-name or add `?v=2` to the link, otherwise returning visitors keep the old copy.
+**Caching.** `.htaccess` gives CSS, JS and images a year of `immutable` cache,
+so `package.py` stamps `?v=<content-hash>` onto every long-cached asset in the
+HTML it ships, and sets `window.__ASSET_V` so `i18n.js` appends the same token
+when it fetches `en.json` / `tr.json`. Change any of them and the token changes,
+so the URL changes, so every cache misses. The HTML is `no-cache`, which is what
+lets the new token reach people at all.
+
+This is not theoretical: the first deploy served a stale `i18n/tr.json` from
+Hostinger's CDN for an hour, so the live site showed the old email and the old
+"opening your email app" message while `index.html` was byte-for-byte current.
+`fetch(..., {cache: "no-cache"})` revalidates the browser cache and says nothing
+whatsoever to a CDN edge.
+
+**Photographs are not covered by the token** — they are not in the hash, because
+adding a 2 MB folder to it would rewrite every asset URL on every image tweak.
+If you replace a photograph, give the file a new name.
 
 ## Before launch — checklist
 

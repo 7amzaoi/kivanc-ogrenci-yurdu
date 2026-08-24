@@ -11,6 +11,7 @@ Refuses to build if the site still has no origin configured, because a site
 uploaded without a canonical and without an absolute og:image is a site you
 will have to upload again.
 """
+import hashlib
 import io
 import json
 import os
@@ -65,6 +66,39 @@ def flatten_css():
     return "".join(out), names
 
 
+def version_token(css):
+    """Short content hash covering everything cached long-term."""
+    h = hashlib.sha1()
+    h.update(css.encode("utf-8"))
+    for f in ("js/i18n.js", "js/main.js", "i18n/bundle.js",
+              "i18n/en.json", "i18n/tr.json"):
+        h.update(io.open(f, "rb").read())
+    return h.hexdigest()[:10]
+
+
+def stamp_versions(html, token):
+    """Point the HTML at versioned asset URLs.
+
+    Assets are served with a year of immutable cache, which is right for
+    speed and wrong for the next edit: without this, a corrected price or a
+    restyled section would keep serving the old file to returning visitors
+    and to Hostinger's CDN. The HTML itself is no-cache, so a new token
+    reaches everyone on their next page load.
+    """
+    for path in ("css/main.css", "js/i18n.js", "js/main.js", "i18n/bundle.js"):
+        for attr in ("href", "src"):
+            html = html.replace('%s="%s"' % (attr, path),
+                                '%s="%s?v=%s"' % (attr, path, token))
+
+    # i18n.js reads this when it fetches en.json / tr.json at runtime
+    marker = '<script src="i18n/bundle.js?v=%s"></script>' % token
+    if marker not in html:
+        raise SystemExit("bundle.js script tag not found -- cannot stamp __ASSET_V")
+    return html.replace(
+        marker,
+        '<script>window.__ASSET_V="%s";</script>\n  %s' % (token, marker))
+
+
 def collect():
     for f in ROOT_FILES:
         if os.path.exists(f):
@@ -102,12 +136,18 @@ def main():
 
     files = sorted(set(collect()))
     css, partials = flatten_css()
+    token = version_token(css)
 
     if os.path.exists(OUT):
         os.remove(OUT)
     with zipfile.ZipFile(OUT, "w", zipfile.ZIP_DEFLATED) as z:
         for f in files:
-            z.write(f, f)
+            if f.endswith(".html"):
+                html = stamp_versions(io.open(f, encoding="utf-8").read(), token) \
+                       if f != "404.html" else io.open(f, encoding="utf-8").read()
+                z.writestr(f, html.encode("utf-8"))
+            else:
+                z.write(f, f)
         z.writestr("css/main.css", css.encode("utf-8"))
 
     total = sum(os.path.getsize(f) for f in files) + len(css.encode("utf-8"))
@@ -117,6 +157,7 @@ def main():
     print("css: %d partials flattened into one main.css (%d KB), "
           "saving %d requests and a round-trip"
           % (len(partials), len(css) // 1024, len(partials)))
+    print("cache: assets stamped ?v=%s -- edit anything and the URLs change" % token)
     print("origin: %s" % o)
     print()
     print("Upload it in hPanel -> File Manager -> public_html, then use the")

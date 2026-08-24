@@ -1,0 +1,124 @@
+# Kıvanç Kız Yurdu — server config for Hostinger (LiteSpeed, reads .htaccess)
+# Upload this to public_html/ alongside index.html. Lines are grouped so you
+# can comment out any block that your plan does not support without breaking
+# the rest.
+
+AddDefaultCharset UTF-8
+
+# ---------------------------------------------------------------------------
+# Custom error page
+# ---------------------------------------------------------------------------
+# 404.html is deliberately self-contained, so it renders correctly even when
+# it is served for a deep path like /a/b/c where relative CSS would 404 too.
+ErrorDocument 404 /404.html
+
+# ---------------------------------------------------------------------------
+# Force HTTPS
+# ---------------------------------------------------------------------------
+# Turn this on only AFTER the SSL certificate in hPanel says "Active".
+# Enabling it before the certificate exists locks the site behind a redirect
+# loop to a URL that does not answer yet.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Pick ONE canonical hostname and uncomment it, so www and non-www do not
+  # both serve the site as separate pages to Google. It must match the origin
+  # you passed to tools/set-domain.py.
+  #
+  # non-www (recommended, matches https://example.com):
+  # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  # RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+  #
+  # www:
+  # RewriteCond %{HTTP_HOST} !^www\. [NC]
+  # RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Serve /rooms instead of /rooms.html if you prefer the tidier URL.
+  # Leave it off unless you want it: turning it on changes every link you
+  # may already have shared.
+  # RewriteCond %{REQUEST_FILENAME}.html -f
+  # RewriteRule ^([^.]+)$ $1.html [L]
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Compression
+# ---------------------------------------------------------------------------
+# Images and .webp are already compressed; re-compressing them wastes CPU.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Caching
+# ---------------------------------------------------------------------------
+# Long cache on assets, none on HTML. There is no build step and no filename
+# hashing, so if you replace a photo or edit CSS, visitors who already have
+# the old copy keep it for up to a year. Either rename the file, or add a
+# query string to the link (main.css?v=2) when you change one.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                        "access plus 1 month"
+
+  ExpiresByType text/html               "access plus 0 seconds"
+  ExpiresByType application/json        "access plus 1 hour"
+
+  ExpiresByType text/css                "access plus 1 year"
+  ExpiresByType application/javascript  "access plus 1 year"
+  ExpiresByType image/jpeg              "access plus 1 year"
+  ExpiresByType image/png               "access plus 1 year"
+  ExpiresByType image/webp              "access plus 1 year"
+  ExpiresByType image/svg+xml           "access plus 1 year"
+  ExpiresByType font/woff2              "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|jpg|jpeg|png|webp|svg|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  # ---------------------------------------------------------------------
+  # Security headers
+  # ---------------------------------------------------------------------
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+  # HSTS: only switch on once HTTPS has worked for a few days. Once a browser
+  # has seen this header it refuses plain http for max-age, and you cannot
+  # take that back from the server side.
+  # Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# MIME types
+# ---------------------------------------------------------------------------
+<IfModule mod_mime.c>
+  AddType image/webp        .webp
+  AddType application/json  .json
+  AddType font/woff2        .woff2
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Do not serve source files if any were uploaded by mistake
+# ---------------------------------------------------------------------------
+<FilesMatch "\.(py|md|json\.bak|gitignore)$">
+  Require all denied
+</FilesMatch>
+
+# i18n/en.json and i18n/tr.json must stay reachable: the page fetches them.
+<FilesMatch "^(en|tr)\.json$">
+  Require all granted
+</FilesMatch>
+
+Options -Indexes

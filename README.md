@@ -34,6 +34,7 @@ Then open <http://localhost:8000>.
 index.html                 Homepage — all sections, semantic markup with data-i18n keys
 rooms.html                 GENERATED rooms & prices page (see Rooms page below)
 404.html                   Self-contained not-found page (no external CSS by design)
+.htaccess                  Server config for Hostinger: 404, HTTPS, caching, headers
 site.config.json           The public origin. Set it with tools/set-domain.py
 robots.txt, sitemap.xml    GENERATED once an origin is set
 css/
@@ -64,6 +65,7 @@ tools/
   build-rooms-page.py      Regenerates rooms.html
   build-seo.py             Regenerates canonical/og/JSON-LD/robots/sitemap
   set-domain.py            One command to point the site at its public URL
+  package.py               Builds kivanc-site.zip for upload to public_html/
 assets/
   brand/                   Kıvanç logo, favicons (see Brand assets)
   logos/                   University logos
@@ -449,6 +451,48 @@ publishable in that state; social shares just will not show a preview image.
 Upload the repository root as-is. There is no build step. `404.html` is
 deliberately self-contained — it is served for unknown paths at any depth, where
 relative links to `css/` would break.
+
+### Deploying to Hostinger
+
+1. **Point the site at the domain first.** Nothing else works properly until
+   this is done, and doing it after the upload means uploading twice.
+
+   ```bash
+   python tools/set-domain.py https://kivancyurdu.com
+   ```
+
+2. **Build the upload bundle.**
+
+   ```bash
+   python tools/package.py        # -> kivanc-site.zip
+   ```
+
+   It ships `index.html`, `rooms.html`, `404.html`, `.htaccess`, `robots.txt`,
+   `sitemap.xml` and the `css/ js/ i18n/ assets/` folders. The generators, the
+   README and `site.config.json` stay here; the server has no use for them.
+   It refuses to build while no origin is set.
+
+3. **hPanel → File Manager → `public_html`.** Delete Hostinger's placeholder
+   `index.html` if one is there, upload the zip, then use **Extract**. Turn on
+   *Show hidden files* in the File Manager settings, or you will not be able to
+   see `.htaccess` afterwards to confirm it arrived.
+
+4. **hPanel → SSL.** Wait until the certificate reads *Active*, then uncomment
+   the HTTPS redirect block in `.htaccess`. Doing it earlier redirects the site
+   to a URL that cannot answer yet.
+
+5. **Pick www or non-www** in `.htaccess` (one block is commented ready) and
+   make it match the origin you passed in step 1. Serving both is the single
+   most common way a small site splits its own search ranking.
+
+6. **Check it.** Visit the site, switch TR/EN, open `rooms.html`, and request a
+   deliberately wrong URL such as `/nope` to confirm the 404 page appears.
+   Paste the address into a WhatsApp message to yourself: if the preview card
+   shows the entrance photograph, `og:image` resolved correctly.
+
+Caching note: assets are cached for a year and there is no filename hashing.
+If you later replace a photograph or edit the CSS, either give the file a new
+name or add `?v=2` to the link, otherwise returning visitors keep the old copy.
 
 ## Before launch — checklist
 

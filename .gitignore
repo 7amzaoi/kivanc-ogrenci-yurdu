@@ -30,3 +30,6 @@ __pycache__/
 # i18n/*.json by tools/build-i18n.py, but the site needs it at runtime to work
 # when opened from disk (file://), and there is no build step on deploy.
 # Regenerate and commit it whenever the JSON changes.
+
+# deployment bundle, rebuilt on demand
+kivanc-site.zip

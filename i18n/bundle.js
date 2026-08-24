@@ -42,7 +42,7 @@ window.I18N_BUNDLE = {
       "lede": "A private residence for female students in the heart of Avcılar — professionally managed, secure around the clock, and a short walk from the Metrobüs that reaches five university campuses in under half an hour.",
       "ctaPrimary": "View Rooms",
       "ctaSecondary": "Book a Visit",
-      "imageAlt": "Students relaxing in a bright, modern residence common area",
+      "imageAlt": "A double room with two beds, study desks, a television and a mini fridge",
       "trust": {
         "1": {
           "value": "500+",
@@ -84,7 +84,7 @@ window.I18N_BUNDLE = {
         "capacity": "1 student",
         "desc": "A hotel-style room of your own, with a private bathroom and WC, a TV, a mini fridge and a brand-new study set.",
         "price": "₺30.000",
-        "alt": "Single room with a bed, study desk and large window",
+        "alt": "A single room with one bed, a bedside table and a full-height wardrobe",
         "priceTerm": "₺300.000",
         "instalments": "10",
         "payment": "1 deposit + 10 instalments"
@@ -94,7 +94,7 @@ window.I18N_BUNDLE = {
         "capacity": "2 students",
         "desc": "Two beds in a hotel-style room with its own bathroom and WC, a TV and a mini fridge. Our most popular choice.",
         "price": "₺24.000",
-        "alt": "Shared twin room with two beds and matching study desks",
+        "alt": "A double room with two beds, a television and its own bathroom",
         "priceTerm": "₺240.000",
         "instalments": "9",
         "payment": "1 deposit + 9 instalments"
@@ -228,7 +228,7 @@ window.I18N_BUNDLE = {
       "title": "Built for students. Answerable to parents.",
       "p1": "Most of our residents move to Istanbul from another city, and for their families that first year is a leap of faith. We built Kıvanç around that reality: one properly staffed building, clear rules, transparent pricing, and someone reachable whenever a parent needs an answer.",
       "p2": "We're not a large chain. The residence is run day to day by the same family that has owned it since 2013, which is why the standards hold.",
-      "imageAlt": "Students studying together around a shared table",
+      "imageAlt": "The entrance and common seating area at Kıvanç Öğrenci Yurdu",
       "v1": {
         "title": "Safety comes first",
         "desc": "Controlled entry, 24/7 camera recording and staff on site at every hour — and entries and exits reported to the family as they happen."
@@ -265,28 +265,28 @@ window.I18N_BUNDLE = {
       "lede": "Rooms, lounges, kitchens and the spaces in between. Book a visit and we'll show you the rest in person.",
       "cta": "Book a visit",
       "1": {
-        "alt": "Common lounge with armchairs and floor lamps"
+        "alt": "A corridor on the residence floors"
       },
       "2": {
-        "alt": "Quiet seating corner in the common lounge"
+        "alt": "A single room with its wardrobe and two windows"
       },
       "3": {
-        "alt": "Study desk by a window surrounded by plants"
+        "alt": "The entrance and common seating area of the residence"
       },
       "4": {
-        "alt": "Students cooking together in a shared kitchen"
+        "alt": "The shower and washbasin inside a room"
       },
       "5": {
-        "alt": "Study lounge with bookshelves and armchairs"
+        "alt": "A double room seen from its doorway"
       },
       "6": {
-        "alt": "Fitness room with racks of free weights"
+        "alt": "The doorway into one of the rooms"
       },
       "7": {
-        "alt": "Residence building exterior at dusk"
+        "alt": "A double room with a television and its own bathroom"
       },
       "8": {
-        "alt": "Modern shared bathroom with a walk-in shower"
+        "alt": "A double room with beds, study desks and a mini fridge"
       }
     },
     "test": {
@@ -445,7 +445,11 @@ window.I18N_BUNDLE = {
       "ctaLede": "Tell us which size you're after and we'll confirm availability the same day.",
       "ctaPrimary": "Send an enquiry",
       "ctaSecondary": "Message on WhatsApp",
-      "termLength": "10 months"
+      "termLength": "10 months",
+      "sliderLabel": "Photographs of this room",
+      "prevPhoto": "Previous photograph",
+      "nextPhoto": "Next photograph",
+      "photoOf": "Photograph"
     }
   },
   "tr": {
@@ -486,7 +490,7 @@ window.I18N_BUNDLE = {
       "lede": "Avcılar'ın merkezinde kız öğrenciler için özel bir yurt — profesyonel yönetim, 7/24 güvenlik ve yarım saatin altında beş üniversite kampüsüne ulaşan Metrobüs'e kısa bir yürüyüş.",
       "ctaPrimary": "Odaları İncele",
       "ctaSecondary": "Randevu Al",
-      "imageAlt": "Aydınlık ve modern bir yurt ortak alanında dinlenen öğrenciler",
+      "imageAlt": "İki kişilik bir oda: iki yatak, çalışma masaları, televizyon ve mini buzdolabı",
       "trust": {
         "1": {
           "value": "500+",
@@ -528,7 +532,7 @@ window.I18N_BUNDLE = {
         "capacity": "1 öğrenci",
         "desc": "Kendinize ait otel tipi bir oda: oda içinde banyo ve WC, TV, mini buzdolabı ve sıfır genç odası takımı.",
         "price": "₺30.000",
-        "alt": "Yatak, çalışma masası ve geniş pencereli tek kişilik oda",
+        "alt": "Tek kişilik oda: tek yatak, komodin ve boydan gardırop",
         "priceTerm": "₺300.000",
         "instalments": "10",
         "payment": "1 peşin + 10 taksit"
@@ -538,7 +542,7 @@ window.I18N_BUNDLE = {
         "capacity": "2 öğrenci",
         "desc": "Oda içinde banyo ve WC, TV ve mini buzdolabı bulunan otel tipi iki kişilik oda. En çok tercih edilen seçeneğimiz.",
         "price": "₺24.000",
-        "alt": "İki yataklı ve iki çalışma masalı paylaşımlı oda",
+        "alt": "İki kişilik oda: iki yatak, televizyon ve oda içi banyo",
         "priceTerm": "₺240.000",
         "instalments": "9",
         "payment": "1 peşin + 9 taksit"
@@ -672,7 +676,7 @@ window.I18N_BUNDLE = {
       "title": "Öğrenci için kurulduk. Aileye hesap veriyoruz.",
       "p1": "Öğrencilerimizin çoğu İstanbul'a başka bir şehirden geliyor ve aileleri için o ilk yıl büyük bir güven meselesi. Kıvanç'ı tam da bu gerçeğin üzerine kurduk: gerçekten personelli tek bir bina, net kurallar, şeffaf fiyatlandırma ve bir veli soru sorduğunda her zaman ulaşılabilen bir muhatap.",
       "p2": "Büyük bir zincir değiliz. Yurdu, 2013'ten bu yana sahibi olan aile günlük olarak kendisi yönetiyor; standartların korunmasının sebebi de bu.",
-      "imageAlt": "Ortak bir masanın etrafında birlikte ders çalışan öğrenciler",
+      "imageAlt": "Kıvanç Öğrenci Yurdu'nun girişi ve ortak oturma alanı",
       "v1": {
         "title": "Önce güvenlik",
         "desc": "Kontrollü giriş, 7/24 kamera kaydı ve günün her saatinde binada personel; giriş-çıkışlar anında aileye bildirilir."
@@ -709,28 +713,28 @@ window.I18N_BUNDLE = {
       "lede": "Odalar, salonlar, mutfaklar ve aradaki tüm alanlar. Randevu alın, gerisini yerinde gösterelim.",
       "cta": "Randevu alın",
       "1": {
-        "alt": "Koltuklar ve lambaderlerle döşenmiş ortak salon"
+        "alt": "Yurt katlarındaki koridor"
       },
       "2": {
-        "alt": "Ortak salonda sessiz bir oturma köşesi"
+        "alt": "Tek kişilik oda: gardırobu ve iki penceresiyle"
       },
       "3": {
-        "alt": "Pencere kenarında bitkilerle çevrili çalışma masası"
+        "alt": "Yurdun girişi ve ortak oturma alanı"
       },
       "4": {
-        "alt": "Ortak mutfakta birlikte yemek yapan öğrenciler"
+        "alt": "Oda içindeki duş ve lavabo"
       },
       "5": {
-        "alt": "Kitaplıkları ve koltuklarıyla çalışma salonu"
+        "alt": "İki kişilik odanın kapıdan görünümü"
       },
       "6": {
-        "alt": "Serbest ağırlıkların bulunduğu spor salonu"
+        "alt": "Odalardan birinin kapısı"
       },
       "7": {
-        "alt": "Akşam saatlerinde yurt binasının dış görünümü"
+        "alt": "İki kişilik oda: televizyon ve oda içi banyo"
       },
       "8": {
-        "alt": "Duşakabinli modern ortak banyo"
+        "alt": "İki kişilik oda: yataklar, çalışma masaları ve mini buzdolabı"
       }
     },
     "test": {
@@ -889,7 +893,11 @@ window.I18N_BUNDLE = {
       "ctaLede": "Hangi oda tipini istediğinizi yazın, boş yer durumunu aynı gün teyit edelim.",
       "ctaPrimary": "Talep gönder",
       "ctaSecondary": "WhatsApp'tan yazın",
-      "termLength": "10 ay"
+      "termLength": "10 ay",
+      "sliderLabel": "Bu odanın fotoğrafları",
+      "prevPhoto": "Önceki fotoğraf",
+      "nextPhoto": "Sonraki fotoğraf",
+      "photoOf": "Fotoğraf"
     }
   }
 };

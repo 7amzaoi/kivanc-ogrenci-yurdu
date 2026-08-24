@@ -36,7 +36,7 @@
     "lede": "Avcılar'ın merkezinde kız öğrenciler için özel bir yurt — profesyonel yönetim, 7/24 güvenlik ve yarım saatin altında beş üniversite kampüsüne ulaşan Metrobüs'e kısa bir yürüyüş.",
     "ctaPrimary": "Odaları İncele",
     "ctaSecondary": "Randevu Al",
-    "imageAlt": "Aydınlık ve modern bir yurt ortak alanında dinlenen öğrenciler",
+    "imageAlt": "İki kişilik bir oda: iki yatak, çalışma masaları, televizyon ve mini buzdolabı",
     "trust": {
       "1": {
         "value": "500+",
@@ -78,7 +78,7 @@
       "capacity": "1 öğrenci",
       "desc": "Kendinize ait otel tipi bir oda: oda içinde banyo ve WC, TV, mini buzdolabı ve sıfır genç odası takımı.",
       "price": "₺30.000",
-      "alt": "Yatak, çalışma masası ve geniş pencereli tek kişilik oda",
+      "alt": "Tek kişilik oda: tek yatak, komodin ve boydan gardırop",
       "priceTerm": "₺300.000",
       "instalments": "10",
       "payment": "1 peşin + 10 taksit"
@@ -88,7 +88,7 @@
       "capacity": "2 öğrenci",
       "desc": "Oda içinde banyo ve WC, TV ve mini buzdolabı bulunan otel tipi iki kişilik oda. En çok tercih edilen seçeneğimiz.",
       "price": "₺24.000",
-      "alt": "İki yataklı ve iki çalışma masalı paylaşımlı oda",
+      "alt": "İki kişilik oda: iki yatak, televizyon ve oda içi banyo",
       "priceTerm": "₺240.000",
       "instalments": "9",
       "payment": "1 peşin + 9 taksit"
@@ -222,7 +222,7 @@
     "title": "Öğrenci için kurulduk. Aileye hesap veriyoruz.",
     "p1": "Öğrencilerimizin çoğu İstanbul'a başka bir şehirden geliyor ve aileleri için o ilk yıl büyük bir güven meselesi. Kıvanç'ı tam da bu gerçeğin üzerine kurduk: gerçekten personelli tek bir bina, net kurallar, şeffaf fiyatlandırma ve bir veli soru sorduğunda her zaman ulaşılabilen bir muhatap.",
     "p2": "Büyük bir zincir değiliz. Yurdu, 2013'ten bu yana sahibi olan aile günlük olarak kendisi yönetiyor; standartların korunmasının sebebi de bu.",
-    "imageAlt": "Ortak bir masanın etrafında birlikte ders çalışan öğrenciler",
+    "imageAlt": "Kıvanç Öğrenci Yurdu'nun girişi ve ortak oturma alanı",
     "v1": {
       "title": "Önce güvenlik",
       "desc": "Kontrollü giriş, 7/24 kamera kaydı ve günün her saatinde binada personel; giriş-çıkışlar anında aileye bildirilir."
@@ -259,28 +259,28 @@
     "lede": "Odalar, salonlar, mutfaklar ve aradaki tüm alanlar. Randevu alın, gerisini yerinde gösterelim.",
     "cta": "Randevu alın",
     "1": {
-      "alt": "Koltuklar ve lambaderlerle döşenmiş ortak salon"
+      "alt": "Yurt katlarındaki koridor"
     },
     "2": {
-      "alt": "Ortak salonda sessiz bir oturma köşesi"
+      "alt": "Tek kişilik oda: gardırobu ve iki penceresiyle"
     },
     "3": {
-      "alt": "Pencere kenarında bitkilerle çevrili çalışma masası"
+      "alt": "Yurdun girişi ve ortak oturma alanı"
     },
     "4": {
-      "alt": "Ortak mutfakta birlikte yemek yapan öğrenciler"
+      "alt": "Oda içindeki duş ve lavabo"
     },
     "5": {
-      "alt": "Kitaplıkları ve koltuklarıyla çalışma salonu"
+      "alt": "İki kişilik odanın kapıdan görünümü"
     },
     "6": {
-      "alt": "Serbest ağırlıkların bulunduğu spor salonu"
+      "alt": "Odalardan birinin kapısı"
     },
     "7": {
-      "alt": "Akşam saatlerinde yurt binasının dış görünümü"
+      "alt": "İki kişilik oda: televizyon ve oda içi banyo"
     },
     "8": {
-      "alt": "Duşakabinli modern ortak banyo"
+      "alt": "İki kişilik oda: yataklar, çalışma masaları ve mini buzdolabı"
     }
   },
   "test": {
@@ -439,6 +439,10 @@
     "ctaLede": "Hangi oda tipini istediğinizi yazın, boş yer durumunu aynı gün teyit edelim.",
     "ctaPrimary": "Talep gönder",
     "ctaSecondary": "WhatsApp'tan yazın",
-    "termLength": "10 ay"
+    "termLength": "10 ay",
+    "sliderLabel": "Bu odanın fotoğrafları",
+    "prevPhoto": "Önceki fotoğraf",
+    "nextPhoto": "Sonraki fotoğraf",
+    "photoOf": "Fotoğraf"
   }
 }

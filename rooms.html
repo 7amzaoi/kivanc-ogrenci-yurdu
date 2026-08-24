@@ -174,9 +174,7 @@
       <div class="container">
         <article class="room-row" data-reveal>
           <div class="media media--4x3 room-row__media">
-            <!-- PLACEHOLDER IMAGE: replace with real property photo (single room) -->
-            <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1100&q=80"
-                 data-i18n-attr="alt:rooms.f1.alt" alt="Single room with a bed, study desk and large window"
+            <img src="assets/images/room-single-1.jpg" data-i18n-attr="alt:rooms.f1.alt" alt="A single room with one bed, a bedside table and a full-height wardrobe"
                  loading="lazy" width="1100" height="825" />
           </div>
 
@@ -223,11 +221,47 @@
         </article>
 
         <article class="room-row" data-reveal>
-          <div class="media media--4x3 room-row__media">
-            <!-- PLACEHOLDER IMAGE: replace with real property photo (double room) -->
-            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1100&q=80"
-                 data-i18n-attr="alt:rooms.f2.alt" alt="Shared twin room with two beds and matching study desks"
-                 loading="lazy" width="1100" height="825" />
+          <div class="room-slider" data-slider>
+            <ul class="room-slider__track" data-slider-track tabindex="0"
+                data-i18n-attr="aria-label:roomsPage.sliderLabel" aria-label="Photographs of this room">
+              <li class="room-slider__slide">
+                <img src="assets/images/room-double-1.jpg" data-i18n-attr="alt:rooms.f2.alt" alt="A double room with two beds, a television and its own bathroom"
+                     loading="lazy" width="1100" height="825" />
+              </li>
+              <li class="room-slider__slide">
+                <img src="assets/images/room-double-3.jpg" data-i18n-attr="alt:rooms.f2.alt" alt="A double room with two beds, a television and its own bathroom"
+                     loading="lazy" width="1100" height="825" />
+              </li>
+              <li class="room-slider__slide">
+                <img src="assets/images/room-double-2.jpg" data-i18n-attr="alt:rooms.f2.alt" alt="A double room with two beds, a television and its own bathroom"
+                     loading="lazy" width="1100" height="825" />
+              </li>
+              <li class="room-slider__slide">
+                <img src="assets/images/room-double-4.jpg" data-i18n-attr="alt:rooms.f2.alt" alt="A double room with two beds, a television and its own bathroom"
+                     loading="lazy" width="1100" height="825" />
+              </li>
+            </ul>
+
+            <button type="button" class="room-slider__nav room-slider__nav--prev" data-slider-prev
+                    data-i18n-attr="aria-label:roomsPage.prevPhoto" aria-label="Previous photograph">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+            </button>
+            <button type="button" class="room-slider__nav room-slider__nav--next" data-slider-next
+                    data-i18n-attr="aria-label:roomsPage.nextPhoto" aria-label="Next photograph">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+            </button>
+
+            <div class="room-slider__dots" data-slider-dots>
+              <button type="button" class="room-slider__dot" data-slider-dot="0"
+                      data-i18n-attr="aria-label:roomsPage.photoOf" aria-label="Photograph 1"></button>
+              <button type="button" class="room-slider__dot" data-slider-dot="1"
+                      data-i18n-attr="aria-label:roomsPage.photoOf" aria-label="Photograph 2"></button>
+              <button type="button" class="room-slider__dot" data-slider-dot="2"
+                      data-i18n-attr="aria-label:roomsPage.photoOf" aria-label="Photograph 3"></button>
+              <button type="button" class="room-slider__dot" data-slider-dot="3"
+                      data-i18n-attr="aria-label:roomsPage.photoOf" aria-label="Photograph 4"></button>
+            </div>
+            <p class="room-slider__count"><span data-slider-current>1</span> / 4</p>
           </div>
 
           <div class="room-row__body">
@@ -274,9 +308,8 @@
 
         <article class="room-row" data-reveal>
           <div class="media media--4x3 room-row__media">
-            <!-- PLACEHOLDER IMAGE: replace with real property photo (triple room) -->
-            <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1100&q=80"
-                 data-i18n-attr="alt:rooms.f3.alt" alt="Shared room with bunk beds and individual storage"
+            <!-- PLACEHOLDER IMAGE: no photograph of this room type supplied yet -->
+            <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1100&q=80" data-i18n-attr="alt:rooms.f3.alt" alt="Shared room with bunk beds and individual storage"
                  loading="lazy" width="1100" height="825" />
           </div>
 
@@ -324,9 +357,8 @@
 
         <article class="room-row" data-reveal>
           <div class="media media--4x3 room-row__media">
-            <!-- PLACEHOLDER IMAGE: replace with real property photo (quad room) -->
-            <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1100&q=80"
-                 data-i18n-attr="alt:rooms.f4.alt" alt="Hotel-style room with four beds"
+            <!-- PLACEHOLDER IMAGE: no photograph of this room type supplied yet -->
+            <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1100&q=80" data-i18n-attr="alt:rooms.f4.alt" alt="Hotel-style room with four beds"
                  loading="lazy" width="1100" height="825" />
           </div>
 

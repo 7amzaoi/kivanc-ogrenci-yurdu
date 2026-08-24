@@ -285,35 +285,38 @@ If you ever need the mark on a light background, use `logo-dark.png`.
 
 ---
 
-## Replacing the placeholder images
+## Photography
 
-Every photo is currently a direct Unsplash URL and is marked in the HTML with:
+Most of the site now uses the client's own photographs of the building, in
+`assets/images/` — see the table in `assets/images/README.md` for what each one
+shows and where it is used.
 
-```html
-<!-- PLACEHOLDER IMAGE: replace with real property photo -->
+**Two stock images remain**, on the triple and quad room cards, because no
+photographs of those room types have been supplied. They are marked in the
+markup:
+
+```bash
+grep -c "PLACEHOLDER IMAGE" index.html rooms.html
 ```
 
-Search `index.html` for `PLACEHOLDER IMAGE` to find all of them — 7 remain, since the
-brand logo is now real. Each is a single `src` on a single `<img>`; replacing one is a
-one-line edit.
+A two-bed photograph must not be reused on a card that says three or four
+students, which is why those two were left as stock rather than filled in.
 
-**Recommended workflow for real photography:**
+**Room photographs and the slider.** Each room type has a list of photographs in
+the `PHOTOS` map in `tools/build-rooms-page.py`. A type with one photograph
+renders a plain figure; a type with several renders a slider. Add files, extend
+the list, re-run `python tools/build-rooms-page.py`.
 
-1. Drop the files into `assets/images/`.
-2. Replace each `src="https://images.unsplash.com/…"` with `src="assets/images/your-photo.jpg"`.
-3. Keep the `width`/`height` attributes accurate — they reserve layout space and prevent
-   the page from jumping while images load.
-4. Update the matching `alt` text in **both** JSON files (the `alt` values are translated
-   via `data-i18n-attr="alt:…"`).
+The slider's track is a CSS scroll-snap container, so swipe, trackpad gestures
+and keyboard scrolling work with no JavaScript at all. `js/main.js` only adds
+the arrows and dots and reads the scroll position back — it never becomes the
+source of truth for which slide is showing, so a swipe and a button press
+cannot disagree. Arrows are hidden on touch devices, where swipe is the natural
+gesture and the dots already show the position.
 
-| Where | Count | What to shoot |
-|---|---|---|
-| Hero | 1 | Wide, landscape. Building exterior or a lifestyle shot in a common area. Leave the left third relatively uncluttered — the headline sits there. Also used as the social preview (`og:image`). |
-| Rooms | 3 | One per room type: single, twin, triple. Shoot 4:3, tidy, daylight. |
-| About | 1 | Portrait crop, 4:5. Students or staff, not an empty room. |
-| Gallery | 8 | Lounge, lounge corner, study desk, kitchen, study lounge, gym, exterior, bathroom. **Shape matters:** on desktop items 1 and 6 render tall (portrait crop) and items 3 and 7 render wide (landscape crop) — see the tiling note at the top of `_gallery.css` before reordering. |
-
-The `og:image` in `<head>` is separate from the hero `<img>` — update both.
+Keep the `width`/`height` attributes accurate when swapping a file: they reserve
+layout space and stop the page jumping while images load. Alt text lives in
+**both** `i18n/*.json`, not in the HTML.
 
 ### University logos
 
@@ -415,11 +418,9 @@ itself. An Arabic webfont is already stubbed in `_foundation.css` under `[dir="r
 Done since the first build: real logo and brand identity, real phone/WhatsApp/email,
 Avcılar location and travel times, all six university logos, female-only structure.
 
-- [ ] Replace the remaining placeholder photos (`grep -c "PLACEHOLDER IMAGE" index.html rooms.html`)
-- [ ] **Ask the client for the original building photograph.** The price poster contains a
-      real night shot of the building with its signage, but only at 443x418px with the logo
-      across it — too small to use. The full-resolution original would beat every stock photo
-      on the site, starting with the hero
+- [ ] Photographs of the **triple and quad rooms** — the last two stock images on the site
+- [ ] A photograph of the **building exterior**. The price poster has a night shot with the
+      signage, but only at 443x418px with the logo across it
 - [ ] Confirm prices are **per person** (assumed from the poster's falling rate), and that
       the single room really is "1 peşin + 10 taksit" while the others are +9 — that asymmetry
       is printed on the poster and may be a typo

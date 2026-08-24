@@ -332,3 +332,120 @@
   .page-head__title { font-size: var(--t-4xl); }
   .rate-table { min-inline-size: 0; }
 }
+
+/* --------------------------------------------------------------------------
+   ROOM PHOTO SLIDER
+   The track is the source of truth: a scroll-snap container, so swipe and
+   trackpad gestures work with no JS at all. The buttons and dots in
+   js/main.js only nudge its scroll position and read it back.
+   -------------------------------------------------------------------------- */
+.room-slider {
+  position: relative;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background-color: var(--c-sand-deep);
+}
+
+.room-slider__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  /* The scrollbar is replaced by the dots and the counter. */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.room-slider__track::-webkit-scrollbar { display: none; }
+.room-slider__track:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: -2px;
+}
+
+.room-slider__slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  aspect-ratio: 4 / 3;
+}
+.room-slider__slide img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Controls ---------------------------------------------------------------- */
+.room-slider__nav {
+  position: absolute;
+  inset-block-start: 50%;
+  translate: 0 -50%;
+  display: grid;
+  place-items: center;
+  inline-size: 42px;
+  block-size: 42px;
+  border-radius: var(--r-pill);
+  background-color: rgba(251, 248, 243, 0.92);
+  color: var(--c-ink);
+  box-shadow: var(--sh-md);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease), background-color var(--dur-fast) var(--ease);
+}
+.room-slider:hover .room-slider__nav,
+.room-slider:focus-within .room-slider__nav { opacity: 1; }
+.room-slider__nav:hover { background-color: var(--c-cream); }
+.room-slider__nav:disabled { opacity: 0 !important; pointer-events: none; }
+
+.room-slider__nav--prev { inset-inline-start: var(--s-4); }
+.room-slider__nav--next { inset-inline-end: var(--s-4); }
+.room-slider__nav--prev svg { transform: scaleX(-1); }
+[dir="rtl"] .room-slider__nav--prev svg { transform: none; }
+[dir="rtl"] .room-slider__nav--next svg { transform: scaleX(-1); }
+
+.room-slider__dots {
+  position: absolute;
+  inset-block-end: var(--s-4);
+  inset-inline-start: 50%;
+  translate: -50% 0;
+  display: flex;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-pill);
+  background-color: rgba(18, 14, 11, 0.42);
+  backdrop-filter: blur(6px);
+}
+.room-slider__dot {
+  inline-size: 7px;
+  block-size: 7px;
+  border-radius: var(--r-pill);
+  background-color: rgba(251, 248, 243, 0.5);
+  transition: background-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.room-slider__dot:hover { background-color: rgba(251, 248, 243, 0.8); }
+.room-slider__dot.is-active {
+  background-color: var(--c-gold-light);
+  transform: scale(1.35);
+}
+
+.room-slider__count {
+  position: absolute;
+  inset-block-end: var(--s-4);
+  inset-inline-end: var(--s-4);
+  padding: 0.2rem var(--s-3);
+  border-radius: var(--r-pill);
+  background-color: rgba(18, 14, 11, 0.42);
+  backdrop-filter: blur(6px);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  color: var(--c-cream);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Touch devices have no hover, so the arrows would never appear. Swipe is
+   the natural gesture there and the dots already show the position. */
+@media (hover: none) {
+  .room-slider__nav { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .room-slider__track { scroll-behavior: auto; }
+}

@@ -1,7 +1,7 @@
 /* ==========================================================================
    main.js — interaction layer
    Sticky header · hero entrance · mobile drawer · FAQ accordion ·
-   gallery lightbox · scroll reveal · scroll-expand · inquiry form
+   gallery lightbox · room slider · scroll reveal · scroll-expand · inquiry form
    All modules are independent; a missing element simply skips its module.
    ========================================================================== */
 
@@ -464,6 +464,82 @@
   }
 
   /* ======================================================================
+     ROOM PHOTO SLIDER
+     The track is a scroll-snap container, so touch swipe, trackpad gestures
+     and keyboard scrolling all work natively. JS only adds the buttons and
+     dots and keeps them in step with the scroll position — it never becomes
+     the source of truth for which slide is showing.
+     ====================================================================== */
+  function initSliders() {
+    $$("[data-slider]").forEach(function (root) {
+      var track = $("[data-slider-track]", root);
+      var slides = $$(".room-slider__slide", root);
+      var dots = $$("[data-slider-dot]", root);
+      var current = $("[data-slider-current]", root);
+      var prev = $("[data-slider-prev]", root);
+      var next = $("[data-slider-next]", root);
+      if (!track || slides.length < 2) return;
+
+      var index = 0;
+
+      function go(i) {
+        i = Math.max(0, Math.min(slides.length - 1, i));
+        track.scrollTo({
+          left: slides[i].offsetLeft - track.offsetLeft,
+          behavior: prefersReducedMotion ? "auto" : "smooth"
+        });
+      }
+
+      function sync() {
+        // Derive the active slide from where the track actually is, so a
+        // swipe and a button press cannot disagree.
+        var mid = track.scrollLeft + track.clientWidth / 2;
+        var best = 0, bestDist = Infinity;
+        slides.forEach(function (s, i) {
+          var c = s.offsetLeft - track.offsetLeft + s.clientWidth / 2;
+          var d = Math.abs(c - mid);
+          if (d < bestDist) { bestDist = d; best = i; }
+        });
+        if (best === index) return;
+        index = best;
+        dots.forEach(function (d, i) {
+          d.classList.toggle("is-active", i === index);
+          d.setAttribute("aria-current", i === index ? "true" : "false");
+        });
+        if (current) current.textContent = String(index + 1);
+        if (prev) prev.disabled = index === 0;
+        if (next) next.disabled = index === slides.length - 1;
+      }
+
+      if (prev) prev.addEventListener("click", function () { go(index - 1); });
+      if (next) next.addEventListener("click", function () { go(index + 1); });
+      dots.forEach(function (d, i) {
+        d.addEventListener("click", function () { go(i); });
+      });
+
+      var ticking = false;
+      track.addEventListener("scroll", function () {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () { sync(); ticking = false; });
+      }, { passive: true });
+
+      track.addEventListener("keydown", function (e) {
+        var rtl = document.documentElement.getAttribute("dir") === "rtl";
+        var fwd = rtl ? "ArrowLeft" : "ArrowRight";
+        var back = rtl ? "ArrowRight" : "ArrowLeft";
+        if (e.key === fwd)       { e.preventDefault(); go(index + 1); }
+        else if (e.key === back) { e.preventDefault(); go(index - 1); }
+      });
+
+      window.addEventListener("resize", sync);
+      // Set the initial state (dot 1 active, prev disabled).
+      index = -1;
+      sync();
+    });
+  }
+
+  /* ======================================================================
      GALLERY LIGHTBOX
      ====================================================================== */
   function initLightbox() {
@@ -743,6 +819,7 @@
     initStats();
     initFacts();
     initScrollExpand();
+    initSliders();
     initDrawer();
     initAccordion();
     initLightbox();

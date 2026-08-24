@@ -54,32 +54,81 @@ def relink(s):
 
 header, drawer, footer = relink(header), relink(drawer), relink(footer)
 
+# Photographs per room type. Real ones are local files; the triple and quad
+# are still stock, because the client has not supplied photographs of those
+# two room types yet — a two-bed photograph must not be shown on a card that
+# says three or four students.
 PHOTOS = {
-    "f1": ("photo-1595526114035-0d45ed16cfbf", "single room"),
-    "f2": ("photo-1631049307264-da0ec9d70304", "double room"),
-    "f3": ("photo-1555854877-bab0e564b8d5", "triple room"),
-    "f4": ("photo-1540518614846-7eded433c457", "quad room"),
+    "f1": ["assets/images/room-single-1.jpg"],
+    "f2": ["assets/images/room-double-1.jpg",
+           "assets/images/room-double-3.jpg",
+           "assets/images/room-double-2.jpg",
+           "assets/images/room-double-4.jpg"],
+    "f3": ["https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1100&q=80"],
+    "f4": ["https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1100&q=80"],
 }
+STOCK = {"f3", "f4"}
 CHIPS = [("i-wifi", "wifi"), ("i-tv", "tv"), ("i-fridge", "fridge"), ("i-bath", "ensuite")]
 INCLUDED = [("i-coffee", "inc1"), ("i-wifi", "inc2"), ("i-sparkle", "inc3"),
             ("i-bath", "inc4"), ("i-shield", "inc5"), ("i-laundry", "inc6")]
 FEATURES = ["feat1", "feat2", "feat3", "feat4"]
 
 
+def slider(key, r):
+    """One media block. With a single photograph it is a plain figure; with
+    several it becomes a scroll-snap track, so touch swipe is native and the
+    buttons only have to nudge the scroll position."""
+    shots = PHOTOS[key]
+    note = ("\n            <!-- PLACEHOLDER IMAGE: no photograph of this room type supplied yet -->"
+            if key in STOCK else "")
+
+    if len(shots) == 1:
+        return (u'''          <div class="media media--4x3 room-row__media">%s
+            <img src="%s" data-i18n-attr="alt:rooms.%s.alt" alt="%s"
+                 loading="lazy" width="1100" height="825" />
+          </div>''' % (note, shots[0], key, r.get("alt", "")))
+
+    slides = "\n".join(
+        u'''              <li class="room-slider__slide">
+                <img src="%s" data-i18n-attr="alt:rooms.%s.alt" alt="%s"
+                     loading="lazy" width="1100" height="825" />
+              </li>''' % (src, key, r.get("alt", "")) for src in shots)
+
+    dots = "\n".join(
+        u'''              <button type="button" class="room-slider__dot" data-slider-dot="%d"
+                      data-i18n-attr="aria-label:roomsPage.photoOf" aria-label="%s %d"></button>'''
+        % (n, P["photoOf"], n + 1) for n in range(len(shots)))
+
+    return (u'''          <div class="room-slider" data-slider>
+            <ul class="room-slider__track" data-slider-track tabindex="0"
+                data-i18n-attr="aria-label:roomsPage.sliderLabel" aria-label="%s">
+%s
+            </ul>
+
+            <button type="button" class="room-slider__nav room-slider__nav--prev" data-slider-prev
+                    data-i18n-attr="aria-label:roomsPage.prevPhoto" aria-label="%s">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+            </button>
+            <button type="button" class="room-slider__nav room-slider__nav--next" data-slider-next
+                    data-i18n-attr="aria-label:roomsPage.nextPhoto" aria-label="%s">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+            </button>
+
+            <div class="room-slider__dots" data-slider-dots>
+%s
+            </div>
+            <p class="room-slider__count"><span data-slider-current>1</span> / %d</p>
+          </div>''' % (P["sliderLabel"], slides, P["prevPhoto"], P["nextPhoto"], dots, len(shots)))
+
+
 def room_row(key, i):
     r = R[key]
-    pid, label = PHOTOS[key]
     chips = "\n".join(
         '            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#%s"></use></svg>'
         '<span data-i18n="rooms.amen.%s">%s</span></li>' % (ic, ak, R["amen"][ak])
         for ic, ak in CHIPS)
     return u'''        <article class="room-row" data-reveal>
-          <div class="media media--4x3 room-row__media">
-            <!-- PLACEHOLDER IMAGE: replace with real property photo (%s) -->
-            <img src="https://images.unsplash.com/%s?auto=format&fit=crop&w=1100&q=80"
-                 data-i18n-attr="alt:rooms.%s.alt" alt="%s"
-                 loading="lazy" width="1100" height="825" />
-          </div>
+%s
 
           <div class="room-row__body">
             <p class="room-row__cap">
@@ -118,7 +167,7 @@ def room_row(key, i):
               </a>
             </div>
           </div>
-        </article>''' % (label, pid, key, r.get("alt", ""), key, r["capacity"], key, r["name"],
+        </article>''' % (slider(key, r), key, r["capacity"], key, r["name"],
                          key, r["desc"], chips, P["colMonthly"], key, r["price"], R["priceFrom"],
                          P["colTerm"], key, r["priceTerm"], P["termLength"], P["colPayment"],
                          key, r["payment"], R["apply"], P["ctaSecondary"])

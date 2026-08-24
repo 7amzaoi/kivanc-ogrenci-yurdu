@@ -29,6 +29,12 @@ END = "<!-- seo:end -->"
 OG_IMAGE = "assets/images/og-card.jpg"
 PAGES = {"index.html": "", "rooms.html": "rooms.html"}
 
+# Single source of truth for the landing-page slugs: the sitemap below and
+# tools/package.py both read it, so a seventh page is added in one place.
+SEO_SLUGS = ["istanbul-kiz-yurdu", "istanbul-ogrenci-yurdu",
+             "istanbul-kiz-ogrenci-yurdu", "guvenli-kiz-yurdu-istanbul",
+             "universitelere-yakin-kiz-yurdu", "kiz-yurdu-fiyatlari"]
+
 
 def load_origin():
     try:
@@ -138,14 +144,19 @@ def main():
     stamp("index.html", block("index.html", origin, en, True))
     stamp("tools/build-rooms-page.py", block("rooms.html", origin, en, False))
     subprocess.check_call([sys.executable, "tools/build-rooms-page.py"])
+    # the landing pages carry their own canonical and og:url
+    subprocess.check_call([sys.executable, "tools/build-seo-pages.py"])
 
     if origin:
         io.open("robots.txt", "w", encoding="utf-8").write(
             "User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % origin)
+        # SEO landing pages sit alongside the two core pages
+        PAGE_LIST = ([("", "1.0"), ("rooms.html", "0.8")] +
+                     [(s + "/", "0.7") for s in SEO_SLUGS])
         urls = "".join(
             '  <url><loc>%s/%s</loc><changefreq>monthly</changefreq>'
             '<priority>%s</priority></url>\n' % (origin, path, pri)
-            for path, pri in (("", "1.0"), ("rooms.html", "0.8")))
+            for path, pri in PAGE_LIST)
         io.open("sitemap.xml", "w", encoding="utf-8").write(
             '<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'

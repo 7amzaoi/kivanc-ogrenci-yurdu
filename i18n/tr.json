@@ -112,7 +112,7 @@
       "price": "₺15.000",
       "priceTerm": "₺150.000",
       "instalments": "9",
-      "alt": "Dört kişilik otel tipi oda",
+      "alt": "Kıvanç Kız Yurdu'nda dört kişilik oda: dört tek kişilik yatak, gardıroplar ve çalışma takımı",
       "payment": "1 peşin + 9 taksit"
     }
   },
@@ -318,7 +318,7 @@
     },
     "3": {
       "q": "Aylık ücrete neler dahil?",
-      "a": "Kira, tüm faturalar, fiber internet, haftalık oda temizliği, çamaşırhane kullanımı, çalışma salonları ve spor salonu ile günlük yemek planı. Ay sonunda ayrıca bir fatura çıkmaz."
+      "a": "Kira, tüm faturalar, fiber internet, haftalık oda temizliği, çamaşırhane kullanımı, kesintisiz sıcak su, 7/24 güvenlik ve her sabah kahvaltı. Ay sonunda ayrıca bir fatura çıkmaz."
     },
     "4": {
       "q": "Veliler ziyaret edebilir mi, güvenlik kuralları nedir?",
@@ -439,5 +439,176 @@
     "prevPhoto": "Önceki fotoğraf",
     "nextPhoto": "Sonraki fotoğraf",
     "photoOf": "Fotoğraf"
+  },
+  "seo": {
+    "common": {
+      "breadcrumbHome": "Ana sayfa",
+      "breadcrumbLabel": "Sayfa yolu",
+      "ctaForm": "İletişim formu",
+      "ctaH": "Yer durumunu sorun",
+      "ctaP": "Adınızı, üniversitenizi ve tercih ettiğiniz oda tipini yazın; kısa sürede dönüş yapalım.",
+      "ctaWa": "WhatsApp'tan yazın",
+      "facilitiesH": "Olanaklar",
+      "faqH": "Sık sorulan sorular",
+      "footerTitle": "Kız Yurdu Rehberi",
+      "includedH": "Aylık ücrete dahil",
+      "locationH": "Konum",
+      "locationP": "Yurt, Cihangir Mahallesi, Kirazlı Caddesi No:18, 34310 Avcılar / İstanbul adresindedir. Bina tek girişlidir ve zili No:18'dedir.",
+      "planFmt": "%s peşin + %s taksit",
+      "ratesH": "Oda tipleri ve aylık ücretler",
+      "relatedH": "İlgili sayfalar",
+      "roomsH": "Odalar",
+      "roomsP": "Binada dört büyüklükte 45 oda vardır. Her odada oda içi banyo ve WC, televizyon, mini buzdolabı ve sıfır çalışma takımı bulunur.",
+      "securityH": "Güvenlik",
+      "seeRooms": "Bütün odalar ve fiyatlar",
+      "tblCap": "Kapasite",
+      "tblPlan": "Ödeme planı",
+      "tblPrice": "Aylık (kişi başı)",
+      "tblRoom": "Oda tipi",
+      "tblTime": "Süre",
+      "tblUni": "Üniversite",
+      "transportH": "Ulaşım",
+      "transportP": "Metrobüs, otobüs ve minibüs hatları binaya kısa bir yürüyüş mesafesindedir. Aşağıdaki üniversite süreleri Metrobüs hattı üzerinden hesaplanmıştır.",
+      "universitiesH": "Yakındaki üniversiteler",
+      "universitiesP": "Süreler Metrobüs hattı üzerinden, normal trafik koşullarında yaklaşık değerlerdir."
+    },
+    "istanbul-kiz-yurdu": {
+      "title": "İstanbul Kız Yurdu | Kıvanç Kız Yurdu",
+      "description": "Avcılar'da özel kız yurdu: 45 oda, oda içi banyo, 7/24 güvenlik ve kamera kaydı, kahvaltı dahil. Metrobüs yürüme mesafesinde.",
+      "h1": "İstanbul Kız Yurdu",
+      "navLabel": "İstanbul Kız Yurdu",
+      "lede": "Kıvanç Kız Yurdu, İstanbul Avcılar'da yalnızca kız öğrencilere hizmet veren özel bir yurttur. Binada dört farklı büyüklükte 45 oda bulunur; hepsinde oda içi banyo ve WC, televizyon, mini buzdolabı ve sıfır çalışma takımı vardır.",
+      "intro": [
+        {
+          "h": "Yurt hakkında",
+          "p": [
+            "Yurt, Cihangir Mahallesi'nde Kirazlı Caddesi üzerinde tek bir binada hizmet verir. Odalar tek, iki, üç ve dört kişilik olarak ayrılır; aradaki fark yalnızca odayı kaç kişinin paylaştığı ve buna bağlı aylık ücrettir. Donanım her oda tipinde aynıdır.",
+            "Binada yaşayan bir yurt müdürü vardır. Bir sorun olduğunda başka bir şehirdeki çağrı merkezine değil, öğrenciyi adıyla tanıyan bir kişiye ulaşırsınız."
+          ]
+        }
+      ],
+      "close": {
+        "h": "Neden Kıvanç Kız Yurdu?",
+        "p": [
+          "Tek bir aylık rakam ödersiniz: kira, faturalar, fiber internet, haftalık oda temizliği, çamaşırhane, kesintisiz sıcak su ve her sabah kahvaltı bu rakama dahildir. Ay sonunda ayrıca fatura çıkmaz.",
+          "Yerinde göremeyecek durumdaysanız odaları görüntülü görüşmeyle canlı olarak gösteriyoruz."
+        ]
+      }
+    },
+    "istanbul-ogrenci-yurdu": {
+      "title": "İstanbul Öğrenci Yurdu | Kıvanç Kız Yurdu",
+      "description": "Avcılar'da öğrenci yurdu: dört oda tipi, aylık ₺15.000'den başlayan fiyatlar, taksitli ödeme, kahvaltı ve faturalar dahil.",
+      "h1": "İstanbul Öğrenci Yurdu",
+      "navLabel": "İstanbul Öğrenci Yurdu",
+      "lede": "Kıvanç Kız Yurdu, Avcılar'da kız öğrenciler için akademik yıl boyunca konaklama sunar. Standart sözleşme eylül–haziran arasını kapsar ve ödeme taksitlendirilir.",
+      "intro": [
+        {
+          "h": "Öğrenciler için ne sunuyoruz",
+          "p": [
+            "Bir öğrenci yurdu seçerken asıl mesele, aylık rakamın gerçekten ne kadarını kapsadığıdır. Burada tek bir tutar ödenir; faturalar, internet, temizlik, çamaşırhane, sıcak su ve kahvaltı içindedir. Ay sonunda sürpriz bir hesap çıkmaz.",
+            "Odaların tamamı otel tipidir: banyo ve WC oda içindedir, koridorda sıra beklenmez. Her odada televizyon, mini buzdolabı ve yeni bir çalışma masası bulunur."
+          ]
+        }
+      ],
+      "close": {
+        "h": "Sözleşme ve ödeme",
+        "p": [
+          "Standart sözleşme eylül–haziran akademik yılını kapsar. Yaz dönemi ve daha kısa kalışlar yer durumuna bağlı olarak değerlendirilir.",
+          "Ödeme peşinat ve taksitler şeklindedir; her ödeme için makbuz düzenlenir. Belgesiz nakit talep edilmez."
+        ]
+      }
+    },
+    "istanbul-kiz-ogrenci-yurdu": {
+      "title": "İstanbul Kız Öğrenci Yurdu | Kıvanç Kız Yurdu",
+      "description": "Yalnızca kız öğrencilere özel yurt. Kartlı geçiş, 7/24 kamera kaydı, giriş-çıkış bildirimi ve binada yaşayan yönetim.",
+      "h1": "İstanbul Kız Öğrenci Yurdu",
+      "navLabel": "İstanbul Kız Öğrenci Yurdu",
+      "lede": "Kıvanç Kız Yurdu yalnızca kız öğrencilere hizmet verir. Bina karma değildir; yatakhane katlarına giriş kartlıdır ve ziyaretçiler giriş katındaki salonda ağırlanır.",
+      "intro": [
+        {
+          "h": "Aileler için",
+          "p": [
+            "Şehir dışından bir öğrenciyi İstanbul'a göndermenin en zor tarafı, ne olup bittiğini görememektir. Öğrencinin binaya her girişi ve çıkışı kaydedilir; isteyen aileye bu bildirimler WhatsApp üzerinden iletilir.",
+            "Binada yaşayan bir yurt müdürü vardır ve aileler ziyaret saatleri içinde ağırlanır."
+          ]
+        }
+      ],
+      "close": {
+        "h": "Günlük hayat",
+        "p": [
+          "Bina hafta içi 23:00'te, hafta sonu 24:00'te kapanır. Daha geç dönmesi gereken bir öğrenci yurt müdürüyle önceden görüşür.",
+          "Haftalık oda temizliği ve ortak alanların günlük bakımı aylık ücrete dahildir."
+        ]
+      }
+    },
+    "guvenli-kiz-yurdu-istanbul": {
+      "title": "Güvenli Kız Yurdu İstanbul | Kıvanç Kız Yurdu",
+      "description": "7/24 personelli resepsiyon, kartlı geçiş, tüm ortak alanlarda kesintisiz kamera kaydı ve aileye giriş-çıkış bildirimi.",
+      "h1": "Güvenli Kız Yurdu İstanbul",
+      "navLabel": "Güvenli Kız Yurdu İstanbul",
+      "lede": "Güvenlik, bir yurt broşüründe en kolay yazılan ve en zor kanıtlanan şeydir. Aşağıda Kıvanç Kız Yurdu'nda fiilen uygulanan düzenlemeler yer alır.",
+      "intro": [
+        {
+          "h": "Nasıl çalışıyor",
+          "p": [
+            "Resepsiyon gece gündüz personellidir ve tüm girişlerde kartlı geçiş sistemi vardır. Yatakhane katlarına kartsız girilmez.",
+            "Ortak alanların ve girişlerin tamamı gün boyu kesintisiz kaydedilir. Kayıtlar düzenli olarak saklanır."
+          ]
+        }
+      ],
+      "close": {
+        "h": "Ziyaret kuralları",
+        "p": [
+          "Aileler ziyaret saatleri içinde giriş katındaki salonda ağırlanır. Yatakhane katlarına ziyaretçi çıkmaz.",
+          "Bina hafta içi 23:00'te, hafta sonu 24:00'te kapanır."
+        ]
+      }
+    },
+    "universitelere-yakin-kiz-yurdu": {
+      "title": "Üniversitelere Yakın Kız Yurdu İstanbul | Kıvanç",
+      "description": "Avcılar'dan Metrobüs ile Gelişim 5 dk, Beykent 10 dk, Aydın 15 dk, Arel 20 dk, Biruni 30 dk. Durak yürüme mesafesinde.",
+      "h1": "Üniversitelere Yakın Kız Yurdu İstanbul",
+      "navLabel": "Üniversitelere Yakın Kız Yurdu",
+      "lede": "Avcılar'ın avantajı Metrobüs hattıdır. Yurttan durağa yürünür ve İstanbul'un vakıf üniversitelerinin çoğuna aktarmasız ulaşılır.",
+      "intro": [
+        {
+          "h": "Konum neden önemli",
+          "p": [
+            "Bir yurdun aylık ücreti kadar önemli olan, her sabah yolda geçen süredir. Aşağıdaki süreler Metrobüs hattı üzerinden, normal trafik koşullarında yaklaşık değerlerdir.",
+            "Sabah ilk derse yetişmek için yarım saatten fazla yol yapmak, bir akademik yıl boyunca ciddi bir farktır."
+          ]
+        }
+      ],
+      "close": {
+        "h": "Kapıda toplu taşıma",
+        "p": [
+          "Metrobüs, otobüs ve minibüs hatlarının tamamı binaya kısa bir yürüyüş mesafesindedir.",
+          "Süreleri kendiniz de doğrulayabilirsiniz; adres aşağıda ve haritada işaretlidir."
+        ]
+      }
+    },
+    "kiz-yurdu-fiyatlari": {
+      "title": "Kız Yurdu Fiyatları İstanbul | Kıvanç Kız Yurdu",
+      "description": "2026 kız yurdu fiyatları: tek kişilik ₺30.000, iki kişilik ₺24.000, üç kişilik ₺18.000, dört kişilik ₺15.000. Kahvaltı ve faturalar dahil.",
+      "h1": "Kız Yurdu Fiyatları İstanbul",
+      "navLabel": "Kız Yurdu Fiyatları",
+      "lede": "Aşağıdaki aylık ücretler kişi başıdır ve odayı kaç öğrencinin paylaştığına göre değişir. Donanım her oda tipinde aynıdır.",
+      "intro": [
+        {
+          "h": "Fiyatlar nasıl belirleniyor",
+          "p": [
+            "Odalar arasındaki tek fark kişi sayısıdır. Oda içi banyo, televizyon, mini buzdolabı ve çalışma takımı her oda tipinde vardır; dört kişilik oda ucuz olduğu için eksik donanımlı değildir.",
+            "Ödeme peşinat ve taksitler şeklinde yapılır. Her ödeme için makbuz düzenlenir."
+          ]
+        }
+      ],
+      "close": {
+        "h": "Fiyata dahil olmayanlar",
+        "p": [
+          "Aylık ücret kirayı, faturaları, interneti, haftalık temizliği, çamaşırhaneyi, sıcak suyu, güvenliği ve kahvaltıyı kapsar.",
+          "Öğle ve akşam yemeği aylık ücrete dahil değildir."
+        ]
+      }
+    }
   }
 }

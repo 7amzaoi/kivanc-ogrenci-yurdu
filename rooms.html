@@ -364,10 +364,41 @@
         </article>
 
         <article class="room-row" data-reveal>
-          <div class="media media--4x3 room-row__media">
-            <!-- PLACEHOLDER IMAGE: no photograph of this room type supplied yet -->
-            <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1100&q=80" data-i18n-attr="alt:rooms.f4.alt" alt="Hotel-style room with four beds"
-                 loading="lazy" width="1100" height="825" />
+          <div class="room-slider" data-slider>
+            <ul class="room-slider__track" data-slider-track tabindex="0"
+                data-i18n-attr="aria-label:roomsPage.sliderLabel" aria-label="Photographs of this room">
+              <li class="room-slider__slide">
+                <img src="assets/images/room-quad-1.webp" data-i18n-attr="alt:rooms.f4.alt" alt="A quad room at Kıvanç Kız Yurdu with four single beds, wardrobes and a study set"
+                     loading="lazy" width="1100" height="825" />
+              </li>
+              <li class="room-slider__slide">
+                <img src="assets/images/room-quad-2.webp" data-i18n-attr="alt:rooms.f4.alt" alt="A quad room at Kıvanç Kız Yurdu with four single beds, wardrobes and a study set"
+                     loading="lazy" width="1100" height="825" />
+              </li>
+              <li class="room-slider__slide">
+                <img src="assets/images/room-quad-3.webp" data-i18n-attr="alt:rooms.f4.alt" alt="A quad room at Kıvanç Kız Yurdu with four single beds, wardrobes and a study set"
+                     loading="lazy" width="1100" height="825" />
+              </li>
+            </ul>
+
+            <button type="button" class="room-slider__nav room-slider__nav--prev" data-slider-prev
+                    data-i18n-attr="aria-label:roomsPage.prevPhoto" aria-label="Previous photograph">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+            </button>
+            <button type="button" class="room-slider__nav room-slider__nav--next" data-slider-next
+                    data-i18n-attr="aria-label:roomsPage.nextPhoto" aria-label="Next photograph">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+            </button>
+
+            <div class="room-slider__dots" data-slider-dots>
+              <button type="button" class="room-slider__dot" data-slider-dot="0"
+                      data-i18n-attr="aria-label:roomsPage.photoOf" aria-label="Photograph 1"></button>
+              <button type="button" class="room-slider__dot" data-slider-dot="1"
+                      data-i18n-attr="aria-label:roomsPage.photoOf" aria-label="Photograph 2"></button>
+              <button type="button" class="room-slider__dot" data-slider-dot="2"
+                      data-i18n-attr="aria-label:roomsPage.photoOf" aria-label="Photograph 3"></button>
+            </div>
+            <p class="room-slider__count"><span data-slider-current>1</span> / 3</p>
           </div>
 
           <div class="room-row__body">
@@ -625,6 +656,22 @@
           </div>
         </div>
       </div>
+
+
+      <!-- Guide links. A separate full-width band rather than a fifth column:
+           .footer__top tiles 3-up and 4-up, and a fifth column would leave
+           orphaned cells at both breakpoints. Ordinary visible <a> links. -->
+      <nav class="footer__seo" data-i18n-attr="aria-label:seo.common.footerTitle" aria-label="Residence Guide">
+        <h4 class="footer__title" data-i18n="seo.common.footerTitle">Residence Guide</h4>
+        <ul class="footer__seo-links">
+            <li><a href="/istanbul-kiz-yurdu/" data-i18n="seo.istanbul-kiz-yurdu.navLabel">Istanbul Girls' Dormitory</a></li>
+            <li><a href="/istanbul-ogrenci-yurdu/" data-i18n="seo.istanbul-ogrenci-yurdu.navLabel">Istanbul Student Residence</a></li>
+            <li><a href="/istanbul-kiz-ogrenci-yurdu/" data-i18n="seo.istanbul-kiz-ogrenci-yurdu.navLabel">Istanbul Female Student Residence</a></li>
+            <li><a href="/guvenli-kiz-yurdu-istanbul/" data-i18n="seo.guvenli-kiz-yurdu-istanbul.navLabel">Secure Girls' Residence</a></li>
+            <li><a href="/universitelere-yakin-kiz-yurdu/" data-i18n="seo.universitelere-yakin-kiz-yurdu.navLabel">Residence Near Universities</a></li>
+            <li><a href="/kiz-yurdu-fiyatlari/" data-i18n="seo.kiz-yurdu-fiyatlari.navLabel">Dormitory Prices</a></li>
+        </ul>
+      </nav>
 
       <div class="footer__bottom">
         <p data-i18n="footer.copyright">© 2026 Kıvanç Kız Yurdu. All rights reserved.</p>

@@ -28,7 +28,17 @@
 
   var DEFAULT_LANG = "tr";          // Turkish-first: most visitors are local.
   var STORAGE_KEY  = "kivanc.lang";
-  var BASE_PATH    = "i18n/";
+  /* Derived from this script's own URL rather than hard-coded relative: the
+     SEO landing pages live one directory deep (/istanbul-kiz-yurdu/), where
+     a bare "i18n/" resolves to /istanbul-kiz-yurdu/i18n/ and 404s. Falls back
+     to the relative path for file://, where currentScript.src is a file URL
+     but the arithmetic still works. */
+  var BASE_PATH = (function () {
+    var s = document.currentScript;
+    if (!s || !s.src) return "i18n/";
+    // …/js/i18n.js  ->  …/i18n/
+    return s.src.replace(/[?#].*$/, "").replace(/js\/i18n\.js$/, "i18n/");
+  })();
 
   var dictionaries = {};            // lang → parsed JSON
   var current      = null;
@@ -70,6 +80,13 @@
     try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) { /* private mode */ }
     if (saved && LOCALES[saved]) return saved;
 
+    /* A page may declare its own default (the Turkish SEO landing pages do).
+       It loses to a stored choice -- the visitor's own pick always wins -- but
+       beats the browser's Accept-Language, so a crawler asking for en-US still
+       reads the Turkish copy those pages were written for. */
+    if (window.__LANG_DEFAULT && LOCALES[window.__LANG_DEFAULT]) {
+      return window.__LANG_DEFAULT;
+    }
     var nav = (navigator.languages && navigator.languages[0]) || navigator.language || "";
     var code = nav.toLowerCase().split("-")[0];
     return LOCALES[code] ? code : DEFAULT_LANG;

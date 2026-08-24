@@ -464,11 +464,9 @@
                 </li>
                 <li class="room-card">
                   <div class="media media--4x3 room-card__media">
-                    <!-- PLACEHOLDER IMAGE: replace with real property photo (quad room) -->
-                    <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=900&q=80"
-                         data-i18n-attr="alt:rooms.f4.alt"
-                         alt="Hotel-style room with four beds"
-                         loading="lazy" width="900" height="675" />
+                    <img src="assets/images/room-quad-1.webp"
+                         data-i18n-attr="alt:rooms.f4.alt" alt="A quad room at Kıvanç Kız Yurdu with four single beds, wardrobes and a study set"
+                         loading="lazy" width="1400" height="1050" />
                   </div>
                   <div class="room-card__body">
                     <div class="room-card__head">
@@ -1056,7 +1054,7 @@
                 </button>
               </h3>
               <div class="faq-item__panel" id="faq-p3" role="region" aria-labelledby="faq-t3" hidden>
-                <p data-i18n="faq.3.a">Rent, all utilities, fibre internet, weekly room cleaning, laundry facilities, use of the study lounges and gym, and the daily meal plan. There is no separate bill at the end of the month.</p>
+                <p data-i18n="faq.3.a">Rent, all utilities, fibre internet, weekly room cleaning, use of the laundry, hot water around the clock, 24/7 security, and breakfast every morning. There is no separate bill at the end of the month.</p>
               </div>
             </li>
             <li class="faq-item">
@@ -1310,6 +1308,22 @@
           </div>
         </div>
       </div>
+
+
+      <!-- Guide links. A separate full-width band rather than a fifth column:
+           .footer__top tiles 3-up and 4-up, and a fifth column would leave
+           orphaned cells at both breakpoints. Ordinary visible <a> links. -->
+      <nav class="footer__seo" data-i18n-attr="aria-label:seo.common.footerTitle" aria-label="Residence Guide">
+        <h4 class="footer__title" data-i18n="seo.common.footerTitle">Residence Guide</h4>
+        <ul class="footer__seo-links">
+            <li><a href="/istanbul-kiz-yurdu/" data-i18n="seo.istanbul-kiz-yurdu.navLabel">Istanbul Girls' Dormitory</a></li>
+            <li><a href="/istanbul-ogrenci-yurdu/" data-i18n="seo.istanbul-ogrenci-yurdu.navLabel">Istanbul Student Residence</a></li>
+            <li><a href="/istanbul-kiz-ogrenci-yurdu/" data-i18n="seo.istanbul-kiz-ogrenci-yurdu.navLabel">Istanbul Female Student Residence</a></li>
+            <li><a href="/guvenli-kiz-yurdu-istanbul/" data-i18n="seo.guvenli-kiz-yurdu-istanbul.navLabel">Secure Girls' Residence</a></li>
+            <li><a href="/universitelere-yakin-kiz-yurdu/" data-i18n="seo.universitelere-yakin-kiz-yurdu.navLabel">Residence Near Universities</a></li>
+            <li><a href="/kiz-yurdu-fiyatlari/" data-i18n="seo.kiz-yurdu-fiyatlari.navLabel">Dormitory Prices</a></li>
+        </ul>
+      </nav>
 
       <div class="footer__bottom">
         <p data-i18n="footer.copyright">© 2026 Kıvanç Kız Yurdu. All rights reserved.</p>

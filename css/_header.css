@@ -26,7 +26,11 @@
     color var(--dur) var(--ease);
 }
 
-.header.is-scrolled {
+/* .page-seo has no hero, so the header has no dark band under it and
+   cream-on-cream would be invisible at scroll 0. Same solid treatment,
+   applied from the start rather than on scroll. */
+.header.is-scrolled,
+.page-seo .header {
   background-color: rgba(20, 16, 13, 0.90);
   backdrop-filter: saturate(140%) blur(12px);
   border-block-end-color: rgba(232, 206, 134, 0.16);
@@ -197,7 +201,8 @@
   --ls-fg-mute: var(--hd-fg-mute);
   --ls-fg-active: var(--hd-fg);
 }
-.header.is-scrolled .lang-switch--compact { --ls-fg-active: var(--c-gold-light); }
+.header.is-scrolled .lang-switch--compact,
+.page-seo .header .lang-switch--compact { --ls-fg-active: var(--c-gold-light); }
 
 /* --------------------------------------------------------------------------
    MOBILE DRAWER

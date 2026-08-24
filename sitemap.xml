@@ -2,4 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://kivanc-kizyurdu.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
   <url><loc>https://kivanc-kizyurdu.com/rooms.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kivanc-kizyurdu.com/istanbul-kiz-yurdu/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kivanc-kizyurdu.com/istanbul-ogrenci-yurdu/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kivanc-kizyurdu.com/istanbul-kiz-ogrenci-yurdu/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kivanc-kizyurdu.com/guvenli-kiz-yurdu-istanbul/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kivanc-kizyurdu.com/universitelere-yakin-kiz-yurdu/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kivanc-kizyurdu.com/kiz-yurdu-fiyatlari/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

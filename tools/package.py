@@ -12,6 +12,7 @@ uploaded without a canonical and without an absolute og:image is a site you
 will have to upload again.
 """
 import hashlib
+import importlib.util
 import io
 import json
 import os
@@ -28,6 +29,16 @@ ROOT_FILES = ["index.html", "rooms.html", "404.html", ".htaccess",
               "robots.txt", "sitemap.xml"]
 # Whole directories that belong on the server.
 DIRS = ["css", "js", "i18n", "assets"]
+
+# The SEO landing pages: each is a directory holding one index.html, so the
+# URL ends in a slash. The slug list lives in build-seo.py; loading it from
+# there means a seventh page is added in exactly one place.
+def _seo_slugs():
+    spec = importlib.util.spec_from_file_location(
+        "build_seo", os.path.join(ROOT, "tools", "build-seo.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return list(mod.SEO_SLUGS)
 # Never ship these, wherever they turn up.
 SKIP_EXT = {".py", ".md", ".bak", ".psd", ".zip"}
 SKIP_NAME = {"site.config.json", ".DS_Store", "Thumbs.db", ".gitignore"}
@@ -85,18 +96,23 @@ def stamp_versions(html, token):
     and to Hostinger's CDN. The HTML itself is no-cache, so a new token
     reaches everyone on their next page load.
     """
+    # The landing pages live one directory deep and reference their assets
+    # root-absolutely ("/css/main.css"); index.html and rooms.html sit at the
+    # root and use relative paths. Both forms have to be stamped.
     for path in ("css/main.css", "js/i18n.js", "js/main.js", "i18n/bundle.js"):
-        for attr in ("href", "src"):
-            html = html.replace('%s="%s"' % (attr, path),
-                                '%s="%s?v=%s"' % (attr, path, token))
+        for prefix in ("", "/"):
+            for attr in ("href", "src"):
+                html = html.replace('%s="%s%s"' % (attr, prefix, path),
+                                    '%s="%s%s?v=%s"' % (attr, prefix, path, token))
 
     # i18n.js reads this when it fetches en.json / tr.json at runtime
-    marker = '<script src="i18n/bundle.js?v=%s"></script>' % token
-    if marker not in html:
-        raise SystemExit("bundle.js script tag not found -- cannot stamp __ASSET_V")
-    return html.replace(
-        marker,
-        '<script>window.__ASSET_V="%s";</script>\n  %s' % (token, marker))
+    for prefix in ("", "/"):
+        marker = '<script src="%si18n/bundle.js?v=%s"></script>' % (prefix, token)
+        if marker in html:
+            return html.replace(
+                marker,
+                '<script>window.__ASSET_V="%s";</script>\n  %s' % (token, marker))
+    raise SystemExit("bundle.js script tag not found -- cannot stamp __ASSET_V")
 
 
 def collect():
@@ -107,6 +123,12 @@ def collect():
             pass                      # only exist once an origin is set
         else:
             raise SystemExit("missing required file: %s" % f)
+
+    for slug in _seo_slugs():
+        f = os.path.join(slug, "index.html").replace("\\", "/")
+        if not os.path.exists(f):
+            raise SystemExit("%s missing -- run python tools/build-seo-pages.py" % f)
+        yield f
 
     for d in DIRS:
         for base, _dirs, files in os.walk(d):

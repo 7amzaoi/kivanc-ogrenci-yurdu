@@ -169,3 +169,35 @@
     inset-inline-end: var(--s-6);
   }
 }
+
+/* --------------------------------------------------------------------------
+   GUIDE LINKS
+   A full-width band, not a fifth column: .footer__top tiles 3-up at 620px and
+   4-up at 1000px, so a fifth column would strand empty cells at both. Laid
+   out as a wrapping inline list so it stays one or two lines on a phone
+   instead of adding a tall column to the footer.
+   -------------------------------------------------------------------------- */
+.footer__seo {
+  padding-block: var(--s-6);
+  border-block-end: 1px solid rgba(251, 248, 243, 0.12);
+}
+
+.footer__seo-links {
+  list-style: none;
+  margin: var(--s-4) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-5);
+}
+
+.footer__seo-links a {
+  color: rgba(251, 248, 243, 0.72);
+  text-decoration: none;
+  font-size: var(--t-sm);
+  line-height: 1.9;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.footer__seo-links a:hover,
+.footer__seo-links a:focus-visible { color: var(--c-cream); }

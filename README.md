@@ -65,6 +65,8 @@ tools/
   build-rooms-page.py      Regenerates rooms.html
   build-seo.py             Regenerates canonical/og/JSON-LD/robots/sitemap
   set-domain.py            One command to point the site at its public URL
+  build-seo-pages.py       Regenerates the six SEO landing pages
+  seo-content.py           Writes the landing-page copy into i18n/*.json
   package.py               Builds kivanc-site.zip for upload to public_html/
 assets/
   brand/                   Kıvanç logo, favicons (see Brand assets)
@@ -447,6 +449,61 @@ itself. An Arabic webfont is already stubbed in `_foundation.css` under `[dir="r
   `aria-live` region.
 
 ---
+
+## SEO landing pages
+
+Six Turkish-language landing pages, each targeting one search phrase:
+
+| URL | Target phrase |
+| --- | --- |
+| `/istanbul-kiz-yurdu/` | kız yurdu İstanbul |
+| `/istanbul-ogrenci-yurdu/` | öğrenci yurdu İstanbul |
+| `/istanbul-kiz-ogrenci-yurdu/` | kız öğrenci yurdu İstanbul |
+| `/guvenli-kiz-yurdu-istanbul/` | güvenli kız yurdu İstanbul |
+| `/universitelere-yakin-kiz-yurdu/` | üniversitelere yakın kız yurdu |
+| `/kiz-yurdu-fiyatlari/` | kız yurdu fiyatları İstanbul |
+
+```bash
+python tools/build-seo-pages.py     # writes <slug>/index.html for each
+```
+
+Each is a directory holding one `index.html`, which is what gives the URL its
+trailing slash on a static host. Copy lives in `i18n/*.json` under
+`seo.<slug>`; the shell (sprite, header, drawer, footer, WhatsApp button) is
+lifted from `index.html` exactly as `build-rooms-page.py` does it.
+
+**No page invents anything.** The universities and travel times come from
+`uni.*`, the rates and payment plans from `rooms.*`, the facilities from
+`amen.*`, the address from `contact.*`, and the FAQ answers from `faq.*` — the
+same values the homepage renders. A price cannot say one thing here and
+another there.
+
+Four things that are easy to get wrong here, and why they are the way they are:
+
+- **Every generated string carries a `data-i18n` key.** The first version keyed
+  only the H1 and left the section headings as plain text, so an English
+  browser got an English headline over Turkish subheadings.
+- **The pages declare `window.__LANG_DEFAULT = "tr"`.** They lose to a stored
+  choice — the visitor's own pick always wins — but beat the browser's
+  `Accept-Language`. Without it a crawler asking for `en-US` reads English body
+  copy under a Turkish `<title>`, which is exactly the mismatch that sinks a
+  landing page.
+- **`body.page-seo` makes the header solid.** The header is transparent with
+  cream text because it normally sits over the dark hero. These pages have no
+  hero, so at scroll 0 it was cream-on-cream and invisible.
+- **`BASE_PATH` in `i18n.js` is derived from the script's own URL.** A relative
+  `"i18n/"` resolves to `/istanbul-kiz-yurdu/i18n/` and 404s.
+
+Links to them live **only in the footer**, in a full-width `.footer__seo` band
+rather than a fifth column: `.footer__top` tiles 3-up at 620px and 4-up at
+1000px, so a fifth column would strand empty cells at both. They are ordinary
+visible `<a>` links — nothing is hidden, and nothing was added to the header,
+the hero or any homepage section.
+
+Adding a seventh page: add the slug to `SEO_SLUGS` in `tools/build-seo.py`
+(the sitemap and the packager both read it), to `PAGES` and `LEAD` in
+`tools/build-seo-pages.py`, to the footer band in `index.html`, and write its
+copy into both JSON files.
 
 ## Publishing
 

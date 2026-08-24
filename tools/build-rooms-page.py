@@ -65,9 +65,11 @@ PHOTOS = {
            "assets/images/room-double-2.jpg",
            "assets/images/room-double-4.jpg"],
     "f3": ["https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1100&q=80"],
-    "f4": ["https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1100&q=80"],
+    "f4": ["assets/images/room-quad-1.webp",
+           "assets/images/room-quad-2.webp",
+           "assets/images/room-quad-3.webp"],
 }
-STOCK = {"f3", "f4"}
+STOCK = {"f3"}
 CHIPS = [("i-wifi", "wifi"), ("i-tv", "tv"), ("i-fridge", "fridge"), ("i-bath", "ensuite")]
 INCLUDED = [("i-coffee", "inc1"), ("i-wifi", "inc2"), ("i-sparkle", "inc3"),
             ("i-bath", "inc4"), ("i-shield", "inc5"), ("i-laundry", "inc6")]

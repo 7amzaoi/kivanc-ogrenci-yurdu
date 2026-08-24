@@ -350,12 +350,40 @@ for replacement requirements and why the logo well is 92×64px rather than squar
 
 ## The inquiry form
 
-Client-side validated (name, phone, email, residence choice), then handed to the visitor's
-mail client via `mailto:`. **There is no backend.**
+Client-side validated (name, phone, email, room type), then handed to WhatsApp.
+**There is no backend, and none is needed** — the message arrives in the residence's
+WhatsApp, which is the number families already use.
 
-To connect one, see the block marked `// TODO: connect to backend` in `js/main.js`. Replace
-the `mailto:` hand-off with a `fetch()` POST; leave the validation and the status messages
-above it alone. Status strings live under `form.*` in the JSON files.
+On submit the handler builds a plain-text message and opens
+`https://wa.me/<contact.waNumber>?text=…`:
+
+```
+Oda talebi — Kıvanç Kız Yurdu
+
+Ad Soyad: Ayşe Yılmaz
+Telefon: 0555 123 45 67
+E-posta: ayse@example.com
+Oda tipi: İki kişilik
+
+Mesajınız:
+Biruni Üniversitesi. Eylül ayında taşınmak istiyorum.
+```
+
+Every label goes through `t()`, so the message is written in whichever language the
+visitor is reading the site in. The free-text block is omitted entirely when that field
+is left empty, rather than sending a heading with nothing under it.
+
+Two things worth knowing before you change this code:
+
+- The hand-off is a synthesised `<a target="_blank" rel="noopener">` click, **not**
+  `window.open`. Passing `"noopener"` to `window.open` makes it return `null` by
+  specification, so a blocked popup and a successful one are indistinguishable — the
+  first version of this fell back to `location.href` every single time and navigated
+  the visitor off the site.
+- The visitor still presses send inside WhatsApp. Nothing is transmitted by the page
+  itself, which is why `form.note` says so plainly.
+
+Status strings live under `form.*` in the JSON files.
 
 ---
 
@@ -519,7 +547,6 @@ Blocking, or close to it:
       images on the site, on `rooms.html` and the homepage rooms grid. They are
       other people's rooms presented as yours, which is both a licensing and an
       honesty problem
-- [ ] Connect the inquiry form to a backend, or confirm `mailto:` is acceptable
 
 Worth confirming:
 

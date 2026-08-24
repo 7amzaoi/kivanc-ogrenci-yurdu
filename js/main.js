@@ -773,34 +773,44 @@
       var roomType = form.querySelector('input[name="roomType"]:checked').value;
       var roomLabel = t(roomKeys[roomType] || "form.roomSingle");
 
-      var body = [
+      /* The message is written in whichever language the visitor is reading
+         the site in: every label goes through t(), so a Turkish visitor sends
+         a Turkish message and an English one sends English. */
+      var lines = [
+        t("form.waHeading"),
+        "",
         t("form.name")     + ": " + $("#f-name").value.trim(),
         t("form.phone")    + ": " + $("#f-phone").value.trim(),
         t("form.email")    + ": " + $("#f-email").value.trim(),
-        t("form.interest") + ": " + roomLabel,
-        "",
-        t("form.message")  + ":",
-        $("#f-message").value.trim()
-      ].join("\n");
+        t("form.interest") + ": " + roomLabel
+      ];
 
-      /* TODO: connect to backend.
-         Replace the mailto hand-off below with a POST once an endpoint exists:
+      // an empty "Message:" heading with nothing under it reads like a bug
+      var note = $("#f-message").value.trim();
+      if (note) lines.push("", t("form.message") + ":", note);
 
-           fetch(ENDPOINT, {
-             method: "POST",
-             headers: { "Content-Type": "application/json" },
-             body: JSON.stringify(payload)
-           })
-
-         Keep the validation above and the status messages as they are. */
-      var mailto = "mailto:" + t("contact.emailRaw") +
-                   "?subject=" + encodeURIComponent(t("form.mailSubject")) +
-                   "&body="    + encodeURIComponent(body);
+      /* wa.me wants a bare international number, no + and no separators.
+         contact.waNumber already holds it in that form; strip anything a
+         future edit might reintroduce rather than trusting the string. */
+      var number = String(t("contact.waNumber")).replace(/\D/g, "");
+      var url = "https://wa.me/" + number +
+                "?text=" + encodeURIComponent(lines.join("\n"));
 
       status.className = "form__status is-pending";
       status.textContent = t("form.sending");
 
-      window.location.href = mailto;
+      /* A synthesised link click, not window.open: passing "noopener" to
+         window.open makes it return null by specification, so there is no
+         way to tell a blocked popup from a successful one. An anchor carries
+         rel="noopener" properly, counts as part of the submit gesture, and
+         leaves the site open in the tab behind it. */
+      var hop = document.createElement("a");
+      hop.href = url;
+      hop.target = "_blank";
+      hop.rel = "noopener";
+      document.body.appendChild(hop);
+      hop.click();
+      document.body.removeChild(hop);
 
       setTimeout(function () {
         status.className = "form__status is-success";

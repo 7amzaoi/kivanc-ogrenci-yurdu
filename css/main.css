@@ -1,11 +1,13 @@
 /* ==========================================================================
-   EMISA YURT — main stylesheet
+   Kıvanç Kız Yurdu — main stylesheet
    Imports only. All rules live in the partials.
    Order matters: tokens → base → components, in page order.
    --------------------------------------------------------------------------
-   NOTE ON PRODUCTION: @import issues one request per file, which is fine for
-   a site this size but adds round-trips. To flatten it, concatenate the
-   partials in this order into a single main.min.css (see README).
+   NOTE ON PRODUCTION: @import costs a round-trip -- the browser cannot even
+   discover the partials until this file has been fetched and parsed, and CSS
+   blocks rendering. tools/package.py therefore concatenates them, in this
+   order, into a single css/main.css inside the upload bundle. Keep editing
+   the partials here; the flattening happens at packaging time.
    ========================================================================== */
 
 @import url("_foundation.css");

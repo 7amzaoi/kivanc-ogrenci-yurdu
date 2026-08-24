@@ -25,17 +25,15 @@ ErrorDocument 404 /404.html
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-  # Pick ONE canonical hostname and uncomment it, so www and non-www do not
-  # both serve the site as separate pages to Google. It must match the origin
-  # you passed to tools/set-domain.py.
+  # Canonical hostname: non-www, matching the origin passed to
+  # tools/set-domain.py and therefore the <link rel="canonical"> on both
+  # pages. Serving www and non-www as separate pages splits the site's own
+  # search ranking, so www is redirected here rather than answered.
   #
-  # non-www (recommended, matches https://example.com):
-  # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-  # RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
-  #
-  # www:
-  # RewriteCond %{HTTP_HOST} !^www\. [NC]
-  # RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  # Only change this if you also re-run set-domain.py with the www form --
+  # the redirect and the canonical tag must never disagree.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
   # Serve /rooms instead of /rooms.html if you prefer the tidier URL.
   # Leave it off unless you want it: turning it on changes every link you

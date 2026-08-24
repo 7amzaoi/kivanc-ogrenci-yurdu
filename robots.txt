@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kivanc-kizyurdu.com/sitemap.xml

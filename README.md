@@ -1,6 +1,6 @@
-# Kıvanç Öğrenci Yurdu — Marketing Website
+# Kıvanç Kız Yurdu — Marketing Website
 
-Static marketing site for **Kıvanç Öğrenci Yurdu** (Özel Yüksek Öğrenim Kız Öğrenci
+Static marketing site for **Kıvanç Kız Yurdu** (Özel Yüksek Öğrenim Kız Öğrenci
 Yurdu, est. 2013) — a private residence for **female students** in Avcılar, İstanbul.
 
 Vanilla HTML / CSS / JS. No build step, no framework, no dependencies. Deploy the folder

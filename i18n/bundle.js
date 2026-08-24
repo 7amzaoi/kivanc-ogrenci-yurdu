@@ -6,12 +6,12 @@
 window.I18N_BUNDLE = {
   "en": {
     "meta": {
-      "title": "Kıvanç Öğrenci Yurdu — Female Student Residence in Avcılar, Istanbul",
+      "title": "Kıvanç Kız Yurdu — Female Student Residence in Avcılar, Istanbul",
       "description": "A private residence for female students in Avcılar, Istanbul. Secure, professionally managed rooms minutes from Istanbul's private universities."
     },
     "brand": {
-      "suffix": "Öğrenci Yurdu",
-      "name": "Kıvanç Öğrenci Yurdu"
+      "suffix": "Kız Yurdu",
+      "name": "Kıvanç Kız Yurdu"
     },
     "a11y": {
       "skipToContent": "Skip to content",
@@ -42,7 +42,7 @@ window.I18N_BUNDLE = {
       "lede": "A private residence for female students in the heart of Avcılar — professionally managed, secure around the clock, and a short walk from the Metrobüs that reaches five university campuses in under half an hour.",
       "ctaPrimary": "View Rooms",
       "ctaSecondary": "Book a Visit",
-      "imageAlt": "A double room with two beds, study desks, a television and a mini fridge",
+      "imageAlt": "The entrance and common seating area at Kıvanç Kız Yurdu",
       "trust": {
         "1": {
           "value": "500+",
@@ -228,7 +228,7 @@ window.I18N_BUNDLE = {
       "title": "Built for students. Answerable to parents.",
       "p1": "Most of our residents move to Istanbul from another city, and for their families that first year is a leap of faith. We built Kıvanç around that reality: one properly staffed building, clear rules, transparent pricing, and someone reachable whenever a parent needs an answer.",
       "p2": "We're not a large chain. The residence is run day to day by the same family that has owned it since 2013, which is why the standards hold.",
-      "imageAlt": "The entrance and common seating area at Kıvanç Öğrenci Yurdu",
+      "imageAlt": "A double room with two beds, study desks, a television and a mini fridge",
       "v1": {
         "title": "Safety comes first",
         "desc": "Controlled entry, 24/7 camera recording and staff on site at every hour — and entries and exits reported to the family as they happen."
@@ -354,7 +354,7 @@ window.I18N_BUNDLE = {
       "email": "kivancogrenciyurtlari@gmail.com",
       "hoursLabel": "Visiting hours",
       "hours": "Every day, 09:00 – 20:00",
-      "mapTitle": "Map of Kıvanç Öğrenci Yurdu, Avcılar",
+      "mapTitle": "Map of Kıvanç Kız Yurdu, Avcılar",
       "mapNote": "Cihangir Mah., Avcılar — tap the pin for directions.",
       "_comment": "SINGLE SOURCE OF TRUTH for contact details. js/i18n.js writes phoneRaw / waNumber / emailRaw into the tel:, wa.me and mailto: links, and builds both the Google Maps directions links and the embedded map iframe from mapLat / mapLng. The iframe in index.html also carries the coordinates as a no-JS fallback; tools/verify keeps the two in step.",
       "phoneRaw": "+905415904445",
@@ -382,7 +382,7 @@ window.I18N_BUNDLE = {
       "sending": "Opening your email app…",
       "success": "Thank you — your email app should now be open with your inquiry ready to send.",
       "error": "Something went wrong. Please call or message us on WhatsApp instead.",
-      "mailSubject": "Room inquiry — Kıvanç Öğrenci Yurdu",
+      "mailSubject": "Room inquiry — Kıvanç Kız Yurdu",
       "roomSingle": "Single",
       "roomTwin": "Double",
       "roomTriple": "Triple",
@@ -396,7 +396,7 @@ window.I18N_BUNDLE = {
       "contactTitle": "Contact",
       "bookVisit": "Book a visit",
       "applyNow": "Apply now",
-      "copyright": "© 2026 Kıvanç Öğrenci Yurdu. All rights reserved.",
+      "copyright": "© 2026 Kıvanç Kız Yurdu. All rights reserved.",
       "privacy": "Privacy",
       "terms": "Terms",
       "social": {
@@ -407,7 +407,7 @@ window.I18N_BUNDLE = {
       }
     },
     "roomsPage": {
-      "metaTitle": "Rooms & Prices — Kıvanç Öğrenci Yurdu, Avcılar",
+      "metaTitle": "Rooms & Prices — Kıvanç Kız Yurdu, Avcılar",
       "metaDescription": "45 hotel-style rooms in Avcılar, İstanbul. Single, double, triple and quad rooms from 15.000 TL per person per month, breakfast, internet, cleaning and laundry included.",
       "eyebrow": "Rooms & Prices",
       "title": "Every room, every rate",
@@ -454,12 +454,12 @@ window.I18N_BUNDLE = {
   },
   "tr": {
     "meta": {
-      "title": "Kıvanç Öğrenci Yurdu — Avcılar, İstanbul'da Kız Öğrenci Yurdu",
+      "title": "Kıvanç Kız Yurdu — Avcılar, İstanbul'da Özel Öğrenci Yurdu",
       "description": "Avcılar, İstanbul'da özel kız öğrenci yurdu. Güvenli ve profesyonel yönetilen odalar; İstanbul'un vakıf üniversitelerine dakikalar mesafede."
     },
     "brand": {
-      "suffix": "Öğrenci Yurdu",
-      "name": "Kıvanç Öğrenci Yurdu"
+      "suffix": "Kız Yurdu",
+      "name": "Kıvanç Kız Yurdu"
     },
     "a11y": {
       "skipToContent": "İçeriğe geç",
@@ -490,7 +490,7 @@ window.I18N_BUNDLE = {
       "lede": "Avcılar'ın merkezinde kız öğrenciler için özel bir yurt — profesyonel yönetim, 7/24 güvenlik ve yarım saatin altında beş üniversite kampüsüne ulaşan Metrobüs'e kısa bir yürüyüş.",
       "ctaPrimary": "Odaları İncele",
       "ctaSecondary": "Randevu Al",
-      "imageAlt": "İki kişilik bir oda: iki yatak, çalışma masaları, televizyon ve mini buzdolabı",
+      "imageAlt": "Kıvanç Kız Yurdu'nun girişi ve ortak oturma alanı",
       "trust": {
         "1": {
           "value": "500+",
@@ -676,7 +676,7 @@ window.I18N_BUNDLE = {
       "title": "Öğrenci için kurulduk. Aileye hesap veriyoruz.",
       "p1": "Öğrencilerimizin çoğu İstanbul'a başka bir şehirden geliyor ve aileleri için o ilk yıl büyük bir güven meselesi. Kıvanç'ı tam da bu gerçeğin üzerine kurduk: gerçekten personelli tek bir bina, net kurallar, şeffaf fiyatlandırma ve bir veli soru sorduğunda her zaman ulaşılabilen bir muhatap.",
       "p2": "Büyük bir zincir değiliz. Yurdu, 2013'ten bu yana sahibi olan aile günlük olarak kendisi yönetiyor; standartların korunmasının sebebi de bu.",
-      "imageAlt": "Kıvanç Öğrenci Yurdu'nun girişi ve ortak oturma alanı",
+      "imageAlt": "İki kişilik bir oda: iki yatak, çalışma masaları, televizyon ve mini buzdolabı",
       "v1": {
         "title": "Önce güvenlik",
         "desc": "Kontrollü giriş, 7/24 kamera kaydı ve günün her saatinde binada personel; giriş-çıkışlar anında aileye bildirilir."
@@ -802,7 +802,7 @@ window.I18N_BUNDLE = {
       "email": "kivancogrenciyurtlari@gmail.com",
       "hoursLabel": "Ziyaret saatleri",
       "hours": "Her gün, 09:00 – 20:00",
-      "mapTitle": "Kıvanç Öğrenci Yurdu haritası, Avcılar",
+      "mapTitle": "Kıvanç Kız Yurdu haritası, Avcılar",
       "mapNote": "Cihangir Mah., Avcılar — yol tarifi için işarete dokunun.",
       "_comment": "SINGLE SOURCE OF TRUTH for contact details. js/i18n.js writes phoneRaw / waNumber / emailRaw into the tel:, wa.me and mailto: links, and builds both the Google Maps directions links and the embedded map iframe from mapLat / mapLng. The iframe in index.html also carries the coordinates as a no-JS fallback; tools/verify keeps the two in step.",
       "phoneRaw": "+905415904445",
@@ -830,7 +830,7 @@ window.I18N_BUNDLE = {
       "sending": "E-posta uygulamanız açılıyor…",
       "success": "Teşekkürler — e-posta uygulamanız talebiniz hazır şekilde açılmış olmalı.",
       "error": "Bir sorun oluştu. Lütfen bizi arayın ya da WhatsApp'tan yazın.",
-      "mailSubject": "Oda talebi — Kıvanç Öğrenci Yurdu",
+      "mailSubject": "Oda talebi — Kıvanç Kız Yurdu",
       "roomSingle": "Tek kişilik",
       "roomTwin": "İki kişilik",
       "roomTriple": "Üç kişilik",
@@ -844,7 +844,7 @@ window.I18N_BUNDLE = {
       "contactTitle": "İletişim",
       "bookVisit": "Randevu al",
       "applyNow": "Hemen başvur",
-      "copyright": "© 2026 Kıvanç Öğrenci Yurdu. Tüm hakları saklıdır.",
+      "copyright": "© 2026 Kıvanç Kız Yurdu. Tüm hakları saklıdır.",
       "privacy": "Gizlilik",
       "terms": "Kullanım Koşulları",
       "social": {
@@ -855,7 +855,7 @@ window.I18N_BUNDLE = {
       }
     },
     "roomsPage": {
-      "metaTitle": "Odalar ve Fiyatlar — Kıvanç Öğrenci Yurdu, Avcılar",
+      "metaTitle": "Odalar ve Fiyatlar — Kıvanç Kız Yurdu, Avcılar",
       "metaDescription": "Avcılar, İstanbul'da 45 otel tipi oda. Tek, iki, üç ve dört kişilik odalar kişi başı aylık 15.000 TL'den başlar; kahvaltı, internet, temizlik ve çamaşır dahildir.",
       "eyebrow": "Odalar ve Fiyatlar",
       "title": "Bütün odalar, bütün fiyatlar",

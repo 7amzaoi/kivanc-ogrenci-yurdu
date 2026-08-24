@@ -213,7 +213,7 @@ page = u'''<!DOCTYPE html>
   <meta name="robots" content="index, follow" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Kıvanç Öğrenci Yurdu" />
+  <meta property="og:site_name" content="Kıvanç Kız Yurdu" />
   <meta property="og:title" data-i18n-attr="content:roomsPage.metaTitle" content="%(metaTitle)s" />
   <meta property="og:description" data-i18n-attr="content:roomsPage.metaDescription"
         content="%(metaDescription)s" />

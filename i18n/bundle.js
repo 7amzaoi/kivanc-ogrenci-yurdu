@@ -45,7 +45,7 @@ window.I18N_BUNDLE = {
       "imageAlt": "The entrance and common seating area at Kıvanç Kız Yurdu",
       "trust": {
         "1": {
-          "value": "500+",
+          "value": "250+",
           "label": "Students housed since 2013"
         },
         "2": {
@@ -397,12 +397,7 @@ window.I18N_BUNDLE = {
       "bookVisit": "Book a visit",
       "applyNow": "Apply now",
       "copyright": "© 2026 Kıvanç Kız Yurdu. All rights reserved.",
-      "privacy": "Privacy",
-      "terms": "Terms",
       "social": {
-        "instagram": "Instagram",
-        "facebook": "Facebook",
-        "youtube": "YouTube",
         "whatsapp": "WhatsApp"
       }
     },
@@ -493,7 +488,7 @@ window.I18N_BUNDLE = {
       "imageAlt": "Kıvanç Kız Yurdu'nun girişi ve ortak oturma alanı",
       "trust": {
         "1": {
-          "value": "500+",
+          "value": "250+",
           "label": "2013'ten bu yana ağırladığımız öğrenci"
         },
         "2": {
@@ -845,12 +840,7 @@ window.I18N_BUNDLE = {
       "bookVisit": "Randevu al",
       "applyNow": "Hemen başvur",
       "copyright": "© 2026 Kıvanç Kız Yurdu. Tüm hakları saklıdır.",
-      "privacy": "Gizlilik",
-      "terms": "Kullanım Koşulları",
       "social": {
-        "instagram": "Instagram",
-        "facebook": "Facebook",
-        "youtube": "YouTube",
         "whatsapp": "WhatsApp"
       }
     },

@@ -33,6 +33,9 @@ Then open <http://localhost:8000>.
 ```
 index.html                 Homepage — all sections, semantic markup with data-i18n keys
 rooms.html                 GENERATED rooms & prices page (see Rooms page below)
+404.html                   Self-contained not-found page (no external CSS by design)
+site.config.json           The public origin. Set it with tools/set-domain.py
+robots.txt, sitemap.xml    GENERATED once an origin is set
 css/
   _foundation.css          Design tokens ONLY — colors, type scale, spacing, shadows, motion
   _base.css                Reset, element defaults, shared primitives (.container, .btn, .eyebrow…)
@@ -59,6 +62,8 @@ i18n/
 tools/
   build-i18n.py            Regenerates i18n/bundle.js
   build-rooms-page.py      Regenerates rooms.html
+  build-seo.py             Regenerates canonical/og/JSON-LD/robots/sitemap
+  set-domain.py            One command to point the site at its public URL
 assets/
   brand/                   Kıvanç logo, favicons (see Brand assets)
   logos/                   University logos
@@ -413,28 +418,84 @@ itself. An Arabic webfont is already stubbed in `_foundation.css` under `[dir="r
 
 ---
 
+## Publishing
+
+Everything that depends on the public URL is generated, so pointing the site at
+a domain is one command:
+
+```bash
+python tools/set-domain.py https://kivancyurdu.com
+```
+
+That writes `site.config.json` and then regenerates, via `tools/build-seo.py`:
+
+| Output | What it is |
+| --- | --- |
+| `<link rel="canonical">` | on both pages |
+| `og:url`, `og:image` | absolute, so WhatsApp and Facebook render a preview card |
+| `robots.txt` | allow-all plus the sitemap location |
+| `sitemap.xml` | both pages, with priorities |
+| JSON-LD `LodgingBusiness` | address, coordinates, phone, hours, price range, amenities |
+
+The structured data is built **from `i18n/en.json`**, never hand-written, so the
+address and prices Google reads can never drift from the ones the page shows.
+The amenity list comes from the twelve facilities the page actually lists — do
+not hand-edit it into claims the residence does not make.
+
+Until an origin is set, `build-seo.py` deliberately emits **no** canonical and
+**no** absolute `og:image`: a wrong canonical is worse than none. The site is
+publishable in that state; social shares just will not show a preview image.
+
+Upload the repository root as-is. There is no build step. `404.html` is
+deliberately self-contained — it is served for unknown paths at any depth, where
+relative links to `css/` would break.
+
 ## Before launch — checklist
 
-Done since the first build: real logo and brand identity, real phone/WhatsApp/email,
-Avcılar location and travel times, all six university logos, female-only structure.
+Done: real logo and brand identity, the name **Kıvanç Kız Yurdu**, real
+phone/WhatsApp/email, Avcılar location and travel times, all six university
+logos, female-only structure, the client's own photographs and hero plate,
+structured data, `404.html`, dead links removed, `250+` corrected from the
+invented `500+`.
 
-- [ ] Photographs of the **triple and quad rooms** — the last two stock images on the site
-- [ ] A photograph of the **building exterior**. The price poster has a night shot with the
-      signage, but only at 443x418px with the logo across it
-- [ ] Confirm prices are **per person** (assumed from the poster's falling rate), and that
-      the single room really is "1 peşin + 10 taksit" while the others are +9 — that asymmetry
-      is printed on the poster and may be a typo
-- [ ] Two homepage facilities were replaced because the poster contradicted or omitted them:
-      "breakfast **and dinner**" became breakfast only, and the gym and study lounges gave way
-      to hotel-style rooms and the video tour. Add them back if the building really has them
-- [ ] Real testimonials — currently sample copy; remove `test.note` once replaced
-- [ ] Confirm the trust-bar figures: `500+` students and `since 2013` are placeholders
-      built around the logo's date; the curfew times in `faq.6.a` are assumed too
-- [ ] Verify university travel times against current İETT/Metrobüs schedules
-- [ ] Sanity-check the pin itself: both Google links you sent resolve to **Özel Nilgün
-      Eroğlu Ortaokul**, a school. If the residence is on that campus this is right; if the
-      school was only a nearby landmark, move `contact.mapLat` / `mapLng` (and the iframe)
-- [ ] Register the domain, then add `<link rel="canonical">` and point the `og:` tags at it
-- [ ] Real Privacy / Terms pages (footer links are `#`) and real social URLs
+**Withheld from the live site:** the testimonials section is commented out in
+`index.html`. Its three quotes were written samples attributed to invented
+names, and a real business must not publish invented reviews. Replace `test.1`
+… `test.3` in both JSON files with real, permitted quotes, drop `test.note`,
+then remove the comment wrapper. Nothing else references the section.
+
+Blocking, or close to it:
+
+- [ ] **Domain** — run `python tools/set-domain.py https://…`. Without it there
+      is no canonical and social shares show no preview image
+- [ ] **KVKK aydınlatma metni.** The inquiry form collects a name, phone and
+      email, which makes this a legal requirement for a business operating in
+      Turkey. There is no privacy page yet and the footer no longer links to one
+- [ ] Photographs of the **triple and quad rooms** — the last two Unsplash
+      images on the site, on `rooms.html` and the homepage rooms grid. They are
+      other people's rooms presented as yours, which is both a licensing and an
+      honesty problem
 - [ ] Connect the inquiry form to a backend, or confirm `mailto:` is acceptable
+
+Worth confirming:
+
+- [ ] A photograph of the **building exterior**
+- [ ] Confirm prices are **per person**, and that the single room really is
+      "1 peşin + 10 taksit" while the others are +9 — that asymmetry is printed
+      on the poster and may be a typo
+- [ ] `250+` students and `since 2013` — 250 replaced the invented 500 on the
+      client's word; drop the `+` if the figure is exactly 250. The curfew times
+      in `faq.6.a` are still assumed
+- [ ] Two homepage facilities were replaced because the poster contradicted or
+      omitted them: "breakfast **and dinner**" became breakfast only, and the gym
+      and study lounges gave way to hotel-style rooms and the video tour. Add
+      them back if the building really has them
+- [ ] Verify university travel times against current İETT/Metrobüs schedules
+- [ ] Sanity-check the pin: both Google links resolve to **Özel Nilgün Eroğlu
+      Ortaokul**, a school. If the residence is on that campus this is right; if
+      the school was only a nearby landmark, move `contact.mapLat` / `mapLng`
 - [ ] Get written permission for the six university logos, or keep monograms
+- [ ] `assets/images/entrance-lobby.jpg` and `assets/brand/logo-dark.png` are no
+      longer referenced by anything. Delete them or find them a use
+- [ ] Social accounts — the Instagram/Facebook/YouTube icons were removed
+      because they linked nowhere. Send real URLs to put them back

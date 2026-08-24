@@ -39,7 +39,7 @@
     "imageAlt": "The entrance and common seating area at Kıvanç Kız Yurdu",
     "trust": {
       "1": {
-        "value": "500+",
+        "value": "250+",
         "label": "Students housed since 2013"
       },
       "2": {
@@ -391,12 +391,7 @@
     "bookVisit": "Book a visit",
     "applyNow": "Apply now",
     "copyright": "© 2026 Kıvanç Kız Yurdu. All rights reserved.",
-    "privacy": "Privacy",
-    "terms": "Terms",
     "social": {
-      "instagram": "Instagram",
-      "facebook": "Facebook",
-      "youtube": "YouTube",
       "whatsapp": "WhatsApp"
     }
   },

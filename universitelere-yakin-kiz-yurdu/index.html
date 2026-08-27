@@ -141,29 +141,29 @@
 
       <nav class="nav" id="primary-nav" aria-label="Primary">
         <ul class="nav__list">
-          <li><a class="nav__link" href="/"          data-i18n="nav.home">Home</a></li>
-          <li><a class="nav__link" href="/#rooms"        data-i18n="nav.rooms">Rooms</a></li>
-          <li><a class="nav__link" href="/#universities" data-i18n="nav.universities">Universities</a></li>
-          <li><a class="nav__link" href="/#amenities"    data-i18n="nav.amenities">Facilities</a></li>
-          <li><a class="nav__link" href="/#about"        data-i18n="nav.about">About</a></li>
-          <li><a class="nav__link" href="/#contact"      data-i18n="nav.contact">Contact</a></li>
+          <li><a class="nav__link" href="/"          data-i18n="nav.home">Ana Sayfa</a></li>
+          <li><a class="nav__link" href="/#rooms"        data-i18n="nav.rooms">Odalar</a></li>
+          <li><a class="nav__link" href="/#universities" data-i18n="nav.universities">Üniversiteler</a></li>
+          <li><a class="nav__link" href="/#amenities"    data-i18n="nav.amenities">İmkânlar</a></li>
+          <li><a class="nav__link" href="/#about"        data-i18n="nav.about">Hakkımızda</a></li>
+          <li><a class="nav__link" href="/#contact"      data-i18n="nav.contact">İletişim</a></li>
         </ul>
       </nav>
 
       <div class="header__actions">
         <!-- Compact language toggle (the primary one lives in the hero) -->
         <div class="lang-switch lang-switch--compact" role="group"
-             data-i18n-attr="aria-label:a11y.languageSwitcher" aria-label="Change language">
+             data-i18n-attr="aria-label:a11y.languageSwitcher" aria-label="Dil değiştir">
           <button type="button" class="lang-switch__btn" data-lang="tr" lang="tr">TR</button>
           <span class="lang-switch__sep" aria-hidden="true"></span>
           <button type="button" class="lang-switch__btn" data-lang="en" lang="en">EN</button>
         </div>
 
-        <a class="btn btn--sm header__cta" href="/#contact" data-i18n="nav.cta">Book a Room</a>
+        <a class="btn btn--sm header__cta" href="/#contact" data-i18n="nav.cta">Yer Ayırt</a>
 
         <button type="button" class="nav-toggle" id="nav-toggle"
                 aria-expanded="false" aria-controls="mobile-drawer"
-                data-i18n-attr="aria-label:a11y.openMenu" aria-label="Open menu">
+                data-i18n-attr="aria-label:a11y.openMenu" aria-label="Menüyü aç">
           <svg class="icon nav-toggle__open"  aria-hidden="true"><use href="#i-menu"></use></svg>
           <svg class="icon nav-toggle__close" aria-hidden="true"><use href="#i-close"></use></svg>
         </button>
@@ -172,19 +172,19 @@
   </header>
 
 <div class="drawer" id="mobile-drawer" hidden>
-    <nav class="drawer__nav" data-i18n-attr="aria-label:a11y.mobileNav" aria-label="Mobile navigation">
-      <a class="drawer__link" href="/#rooms"        data-i18n="nav.rooms">Rooms</a>
-      <a class="drawer__link" href="/#universities" data-i18n="nav.universities">Universities</a>
-      <a class="drawer__link" href="/#amenities"    data-i18n="nav.amenities">Facilities</a>
-      <a class="drawer__link" href="/#about"        data-i18n="nav.about">About</a>
-      <a class="drawer__link" href="/#gallery"      data-i18n="nav.gallery">Gallery</a>
-      <a class="drawer__link" href="/#faq"          data-i18n="nav.faq">FAQ</a>
-      <a class="drawer__link" href="/#contact"      data-i18n="nav.contact">Contact</a>
+    <nav class="drawer__nav" data-i18n-attr="aria-label:a11y.mobileNav" aria-label="Mobil menü">
+      <a class="drawer__link" href="/#rooms"        data-i18n="nav.rooms">Odalar</a>
+      <a class="drawer__link" href="/#universities" data-i18n="nav.universities">Üniversiteler</a>
+      <a class="drawer__link" href="/#amenities"    data-i18n="nav.amenities">İmkânlar</a>
+      <a class="drawer__link" href="/#about"        data-i18n="nav.about">Hakkımızda</a>
+      <a class="drawer__link" href="/#gallery"      data-i18n="nav.gallery">Galeri</a>
+      <a class="drawer__link" href="/#faq"          data-i18n="nav.faq">S.S.S.</a>
+      <a class="drawer__link" href="/#contact"      data-i18n="nav.contact">İletişim</a>
     </nav>
     <div class="drawer__foot">
-      <a class="btn btn--block" href="/#contact" data-i18n="nav.cta">Book a Room</a>
+      <a class="btn btn--block" href="/#contact" data-i18n="nav.cta">Yer Ayırt</a>
       <div class="lang-switch" role="group"
-           data-i18n-attr="aria-label:a11y.languageSwitcher" aria-label="Change language">
+           data-i18n-attr="aria-label:a11y.languageSwitcher" aria-label="Dil değiştir">
         <button type="button" class="lang-switch__btn" data-lang="tr" lang="tr">Türkçe</button>
         <span class="lang-switch__sep" aria-hidden="true"></span>
         <button type="button" class="lang-switch__btn" data-lang="en" lang="en">English</button>
@@ -270,7 +270,7 @@
           <h2 data-i18n="seo.common.ctaH">Yer durumunu sorun</h2>
           <p data-i18n="seo.common.ctaP">Adınızı, üniversitenizi ve tercih ettiğiniz oda tipini yazın; kısa sürede dönüş yapalım.</p>
           <div class="seo-cta__actions">
-            <a class="btn btn--primary" href="https://wa.me/905415904445" data-contact-wa target="_blank" rel="noopener" data-i18n="seo.common.ctaWa">WhatsApp'tan yazın</a>
+            <a class="btn" href="https://wa.me/905415904445" data-contact-wa target="_blank" rel="noopener" data-i18n="seo.common.ctaWa">WhatsApp'tan yazın</a>
             <a class="btn btn--ghost" href="/#contact" data-i18n="seo.common.ctaForm">İletişim formu</a>
           </div>
         </section>
@@ -301,36 +301,36 @@
               <span class="brand__suffix" data-i18n="brand.suffix">Kız Yurdu</span>
             </span>
           </a>
-          <p class="footer__desc" data-i18n="footer.desc">A private residence for female students in Avcılar, İstanbul — professionally managed, secure around the clock, and minutes from Istanbul's private university campuses.</p>
+          <p class="footer__desc" data-i18n="footer.desc">Avcılar, İstanbul'da kız öğrenciler için özel yurt — profesyonel yönetim, 7/24 güvenlik ve vakıf üniversitesi kampüslerine dakikalar mesafe.</p>
           <ul class="social">
             <li><a href="https://wa.me/905415904445" data-contact-wa target="_blank" rel="noopener" data-i18n-attr="aria-label:footer.social.whatsapp" aria-label="WhatsApp"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-whatsapp"></use></svg></a></li>
           </ul>
         </div>
 
-        <nav class="footer__col" data-i18n-attr="aria-label:footer.exploreTitle" aria-label="Explore">
-          <h4 class="footer__title" data-i18n="footer.exploreTitle">Explore</h4>
+        <nav class="footer__col" data-i18n-attr="aria-label:footer.exploreTitle" aria-label="Keşfet">
+          <h4 class="footer__title" data-i18n="footer.exploreTitle">Keşfet</h4>
           <ul class="footer__links">
-            <li><a href="/#rooms"        data-i18n="nav.rooms">Rooms</a></li>
-            <li><a href="/#universities" data-i18n="nav.universities">Universities</a></li>
-            <li><a href="/#amenities"    data-i18n="nav.amenities">Facilities</a></li>
-            <li><a href="/#gallery"      data-i18n="nav.gallery">Gallery</a></li>
-            <li><a href="/#faq"          data-i18n="nav.faq">FAQ</a></li>
+            <li><a href="/#rooms"        data-i18n="nav.rooms">Odalar</a></li>
+            <li><a href="/#universities" data-i18n="nav.universities">Üniversiteler</a></li>
+            <li><a href="/#amenities"    data-i18n="nav.amenities">İmkânlar</a></li>
+            <li><a href="/#gallery"      data-i18n="nav.gallery">Galeri</a></li>
+            <li><a href="/#faq"          data-i18n="nav.faq">S.S.S.</a></li>
           </ul>
         </nav>
 
-        <nav class="footer__col" data-i18n-attr="aria-label:footer.residencesTitle" aria-label="Rooms">
-          <h4 class="footer__title" data-i18n="footer.residencesTitle">Rooms</h4>
+        <nav class="footer__col" data-i18n-attr="aria-label:footer.residencesTitle" aria-label="Odalar">
+          <h4 class="footer__title" data-i18n="footer.residencesTitle">Odalar</h4>
           <ul class="footer__links">
-            <li><a href="/#rooms" data-i18n="rooms.f1.name">Single Room</a></li>
-            <li><a href="/#rooms" data-i18n="rooms.f2.name">Double Room</a></li>
-            <li><a href="/#rooms" data-i18n="rooms.f3.name">Triple Room</a></li>
-            <li><a href="/#contact" data-i18n="footer.bookVisit">Book a visit</a></li>
-            <li><a href="/#contact" data-i18n="footer.applyNow">Apply now</a></li>
+            <li><a href="/#rooms" data-i18n="rooms.f1.name">Tek Kişilik Oda</a></li>
+            <li><a href="/#rooms" data-i18n="rooms.f2.name">İki Kişilik Oda</a></li>
+            <li><a href="/#rooms" data-i18n="rooms.f3.name">Üç Kişilik Oda</a></li>
+            <li><a href="/#contact" data-i18n="footer.bookVisit">Randevu al</a></li>
+            <li><a href="/#contact" data-i18n="footer.applyNow">Hemen başvur</a></li>
           </ul>
         </nav>
 
         <div class="footer__col">
-          <h4 class="footer__title" data-i18n="footer.contactTitle">Contact</h4>
+          <h4 class="footer__title" data-i18n="footer.contactTitle">İletişim</h4>
           <ul class="footer__links">
             <li><a href="tel:+905415904445" data-contact-tel data-i18n="contact.phone">+90 541 590 44 45</a></li>
             <li><a href="mailto:kivancagaoglu123@gmail.com" data-contact-mail data-i18n="contact.email">kivancagaoglu123@gmail.com</a></li>
@@ -338,7 +338,7 @@
                    data-i18n="contact.address">Cihangir Mah., Kirazlı Cad. No:18, 34310 Avcılar / İstanbul</a></li>
           </ul>
           <div class="lang-switch lang-switch--footer" role="group"
-               data-i18n-attr="aria-label:a11y.languageSwitcher" aria-label="Change language">
+               data-i18n-attr="aria-label:a11y.languageSwitcher" aria-label="Dil değiştir">
             <button type="button" class="lang-switch__btn" data-lang="tr" lang="tr">Türkçe</button>
             <span class="lang-switch__sep" aria-hidden="true"></span>
             <button type="button" class="lang-switch__btn" data-lang="en" lang="en">English</button>
@@ -350,26 +350,26 @@
       <!-- Guide links. A separate full-width band rather than a fifth column:
            .footer__top tiles 3-up and 4-up, and a fifth column would leave
            orphaned cells at both breakpoints. Ordinary visible <a> links. -->
-      <nav class="footer__seo" data-i18n-attr="aria-label:seo.common.footerTitle" aria-label="Residence Guide">
-        <h4 class="footer__title" data-i18n="seo.common.footerTitle">Residence Guide</h4>
+      <nav class="footer__seo" data-i18n-attr="aria-label:seo.common.footerTitle" aria-label="Kız Yurdu Rehberi">
+        <h4 class="footer__title" data-i18n="seo.common.footerTitle">Kız Yurdu Rehberi</h4>
         <ul class="footer__seo-links">
-            <li><a href="/istanbul-kiz-yurdu/" data-i18n="seo.istanbul-kiz-yurdu.navLabel">Istanbul Girls' Dormitory</a></li>
-            <li><a href="/istanbul-ogrenci-yurdu/" data-i18n="seo.istanbul-ogrenci-yurdu.navLabel">Istanbul Student Residence</a></li>
-            <li><a href="/istanbul-kiz-ogrenci-yurdu/" data-i18n="seo.istanbul-kiz-ogrenci-yurdu.navLabel">Istanbul Female Student Residence</a></li>
-            <li><a href="/guvenli-kiz-yurdu-istanbul/" data-i18n="seo.guvenli-kiz-yurdu-istanbul.navLabel">Secure Girls' Residence</a></li>
-            <li><a href="/universitelere-yakin-kiz-yurdu/" data-i18n="seo.universitelere-yakin-kiz-yurdu.navLabel">Residence Near Universities</a></li>
-            <li><a href="/kiz-yurdu-fiyatlari/" data-i18n="seo.kiz-yurdu-fiyatlari.navLabel">Dormitory Prices</a></li>
+            <li><a href="/istanbul-kiz-yurdu/" data-i18n="seo.istanbul-kiz-yurdu.navLabel">İstanbul Kız Yurdu</a></li>
+            <li><a href="/istanbul-ogrenci-yurdu/" data-i18n="seo.istanbul-ogrenci-yurdu.navLabel">İstanbul Öğrenci Yurdu</a></li>
+            <li><a href="/istanbul-kiz-ogrenci-yurdu/" data-i18n="seo.istanbul-kiz-ogrenci-yurdu.navLabel">İstanbul Kız Öğrenci Yurdu</a></li>
+            <li><a href="/guvenli-kiz-yurdu-istanbul/" data-i18n="seo.guvenli-kiz-yurdu-istanbul.navLabel">Güvenli Kız Yurdu İstanbul</a></li>
+            <li><a href="/universitelere-yakin-kiz-yurdu/" data-i18n="seo.universitelere-yakin-kiz-yurdu.navLabel">Üniversitelere Yakın Kız Yurdu</a></li>
+            <li><a href="/kiz-yurdu-fiyatlari/" data-i18n="seo.kiz-yurdu-fiyatlari.navLabel">Kız Yurdu Fiyatları</a></li>
         </ul>
       </nav>
 
       <div class="footer__bottom">
-        <p data-i18n="footer.copyright">© 2026 Kıvanç Kız Yurdu. All rights reserved.</p>
+        <p data-i18n="footer.copyright">© 2026 Kıvanç Kız Yurdu. Tüm hakları saklıdır.</p>
       </div>
     </div>
   </footer>
 
 <a class="wa-fab" href="https://wa.me/905415904445" data-contact-wa target="_blank" rel="noopener"
-     data-i18n-attr="aria-label:a11y.whatsappFab" aria-label="Message us on WhatsApp">
+     data-i18n-attr="aria-label:a11y.whatsappFab" aria-label="WhatsApp'tan yazın">
     <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
   </a>
 

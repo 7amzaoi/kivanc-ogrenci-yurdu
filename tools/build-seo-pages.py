@@ -136,7 +136,44 @@ def relink(s):
     return s
 
 
-sprite, header, drawer, footer, fab = (relink(x) for x in
+def localise(s):
+    """Swap the lifted shell's English inline fallbacks for Turkish ones.
+
+    index.html carries English fallbacks; these pages declare lang="tr" and
+    are read by crawlers before any JavaScript runs. Lifted verbatim, the
+    header and footer said "Home / Rooms / Universities" above a Turkish H1 --
+    37 elements a page of it.
+    """
+    tags = "h1|h2|h3|h4|p|span|a|button|li|label|legend"
+
+    def text(m):
+        try:
+            return "%s%s</%s>" % (m.group(1), esc(val(m.group(3))), m.group(4))
+        except (KeyError, TypeError, IndexError):
+            return m.group(0)           # key not in the dictionary: leave it
+
+    s = re.sub(r'(<(%s)\b[^>]*\bdata-i18n="([^"]+)"[^>]*>)[^<]*</(\2)>' % tags,
+               text, s)
+
+    def attrs(m):
+        tag = m.group(0)
+        for pair in m.group(1).split(";"):
+            if ":" not in pair:
+                continue
+            attr, key = (x.strip() for x in pair.strip().split(":", 1))
+            try:
+                want = esc(val(key))
+            except (KeyError, TypeError, IndexError):
+                continue
+            am = re.search(r'\s%s="[^"]*"' % re.escape(attr), tag)
+            if am:
+                tag = tag[:am.start()] + ' %s="%s"' % (attr, want) + tag[am.end():]
+        return tag
+
+    return re.sub(r'<[a-zA-Z][^>]*\bdata-i18n-attr="([^"]+)"[^>]*>', attrs, s)
+
+
+sprite, header, drawer, footer, fab = (localise(relink(x)) for x in
                                        (sprite, header, drawer, footer, fab))
 
 ARROW = ('<svg class="icon icon--sm" aria-hidden="true">'
@@ -278,7 +315,7 @@ def related_section(slugs):
 
 
 def cta_section():
-    wa = ('            <a class="btn btn--primary" href="https://wa.me/%s" data-contact-wa '
+    wa = ('            <a class="btn" href="https://wa.me/%s" data-contact-wa '
           'target="_blank" rel="noopener" data-i18n="seo.common.ctaWa">%s</a>'
           % (esc(D["contact"]["waNumber"]), esc(C["ctaWa"])))
     form = ('            <a class="btn btn--ghost" href="/#contact" '

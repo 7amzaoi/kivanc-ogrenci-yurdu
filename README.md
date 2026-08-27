@@ -61,6 +61,9 @@ i18n/
   tr.json                  Turkish copy      <- source of truth
   bundle.js                GENERATED from the two above; makes file:// work
 tools/
+  verify.py                Static integrity checks -- run before every commit
+  sync-fallbacks.py        Rewrites drifted inline text fallbacks from en.json
+  sync-attr-fallbacks.py   Same, for alt/aria-label/content attributes
   build-i18n.py            Regenerates i18n/bundle.js
   build-rooms-page.py      Regenerates rooms.html
   build-seo.py             Regenerates canonical/og/JSON-LD/robots/sitemap
@@ -449,6 +452,33 @@ itself. An Arabic webfont is already stubbed in `_foundation.css` under `[dir="r
   `aria-live` region.
 
 ---
+
+## Verifying
+
+```bash
+python tools/verify.py
+```
+
+Runs from any directory and fails loudly. It checks:
+
+- **i18n parity** — every key present in both languages, and which keys are
+  defined but never referenced
+- **Inline fallback drift**, for text and for `alt` / `aria-label` / `content`
+  attributes, on all eight pages. Each page is compared against **its own**
+  declared language: `index.html` and `rooms.html` ship English fallbacks, the
+  six landing pages ship Turkish ones on purpose
+- **Generated files are current** — `rooms.html`, the six landing pages and
+  `i18n/bundle.js` are regenerated and compared byte for byte
+- **The shared shell** is identical across pages, and every cross-page link,
+  local asset, CSS class and `var()` resolves
+- **Map coordinates** in the iframe match `contact.mapLat` / `mapLng`
+
+Markup inside HTML comments is excluded, so the withheld testimonials block does
+not report its classes as unstyled or its keys as used.
+
+If it reports drift, `python tools/sync-fallbacks.py` and
+`python tools/sync-attr-fallbacks.py index.html` rewrite the inline values from
+`en.json`; then rebuild.
 
 ## SEO landing pages
 
